@@ -1,6 +1,6 @@
-CopperTools
+Copper Tools
 ===========
 
-A Minecraft mod that adds a bunch of metal tools.
-**If you came here for the code, there's nothing here yet.**
-Come back, like, tomorrow or something.
+An open-source Minecraft mod that adds a bunch of metal tools.
+
+No forum link yet because this is an extremely early WIP.
