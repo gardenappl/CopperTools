@@ -1,0 +1,5 @@
+# Items
+item.coppertools:copper_pickaxe.name=Copper Pickaxe
+
+# Misc
+itemGroup.coppertools=Copper Tools

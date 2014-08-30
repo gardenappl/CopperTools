@@ -1,0 +1,5 @@
+# Items
+item.coppertools:copper_pickaxe.name=Медная кирка
+
+# Misc
+itemGroup.coppertools=Copper Tools
