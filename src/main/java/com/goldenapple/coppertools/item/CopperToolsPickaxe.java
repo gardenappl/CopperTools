@@ -18,6 +18,8 @@ public class CopperToolsPickaxe extends ItemPickaxe {
         setUnlocalizedName(name);
     }
 
+    //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot
+
     @Override
     public String getUnlocalizedName()
     {
