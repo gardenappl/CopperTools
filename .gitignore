@@ -1,9 +1,6 @@
 ## gradle
 /.gradle
 /build
-/gradle
-/gradlew
-/gradlew.bat
 
 ## ForgeGradle
 /run
@@ -22,4 +19,3 @@
 /*.iml
 /*.ipr
 /*.iws
-/atlassian-ide-plugin.xml
