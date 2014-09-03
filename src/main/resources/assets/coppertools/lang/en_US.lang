@@ -1,5 +1,11 @@
 # Items
+item.coppertools:wooden_saber.name=Wooden Saber
+
 item.coppertools:copper_pickaxe.name=Copper Pickaxe
+item.coppertools:copper_sword.name=Copper Sword
+item.coppertools:copper_shovel.name=Copper Shovel
+item.coppertools:copper_axe.name=Copper Axe
+item.coppertools:copper_hoe.name=Copper Hoe
 
 # Misc
 itemGroup.coppertools=Copper Tools

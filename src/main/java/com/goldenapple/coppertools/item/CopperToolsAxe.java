@@ -1,18 +1,17 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
-import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
-public class CopperToolsPickaxe extends ItemPickaxe {
+public class CopperToolsAxe extends ItemAxe{
 
-    public CopperToolsPickaxe(Item.ToolMaterial material, String name)
+    public CopperToolsAxe(Item.ToolMaterial material, String name)
     {
         super(material);
         setCreativeTab(CopperToolsTab.CopperToolsTab);

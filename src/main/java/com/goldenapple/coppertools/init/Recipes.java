@@ -8,5 +8,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 public class Recipes {
     public static void init(){
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperPick),"iii", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber)," i ", " i ", " s ", 'i', "logWood", 's', "stickWood"));
     }
 }

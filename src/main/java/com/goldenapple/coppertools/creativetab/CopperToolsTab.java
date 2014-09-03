@@ -6,7 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class CopperToolsTab {
-    public static final CreativeTabs CopperToolsTab = new CreativeTabs(Reference.MOD_ID_LOW) {
+    public static final CreativeTabs CopperToolsTab = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
         @Override
         public Item getTabIconItem() {
             return ModItems.copperPick;

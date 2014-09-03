@@ -7,12 +7,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 
-public class CopperToolsPickaxe extends ItemPickaxe {
+public class CopperToolsSword extends ItemSword{
 
-    public CopperToolsPickaxe(Item.ToolMaterial material, String name)
+    public CopperToolsSword(Item.ToolMaterial material, String name)
     {
         super(material);
         setCreativeTab(CopperToolsTab.CopperToolsTab);

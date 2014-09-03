@@ -3,6 +3,8 @@ package com.goldenapple.coppertools;
 import com.goldenapple.coppertools.handler.ConfigHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
+import com.goldenapple.coppertools.item.CopperToolsPickaxe;
+import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -18,9 +20,11 @@ public class CopperToolsMod {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
-        ModItems.init();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
+
+        ModItems.init();
     }
 
     @Mod.EventHandler
@@ -30,6 +34,5 @@ public class CopperToolsMod {
 
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event){
-
     }
 }

@@ -24,6 +24,7 @@ public class ConfigHandler {
     {
         if (config.hasChanged())
         {
+            loadCopper = config.getBoolean("loadCopper", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable copper");
             config.save();
         }
     }
