@@ -1,11 +1,15 @@
 # Items
 item.coppertools:wooden_saber.name=Деревянная сабля
 
+    # Copper Items
+
 item.coppertools:copper_pickaxe.name=Медная кирка
 item.coppertools:copper_sword.name=Медный меч
 item.coppertools:copper_shovel.name=Медная лопата
 item.coppertools:copper_axe.name=Медный топор
 item.coppertools:copper_hoe.name=Медная мотыга
+
+item.coppertools:copper_helmet.name=Медный шлем
 
 # Misc
 itemGroup.coppertools=Copper Tools
