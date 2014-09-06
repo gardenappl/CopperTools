@@ -3,15 +3,15 @@
   "modid": "CopperTools",
   "name": "Copper Tools",
   "description": "A mod that adds tools made out of copper and (soon) other crazy ingots!",
-  "version": "1.0.1",
+  "version": "1.0",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
   "authorList": [
     "goldenapple"
   ],
-  "credits": "Volodya2501 - textures, thenewboston and VSWE - for their tutorials,
-Vazkii, Flaxbeard, Pahimar and SpritefulFox - for their open-source code :D",
+  "credits": "Volodya2501 - textures, Pahimar, thenewboston - for their tutorials,
+Vazkii, Flaxbeard and Pahimar (again) - for their open-source code :D",
   "logoFile": "",
   "screenshots": [
   ],
