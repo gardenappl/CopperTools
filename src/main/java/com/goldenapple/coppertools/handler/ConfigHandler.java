@@ -1,5 +1,6 @@
 package com.goldenapple.coppertools.handler;
 
+import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -9,7 +10,9 @@ import java.io.File;
 public class ConfigHandler {
 
     public static Configuration config;
+
     public static boolean loadCopper;
+    public static boolean loadSaber;
 
     public static void init(File configFile)
     {
@@ -22,9 +25,12 @@ public class ConfigHandler {
 
     private static void loadConfig()
     {
+        loadCopper = config.getBoolean("loadCopper", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable copper");
+        loadSaber = config.getBoolean("loadSaber", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Wooden Saber");
+
         if (config.hasChanged())
         {
-            loadCopper = config.getBoolean("loadCopper", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable copper");
+            LogHelper.info("Config changed!");
             config.save();
         }
     }
