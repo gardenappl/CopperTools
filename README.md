@@ -1,6 +1,6 @@
 Copper Tools
 ===========
 
-An open-source Minecraft mod that adds a bunch of metal tools.
+An open-source WIP Minecraft mod that adds a bunch of metal tools.
 
-No forum link yet because this is an extremely early WIP.
+To download the mod .jar file, go to Temporary Downloads folder, choose on the version you want, and click "View Raw".
