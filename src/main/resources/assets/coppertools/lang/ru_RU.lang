@@ -10,6 +10,9 @@ item.coppertools:copper_axe.name=Медный топор
 item.coppertools:copper_hoe.name=Медная мотыга
 
 item.coppertools:copper_helmet.name=Медный шлем
+item.coppertools:copper_chestplate.name=Медный нагрудник
+item.coppertools:copper_leggings.name=Медные поножи
+item.coppertools:copper_boots.name=Медные ботинки
 
 # Misc
 itemGroup.coppertools=Copper Tools
