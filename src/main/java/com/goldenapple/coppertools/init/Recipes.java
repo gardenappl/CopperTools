@@ -7,7 +7,9 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class Recipes {
     public static void init(){
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber)," i ", " i ", " s ", 'i', "logWood", 's', "stickWood"));
+        if (ConfigHandler.loadSaber) {
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber), " i ", " i ", " s ", 'i', "logWood", 's', "stickWood"));
+        }
 
         if (ConfigHandler.loadCopper) {
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperPick), "iii", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
@@ -19,8 +21,8 @@ public class Recipes {
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperHoe), " ii", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
 
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperHelmet), "iii", "i i", "   ", 'i', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperChestplate), "ii", "iii", "iii", 'i', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperLeggings), "iii", "i i", "i  i", 'i', "ingotCopper"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperChestplate), "i i", "iii", "iii", 'i', "ingotCopper"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperLeggings), "iii", "i i", "i i", 'i', "ingotCopper"));
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperBoots), "   ", "i i", "i i", 'i', "ingotCopper"));
         }
     }
