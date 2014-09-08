@@ -1,0 +1,7 @@
+CopperTools 1.1:
+-Added:
+   -Config options to tweak properties of tools and armor
+   -Config option to disable the Wooden Saber
+
+CopperTools 1.0:
+Initial release!
