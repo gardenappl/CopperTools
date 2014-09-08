@@ -22,10 +22,11 @@ public class ModItems
 
     public static void init()
     {
+        if (ConfigHandler.loadSaber) {
             GameRegistry.registerItem(woodSaber, "wooden_saber");
+        }
 
-        if (ConfigHandler.loadCopper = true) {
-
+        if (ConfigHandler.loadCopper) {
             GameRegistry.registerItem(copperPick, "copper_pickaxe");
             GameRegistry.registerItem(copperSword, "copper_sword");
             GameRegistry.registerItem(copperShovel, "copper_shovel");
