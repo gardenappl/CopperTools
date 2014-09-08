@@ -28,6 +28,21 @@ public class ConfigHandler {
     public static int protectionCopperBoots;
     public static int enchantCopperA;
 
+    public static boolean loadPlatinum;
+
+    public static int durabliltyPlatinum;
+    public static int levelPlatinum;
+    public static float efficiencyPlatinum;
+    public static float damagePlatinum;
+    public static int enchantPlatinum;
+
+    public static int durablilityPlatinumA;
+    public static int protectionPlatinumHelmet;
+    public static int protectionPlatinumChestplate;
+    public static int protectionPlatinumLeggings;
+    public static int protectionPlatinumBoots;
+    public static int enchantPlatinumA;
+
     public static void init(File configFile)
     {
         if (config == null)
@@ -57,6 +72,21 @@ public class ConfigHandler {
         protectionCopperLeggings = config.getInt("protectionCopperLeggings", "copper", 4, 0, 9000, "Protection of the Copper Leggings");
         protectionCopperBoots = config.getInt("protectionCopperBoots", "copper", 2, 0, 9000, "Protection of Copper Boots");
         enchantCopperA = config.getInt("enchantCopperA", "copper", 17, 0, 9000, "Enchantibility of copper armor");
+
+        loadPlatinum = config.getBoolean("loadPlatinum", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable platinum");
+
+        levelPlatinum = config.getInt("levelPlatinum", "platinum", 2, 0, 9000, "Mining level of platinum tools (e.g. level 0 can mine coal, level 1 can mine iron)");
+        durabliltyPlatinum = config.getInt("durabilityPlatinum", "platinum", 200, 1, 9000, "Durability of platinum tools");
+        efficiencyPlatinum = config.getFloat("efficiencyPlatinum", "platinum", 12, 0.1F, 9000, "Efficiency of platinum tools");
+        damagePlatinum = config.getFloat("damagePlatinum", "platinum", 2, 0.0F, 9000, "Damage of platinum tools");
+        enchantPlatinum = config.getInt("enchantPlatinum", "platinum", 22, 0, 9000, "Enchantibility of platinum tools");
+
+        durablilityPlatinumA = config.getInt("durabilityPlatinumA", "platinum", 12, 1, 9000, "Durability of platinum armor");
+        protectionPlatinumHelmet = config.getInt("protectionPlatinumHelmet", "platinum", 2, 0, 9000, "Protection of the Platinum Helmet");
+        protectionPlatinumChestplate = config.getInt("protectionPlatinumChestplate", "platinum", 6, 0, 9000, "Protection of the Platinum Chestplate");
+        protectionPlatinumLeggings = config.getInt("protectionPlatinumLeggings", "platinum", 5, 0, 9000, "Protection of the Platinum Leggings");
+        protectionPlatinumBoots = config.getInt("protectionPlatinumBoots", "platinum", 2, 0, 9000, "Protection of Platinum Boots");
+        enchantPlatinumA = config.getInt("enchantPlatinumA", "platinum", 25, 0, 9000, "Enchantibility of platinum armor");
 
         if (config.hasChanged())
         {

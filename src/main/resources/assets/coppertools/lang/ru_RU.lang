@@ -2,7 +2,6 @@
 item.coppertools:wooden_saber.name=Деревянная сабля
 
     # Copper Items
-
 item.coppertools:copper_pickaxe.name=Медная кирка
 item.coppertools:copper_sword.name=Медный меч
 item.coppertools:copper_shovel.name=Медная лопата
@@ -13,6 +12,18 @@ item.coppertools:copper_helmet.name=Медный шлем
 item.coppertools:copper_chestplate.name=Медный нагрудник
 item.coppertools:copper_leggings.name=Медные поножи
 item.coppertools:copper_boots.name=Медные ботинки
+
+    # Platinum Items
+item.coppertools:platinum_pickaxe.name=Платниовая кирка
+item.coppertools:platinum_sword.name=Платиновый меч
+item.coppertools:platinum_shovel.name=Платиновая лопата
+item.coppertools:platinum_axe.name=Платиновый топор
+item.coppertools:platinum_hoe.name=Платиновая мотыга
+
+item.coppertools:platinum_helmet.name=Платиновый шлем
+item.coppertools:platinum_chestplate.name=Платиновый нагрудник
+item.coppertools:platinum_leggings.name=Платиновые штаны
+item.coppertools:platinum_boots.name=Платиновые ботинки
 
 # Misc
 itemGroup.coppertools=Copper Tools

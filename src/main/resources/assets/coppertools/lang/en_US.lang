@@ -13,5 +13,17 @@ item.coppertools:copper_chestplate.name=Copper Chestplate
 item.coppertools:copper_leggings.name=Copper Leggings
 item.coppertools:copper_boots.name=Copper Boots
 
+    # Platinum Items
+item.coppertools:platinum_pickaxe.name=Platinum Pickaxe
+item.coppertools:platinum_sword.name=Platinum Sword
+item.coppertools:platinum_shovel.name=Platinum Shovel
+item.coppertools:platinum_axe.name=Platinum Axe
+item.coppertools:platinum_hoe.name=Platinum Hoe
+
+item.coppertools:platinum_helmet.name=Platinum Helmet
+item.coppertools:platinum_chestplate.name=Platinum Chestplate
+item.coppertools:platinum_leggings.name=Platinum Leggings
+item.coppertools:platinum_boots.name=Platinum Boots
+
 # Misc
 itemGroup.coppertools=Copper Tools
