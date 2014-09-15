@@ -7,53 +7,8 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class Recipes {
     public static void init(){
-        if (ConfigHandler.loadSaber) {
+        if (ConfigHandler.loadSaber){
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber), " i ", " i ", " s ", 'i', "logWood", 's', "stickWood"));
-        }
-
-        if (ConfigHandler.loadCopper) {
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperPick), "iii", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperSword), " i ", " i ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperShovel), " i ", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperAxe), "ii ", "is ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperAxe), " ii", " si", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperHoe), "ii ", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperHoe), " ii", " s ", " s ", 'i', "ingotCopper", 's', "stickWood"));
-
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperHelmet), "iii", "i i", "   ", 'i', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperChestplate), "i i", "iii", "iii", 'i', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperLeggings), "iii", "i i", "i i", 'i', "ingotCopper"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.copperBoots), "   ", "i i", "i i", 'i', "ingotCopper"));
-        }
-
-        if (ConfigHandler.loadPlatinum) {
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumPick), "iii", " s ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumSword), " i ", " i ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumShovel), " i ", " s ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumAxe), "ii ", "is ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumAxe), " ii", " si", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumHoe), "ii ", " s ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumHoe), " ii", " s ", " s ", 'i', "ingotPlatinum", 's', "stickWood"));
-
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumHelmet), "iii", "i i", "   ", 'i', "ingotPlatinum"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumChestplate), "i i", "iii", "iii", 'i', "ingotPlatinum"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumLeggings), "iii", "i i", "i i", 'i', "ingotPlatinum"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumBoots), "   ", "i i", "i i", 'i', "ingotPlatinum"));
-        }
-
-        if (ConfigHandler.loadSteel) {
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelPick), "iii", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelSword), " i ", " i ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelShovel), " i ", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelAxe), "ii ", "is ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelAxe), " ii", " si", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHoe), "ii ", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHoe), " ii", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
-
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHelmet), "iii", "i i", "   ", 'i', "ingotSteel"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelChestplate), "i i", "iii", "iii", 'i', "ingotSteel"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelLeggings), "iii", "i i", "i i", 'i', "ingotSteel"));
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelBoots), "   ", "i i", "i i", 'i', "ingotSteel"));
         }
     }
 }

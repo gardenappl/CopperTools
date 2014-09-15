@@ -11,9 +11,9 @@ public class CopperToolsTab {
     public static final CreativeTabs CopperToolsTab = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
         @Override
         public Item getTabIconItem() {
-            if (ConfigHandler.loadCopper) {
-                return ModItems.copperPick;
-            }else{
+            if (ConfigHandler.loadCopper){
+                return ModItems.copper_pickaxe;
+            }else {
                 return Items.iron_pickaxe;
             }
         }
