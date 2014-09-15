@@ -40,5 +40,20 @@ public class Recipes {
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumLeggings), "iii", "i i", "i i", 'i', "ingotPlatinum"));
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.platinumBoots), "   ", "i i", "i i", 'i', "ingotPlatinum"));
         }
+
+        if (ConfigHandler.loadSteel) {
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelPick), "iii", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelSword), " i ", " i ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelShovel), " i ", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelAxe), "ii ", "is ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelAxe), " ii", " si", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHoe), "ii ", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHoe), " ii", " s ", " s ", 'i', "ingotSteel", 's', "stickWood"));
+
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelHelmet), "iii", "i i", "   ", 'i', "ingotSteel"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelChestplate), "i i", "iii", "iii", 'i', "ingotSteel"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelLeggings), "iii", "i i", "i i", 'i', "ingotSteel"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelBoots), "   ", "i i", "i i", 'i', "ingotSteel"));
+        }
     }
 }

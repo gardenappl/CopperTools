@@ -30,6 +30,16 @@ public class ModItems
     public static final CopperToolsArmor platinumLeggings = new CopperToolsArmor(ModToolMaterial.PLATINUM_A, "platinum_leggings", 2);
     public static final CopperToolsArmor platinumBoots = new CopperToolsArmor(ModToolMaterial.PLATINUM_A, "platinum_boots", 3);
 
+    public static final CopperToolsPickaxe steelPick = new CopperToolsPickaxe(ModToolMaterial.STEEL, "steel_pickaxe");
+    public static final CopperToolsSword steelSword = new CopperToolsSword(ModToolMaterial.STEEL, "steel_sword");
+    public static final CopperToolsSpade steelShovel = new CopperToolsSpade(ModToolMaterial.STEEL, "steel_shovel");
+    public static final CopperToolsAxe steelAxe = new CopperToolsAxe(ModToolMaterial.STEEL, "steel_axe");
+    public static final CopperToolsHoe steelHoe = new CopperToolsHoe(ModToolMaterial.STEEL, "steel_hoe");
+    public static final CopperToolsArmor steelHelmet = new CopperToolsArmor(ModToolMaterial.STEEL_A, "steel_helmet", 0);
+    public static final CopperToolsArmor steelChestplate = new CopperToolsArmor(ModToolMaterial.STEEL_A, "steel_chestplate", 1);
+    public static final CopperToolsArmor steelLeggings = new CopperToolsArmor(ModToolMaterial.STEEL_A, "steel_leggings", 2);
+    public static final CopperToolsArmor steelBoots = new CopperToolsArmor(ModToolMaterial.STEEL_A, "steel_boots", 3);
+
     public static void init()
     {
         if (ConfigHandler.loadSaber) {
@@ -58,6 +68,18 @@ public class ModItems
             GameRegistry.registerItem(platinumChestplate, "platinum_chestplate");
             GameRegistry.registerItem(platinumLeggings, "platinum_leggings");
             GameRegistry.registerItem(platinumBoots, "platinum_boots");
+        }
+
+        if (ConfigHandler.loadSteel) {
+            GameRegistry.registerItem(steelPick, "steel_pickaxe");
+            GameRegistry.registerItem(steelSword, "steel_sword");
+            GameRegistry.registerItem(steelShovel, "steel_shovel");
+            GameRegistry.registerItem(steelAxe, "steel_axe");
+            GameRegistry.registerItem(steelHoe, "steel_hoe");
+            GameRegistry.registerItem(steelHelmet, "steel_helmet");
+            GameRegistry.registerItem(steelChestplate, "steel_chestplate");
+            GameRegistry.registerItem(steelLeggings, "steel_leggings");
+            GameRegistry.registerItem(steelBoots, "steel_boots");
         }
     }
 }
