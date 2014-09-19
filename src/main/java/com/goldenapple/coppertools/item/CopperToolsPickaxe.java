@@ -13,29 +13,35 @@ import net.minecraft.item.ItemStack;
 
 public class CopperToolsPickaxe extends ItemPickaxe {
 
-    private ItemStack repairMaterial;
     private String repairOre;
-    private boolean isMaterialAnOre;
+    private ItemStack repairItem;
+    private boolean isMatAnOre;
 
-    public CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair, String oreRepair, boolean isMaterialAnOre)
+    public CopperToolsPickaxe(Item.ToolMaterial material, String name, String matRepair)
     {
         super(material);
-        if (isMaterialAnOre){
-            repairOre = oreRepair;
-        }else{
-            repairMaterial = matRepair;
-        }
+        repairOre = matRepair;
+        isMatAnOre = true;
+        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setUnlocalizedName(name);
+        LogHelper.info("Registering an Ore Tool: " + name);
+    }
+    public
+    CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair)
+    {
+        super(material);
+        repairItem = matRepair;
+        isMatAnOre = false;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
     }
 
     @Override
     public boolean getIsRepairable(ItemStack tool, ItemStack item){
-        if(isMaterialAnOre) {
+        if(isMatAnOre) {
             return MiscUtil.isItemThisOre(item, repairOre);
-        }else {
-            if
-            return item.isItemEqual(repairMaterial);
+        }else{
+            return item.isItemEqual(repairItem);
         }
     }
 

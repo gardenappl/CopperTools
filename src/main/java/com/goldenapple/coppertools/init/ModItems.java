@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 
 public class ModItems {
     public static final CopperToolsSword woodSaber = new CopperToolsSword(Item.ToolMaterial.STONE, "wooden_saber");
-    public static final CopperToolsPickaxe copper_pickaxe = new CopperToolsPickaxe(ModToolMaterial.COPPER, "copper_pickaxe", (Object) "ingotCopper");
+    public static final CopperToolsPickaxe copper_pickaxe = new CopperToolsPickaxe(ModToolMaterial.COPPER, "copper_pickaxe",  "ingotCopper");
 
     public static void init() {
         if (ConfigHandler.loadSaber) {

@@ -4,6 +4,7 @@ import com.goldenapple.coppertools.handler.ConfigHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
+import com.goldenapple.coppertools.util.MiscUtil;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -30,6 +31,7 @@ public class CopperToolsMod {
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
         Recipes.init();
+        MiscUtil.dumpAllOres();
         LogHelper.info("Init complete!");
     }
 
