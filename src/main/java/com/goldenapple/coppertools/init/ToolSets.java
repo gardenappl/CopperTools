@@ -13,7 +13,7 @@ public class ToolSets
         if (matName.equals("copper")) {
             GameRegistry.registerItem(ModItems.copper_pickaxe, "copper_pickaxe");
         }else{
-            Item pickaxe = new CopperToolsPickaxe(mat, matName + "_pickaxe");
+            Item pickaxe = new CopperToolsPickaxe(mat, matName + "_pickaxe", ingot);
             GameRegistry.registerItem(pickaxe, matName + "_pickaxe");
         }
 

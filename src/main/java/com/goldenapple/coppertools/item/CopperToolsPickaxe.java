@@ -2,6 +2,7 @@ package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
 import com.goldenapple.coppertools.util.LogHelper;
+import com.goldenapple.coppertools.util.MiscUtil;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,11 +13,30 @@ import net.minecraft.item.ItemStack;
 
 public class CopperToolsPickaxe extends ItemPickaxe {
 
-    public CopperToolsPickaxe(Item.ToolMaterial material, String name)
+    private ItemStack repairMaterial;
+    private String repairOre;
+    private boolean isMaterialAnOre;
+
+    public CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair, String oreRepair, boolean isMaterialAnOre)
     {
         super(material);
+        if (isMaterialAnOre){
+            repairOre = oreRepair;
+        }else{
+            repairMaterial = matRepair;
+        }
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+    }
+
+    @Override
+    public boolean getIsRepairable(ItemStack tool, ItemStack item){
+        if(isMaterialAnOre) {
+            return MiscUtil.isItemThisOre(item, repairOre);
+        }else {
+            if
+            return item.isItemEqual(repairMaterial);
+        }
     }
 
     //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot
