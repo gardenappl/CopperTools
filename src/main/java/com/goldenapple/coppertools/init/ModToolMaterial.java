@@ -1,18 +1,15 @@
 package com.goldenapple.coppertools.init;
 
-import com.goldenapple.coppertools.handler.ConfigHandler;
+import com.goldenapple.coppertools.handler.PropertiesConfigHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 
 public class ModToolMaterial {
-    public static Item.ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", ConfigHandler.levelCopper, ConfigHandler.durabliltyCopper, ConfigHandler.efficiencyCopper, ConfigHandler.damageCopper, ConfigHandler.enchantCopper);
-    public static Item.ToolMaterial PLATINUM = EnumHelper.addToolMaterial("PLATINUM", ConfigHandler.levelPlatinum, ConfigHandler.durabliltyPlatinum, ConfigHandler.efficiencyPlatinum, ConfigHandler.damagePlatinum, ConfigHandler.enchantPlatinum);
-    public static Item.ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", ConfigHandler.levelSteel, ConfigHandler.durabliltySteel, ConfigHandler.efficiencySteel, ConfigHandler.damageSteel, ConfigHandler.enchantSteel);
+    public static Item.ToolMaterial COPPER = EnumHelper.addToolMaterial("COPPER", PropertiesConfigHandler.levelCopper, PropertiesConfigHandler.durabliltyCopper, PropertiesConfigHandler.efficiencyCopper, PropertiesConfigHandler.damageCopper, PropertiesConfigHandler.enchantCopper);
+    public static Item.ToolMaterial PLATINUM = EnumHelper.addToolMaterial("PLATINUM", PropertiesConfigHandler.levelPlatinum, PropertiesConfigHandler.durabliltyPlatinum, PropertiesConfigHandler.efficiencyPlatinum, PropertiesConfigHandler.damagePlatinum, PropertiesConfigHandler.enchantPlatinum);
 
-
-    public static ItemArmor.ArmorMaterial COPPER_A = EnumHelper.addArmorMaterial("COPPER", ConfigHandler.durablilityCopperA,  new int[] {ConfigHandler.protectionCopperHelmet, ConfigHandler.protectionCopperChestplate, ConfigHandler.protectionCopperLeggings, ConfigHandler.protectionCopperBoots}, ConfigHandler.enchantCopperA);
-    public static ItemArmor.ArmorMaterial PLATINUM_A = EnumHelper.addArmorMaterial("PLATINUM", ConfigHandler.durablilityPlatinumA,  new int[] {ConfigHandler.protectionPlatinumHelmet, ConfigHandler.protectionPlatinumChestplate, ConfigHandler.protectionPlatinumLeggings, ConfigHandler.protectionPlatinumBoots}, ConfigHandler.enchantPlatinumA);
-    public static ItemArmor.ArmorMaterial STEEL_A = EnumHelper.addArmorMaterial("STEEL", ConfigHandler.durablilitySteelA,  new int[] {ConfigHandler.protectionSteelHelmet, ConfigHandler.protectionSteelChestplate, ConfigHandler.protectionSteelLeggings, ConfigHandler.protectionSteelBoots}, ConfigHandler.enchantSteelA);
+    public static ItemArmor.ArmorMaterial COPPER_A = EnumHelper.addArmorMaterial("COPPER", PropertiesConfigHandler.durablilityCopperA,  new int[] {PropertiesConfigHandler.protectionCopperHelmet, PropertiesConfigHandler.protectionCopperChestplate, PropertiesConfigHandler.protectionCopperLeggings, PropertiesConfigHandler.protectionCopperBoots}, PropertiesConfigHandler.enchantCopperA);
+    public static ItemArmor.ArmorMaterial PLATINUM_A = EnumHelper.addArmorMaterial("PLATINUM", PropertiesConfigHandler.durablilityPlatinumA,  new int[] {PropertiesConfigHandler.protectionPlatinumHelmet, PropertiesConfigHandler.protectionPlatinumChestplate, PropertiesConfigHandler.protectionPlatinumLeggings, PropertiesConfigHandler.protectionPlatinumBoots}, PropertiesConfigHandler.enchantPlatinumA);
 
 }
