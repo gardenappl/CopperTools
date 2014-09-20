@@ -20,7 +20,7 @@ public class ToolSets
         Item axe = new CopperToolsAxe(mat, matName + "_axe", ingot);
         GameRegistry.registerItem(axe, matName + "_axe");
 
-        Item hoe = new CopperToolsHoe(mat, matName + "_hoe", "ingotCopper");
+        Item hoe = new CopperToolsHoe(mat, matName + "_hoe", ingot);
         GameRegistry.registerItem(hoe, matName + "_hoe");
 
         Item helmet = new CopperToolsArmor(matArmor, matName + "_helmet", ingot, 0);
