@@ -29,10 +29,10 @@ public class ToolSets
         Item chestplate = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 1);
         GameRegistry.registerItem(chestplate, matName + "_chestplate");
 
-        Item leggings = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 2);
+        Item leggings = new CopperToolsArmor(matArmor, matName + "_leggings", ingot, 2);
         GameRegistry.registerItem(leggings, matName + "_leggings");
 
-        Item boots = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 3);
+        Item boots = new CopperToolsArmor(matArmor, matName + "_boots", ingot, 3);
         GameRegistry.registerItem(boots, matName + "_boots");
     }
 }
