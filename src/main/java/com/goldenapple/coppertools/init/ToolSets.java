@@ -7,26 +7,32 @@ import net.minecraft.item.ItemArmor;
 
 public class ToolSets
 {
-    public static void RegisterOreToolSet(Item.ToolMaterial mat, ItemArmor.ArmorMaterial matNameArmor, String matName, String ingot){
-        //Workaround for the CopperToolsTab class because it needs an Item object to take the Copper Pickaxe texture from.
-        //And I can't give it one with the way my code works now.
-        if (matName.equals("copper")) {
-            GameRegistry.registerItem(ModItems.copper_pickaxe, "copper_pickaxe");
-        }else{
-            Item pickaxe = new CopperToolsPickaxe(mat, matName + "_pickaxe", ingot);
-            GameRegistry.registerItem(pickaxe, matName + "_pickaxe");
-        }
+    public static void RegisterOreToolSet(Item.ToolMaterial mat, ItemArmor.ArmorMaterial matArmor, String matName, String ingot){
+        Item pickaxe = new CopperToolsPickaxe(mat, matName + "_pickaxe", ingot);
+        GameRegistry.registerItem(pickaxe, matName + "_pickaxe");
 
-        Item sword = new CopperToolsSword(mat, matName + "_sword");
+        Item sword = new CopperToolsSword(mat, matName + "_sword", ingot);
         GameRegistry.registerItem(sword, matName + "_sword");
 
-        Item shovel = new CopperToolsSpade(mat, matName + "_shovel");
+        Item shovel = new CopperToolsSpade(mat, matName + "_shovel", ingot);
         GameRegistry.registerItem(shovel, matName + "_shovel");
 
-        Item axe = new CopperToolsAxe(mat, matName + "_axe");
+        Item axe = new CopperToolsAxe(mat, matName + "_axe", ingot);
         GameRegistry.registerItem(axe, matName + "_axe");
 
-        Item hoe = new CopperToolsHoe(mat, matName + "_hoe");
+        Item hoe = new CopperToolsHoe(mat, matName + "_hoe", "ingotCopper");
         GameRegistry.registerItem(hoe, matName + "_hoe");
+
+        Item helmet = new CopperToolsArmor(matArmor, matName + "_helmet", ingot, 0);
+        GameRegistry.registerItem(helmet, matName + "_helmet");
+
+        Item chestplate = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 1);
+        GameRegistry.registerItem(chestplate, matName + "_chestplate");
+
+        Item leggings = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 2);
+        GameRegistry.registerItem(leggings, matName + "_leggings");
+
+        Item boots = new CopperToolsArmor(matArmor, matName + "_chestplate", ingot, 3);
+        GameRegistry.registerItem(boots, matName + "_boots");
     }
 }

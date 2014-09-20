@@ -1,8 +1,7 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
-import com.goldenapple.coppertools.util.LogHelper;
-import com.goldenapple.coppertools.util.MiscUtil;
+import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -15,31 +14,25 @@ public class CopperToolsPickaxe extends ItemPickaxe {
 
     private String repairOre;
     private ItemStack repairItem;
-    private boolean isMatAnOre;
 
-    public CopperToolsPickaxe(Item.ToolMaterial material, String name, String matRepair)
-    {
+    public CopperToolsPickaxe(Item.ToolMaterial material, String name, String matRepair){
         super(material);
         repairOre = matRepair;
-        isMatAnOre = true;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
-        LogHelper.info("Registering an Ore Tool: " + name);
     }
-    public
-    CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair)
-    {
+
+    public CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair){
         super(material);
         repairItem = matRepair;
-        isMatAnOre = false;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
     }
 
     @Override
     public boolean getIsRepairable(ItemStack tool, ItemStack item){
-        if(isMatAnOre) {
-            return MiscUtil.isItemThisOre(item, repairOre);
+        if(repairOre!=null) {
+            return OreHelper.isItemThisOre(item, repairOre);
         }else{
             return item.isItemEqual(repairItem);
         }

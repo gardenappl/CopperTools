@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -11,10 +12,31 @@ import net.minecraft.item.ItemStack;
 
 public class CopperToolsArmor extends ItemArmor{
 
-    public CopperToolsArmor(ArmorMaterial material, String name, int type) {
+    private String repairOre;
+    private ItemStack repairItem;
+
+    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, String matRepair, int type)
+    {
         super(material, 1, type);
+        repairOre = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+    }
+    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type)
+    {
+        super(material, 1, type);
+        repairItem = matRepair;
+        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setUnlocalizedName(name);
+    }
+
+    @Override
+    public boolean getIsRepairable(ItemStack tool, ItemStack item){
+        if(repairOre!=null) {
+            return OreHelper.isItemThisOre(item, repairOre);
+        }else{
+            return item.isItemEqual(repairItem);
+        }
     }
 
     @Override
