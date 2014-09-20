@@ -1,3 +1,9 @@
+CopperTools 1.1.1:
+-Changed:
+   -Platinum tools now require obsidian rods (can be changed in the config)
+   -Reorganized config files
+-Massive code rework
+
 CopperTools 1.1:
 -Added:
    -Config options to tweak properties of tools and armor
