@@ -3,6 +3,7 @@ package com.goldenapple.coppertools.init;
 import com.goldenapple.coppertools.handler.GeneralConfigHandler;
 import com.goldenapple.coppertools.handler.PropertiesConfigHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -11,5 +12,6 @@ public class Recipes {
         if (GeneralConfigHandler.loadSaber){
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber), " i ", " i ", " s ", 'i', "logWood", 's', "stickWood"));
         }
+        GameRegistry.addRecipe(new ItemStack(ModItems.obsidianRod), "o  ", "o  ", "   ", 'o', Blocks.obsidian);
     }
 }

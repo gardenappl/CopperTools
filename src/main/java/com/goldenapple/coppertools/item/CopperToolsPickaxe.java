@@ -14,6 +14,7 @@ public class CopperToolsPickaxe extends ItemPickaxe {
 
     private String repairOre;
     private ItemStack repairItem;
+    private boolean useObsidian = false;
 
     public CopperToolsPickaxe(Item.ToolMaterial material, String name, String matRepair){
         super(material);
@@ -27,6 +28,11 @@ public class CopperToolsPickaxe extends ItemPickaxe {
         repairItem = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+    }
+
+    public CopperToolsPickaxe setUseObsidian(boolean o){
+        useObsidian = o;
+        return this;
     }
 
     @Override
@@ -56,7 +62,7 @@ public class CopperToolsPickaxe extends ItemPickaxe {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister)
     {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        itemIcon = useObsidian ? iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_o") : iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)

@@ -30,6 +30,8 @@ public class PropertiesConfigHandler {
     public static int protectionCopperBoots;
     public static int enchantCopperA;
 
+    public static boolean platinumRequiresObsidian;
+
     public static int durabliltyPlatinum;
     public static int levelPlatinum;
     public static float efficiencyPlatinum;
@@ -67,6 +69,8 @@ public class PropertiesConfigHandler {
         protectionCopperLeggings = config.getInt("protectionCopperLeggings", "copper", CopperArmorMatDefault[3], 0, 9000, "Protection of the Copper Leggings");
         protectionCopperBoots = config.getInt("protectionCopperBoots", "copper", CopperArmorMatDefault[4], 0, 9000, "Protection of the Copper Boots");
         enchantCopperA = config.getInt("enchantCopperA", "copper", CopperArmorMatDefault[5], 0, 9000, "Enchantibility of copper armor");
+
+        platinumRequiresObsidian = config.getBoolean("platinumRequiresObsidian", "platinum", true, "If set to true, platinum tools will require obsidian rods to craft");
 
         levelPlatinum = config.getInt("levelPlatinum", "platinum", PlatinumToolMatDefault[0], 0, 9000, "Mining level of platinum tools (e.g. level 0 can mine coal, level 1 can mine iron)");
         durabliltyPlatinum = config.getInt("durabilityPlatinum", "platinum", PlatinumToolMatDefault[1], 1, 9000, "Durability of platinum tools");

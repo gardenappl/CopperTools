@@ -14,6 +14,7 @@ public class CopperToolsAxe extends ItemAxe{
 
     private String repairOre;
     private ItemStack repairItem;
+    private boolean useObsidian;
 
     public CopperToolsAxe(Item.ToolMaterial material, String name, String matRepair){
         super(material);
@@ -21,11 +22,17 @@ public class CopperToolsAxe extends ItemAxe{
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
     }
+
     public CopperToolsAxe(Item.ToolMaterial material, String name, ItemStack matRepair){
         super(material);
         repairItem = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+    }
+
+    public CopperToolsAxe setUseObsidian(boolean o){
+        useObsidian = o;
+        return this;
     }
 
     @Override
@@ -55,7 +62,7 @@ public class CopperToolsAxe extends ItemAxe{
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister)
     {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        itemIcon = useObsidian ? iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_o") : iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
