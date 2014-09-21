@@ -1,7 +1,6 @@
 package com.goldenapple.coppertools.handler;
 
 import com.goldenapple.coppertools.CopperToolsMod;
-import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -16,6 +15,10 @@ public class GeneralConfigHandler {
     public static boolean loadSaber;
     public static boolean loadCopper;
     public static boolean loadPlatinum;
+    public static boolean loadCompressed;
+    public static boolean loadObsidianRod;
+
+    public static boolean dumpAllOres;
 
     public static void init(){
         if (config == null) {
@@ -25,8 +28,12 @@ public class GeneralConfigHandler {
     }
     public static void loadConfig(){
         loadSaber = config.getBoolean("loadSaber", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Wooden Saber");
+        loadObsidianRod = config.getBoolean("loadObsidianRod", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Obsidian Rod");
         loadCopper = config.getBoolean("loadCopper", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable copper tools & armor");
         loadPlatinum = config.getBoolean("loadPlatinum", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable platinum tools & armor");
+        loadCompressed = config.getBoolean("loadCompressed", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable tools & armor out of compressed iron");
+
+        dumpAllOres = config.getBoolean("dumpAllOres", Configuration.CATEGORY_GENERAL, false, "Set this to true to log every single OreDictionary ore");
         if (config.hasChanged())
         {
             config.save();

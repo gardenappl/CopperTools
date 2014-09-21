@@ -26,6 +26,7 @@ public class CopperToolsMod {
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
         root = event.getModConfigurationDirectory();
+
         PropertiesConfigHandler.init();
         GeneralConfigHandler.init();
 
@@ -39,7 +40,9 @@ public class CopperToolsMod {
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
         Recipes.init();
-        OreHelper.dumpAllOres();
+        if (GeneralConfigHandler.dumpAllOres) {
+            OreHelper.dumpAllOres();
+        }
         LogHelper.info("Init complete!");
     }
 
