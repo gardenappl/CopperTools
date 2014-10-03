@@ -7,6 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
@@ -35,7 +36,7 @@ public class CopperToolsArmor extends ItemArmor{
         if(repairOre!=null) {
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.isItemEqual(repairItem);
+            return item.isItemEqual(item);
         }
     }
 

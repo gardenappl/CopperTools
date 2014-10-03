@@ -27,16 +27,16 @@ item.coppertools:platinum_leggings.name=Платиновые штаны
 item.coppertools:platinum_boots.name=Платиновые ботинки
 
     # Compressed Items
-item.coppertools:platinum_pickaxe.name=Кирка из скопрессированого железа
-item.coppertools:platinum_sword.name=Меч из скопрессированого железа
-item.coppertools:platinum_shovel.name=Лопата из скопрессированого железа
-item.coppertools:platinum_axe.name=Топор из скопрессированого железа
-item.coppertools:platinum_hoe.name=Мотыга из скопрессированого железа
+item.coppertools:compressed_pickaxe.name=Кирка из скопрессированого железа
+item.coppertools:compressed_sword.name=Меч из скопрессированого железа
+item.coppertools:compressed_shovel.name=Лопата из скопрессированого железа
+item.coppertools:compressed_axe.name=Топор из скопрессированого железа
+item.coppertools:compressed_hoe.name=Мотыга из скопрессированого железа
 
-item.coppertools:platinum_helmet.name=Шлем из скопрессированого железа
-item.coppertools:platinum_chestplate.name=Нагрудник из скопрессированого железа
-item.coppertools:platinum_leggings.name=Штаны из скопрессированого железа
-item.coppertools:platinum_boots.name=Ботинки из скопрессированого железа
+item.coppertools:compressed_helmet.name=Шлем из скопрессированого железа
+item.coppertools:compressed_chestplate.name=Нагрудник из скопрессированого железа
+item.coppertools:compressed_leggings.name=Штаны из скопрессированого железа
+item.coppertools:compressed_boots.name=Ботинки из скопрессированого железа
 
 # Misc
 itemGroup.coppertools=Copper Tools

@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -40,7 +41,7 @@ public class CopperToolsPickaxe extends ItemPickaxe {
         if(repairOre!=null) {
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.isItemEqual(repairItem);
+            return item.isItemEqual(item);
         }
     }
 

@@ -40,7 +40,7 @@ public class CopperToolsAxe extends ItemAxe{
         if(repairOre!=null) {
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.isItemEqual(repairItem);
+            return item.isItemEqual(item);
         }
     }
 

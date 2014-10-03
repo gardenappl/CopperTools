@@ -31,7 +31,7 @@ public class ModItems {
             ToolSetsInitializer.RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", PropertiesConfigHandler.platinumRequiresObsidian);
         }
         if (GeneralConfigHandler.loadCompressed && Loader.isModLoaded("PneumaticCraft")) {
-            ToolSetsInitializer.RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotCompressedIron"), PropertiesConfigHandler.platinumRequiresObsidian);
+            ToolSetsInitializer.RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", new ItemStack(GameRegistry.findItem("PneumaticCraft", "ingotCompressedIron")), PropertiesConfigHandler.platinumRequiresObsidian);
         }
     }
 }

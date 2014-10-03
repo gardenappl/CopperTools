@@ -10,7 +10,6 @@ import java.io.File;
 
 public class PropertiesConfigHandler {
     //TODO: Clean up all of this mess. Like, make it non-static or something, I dunno.
-
     public static final int[] CopperToolMatDefault = {1, 131, 7, 2, 18};
     public static final int[] CopperArmorMatDefault = {10, 2, 5, 4, 2, 17};
     public static final int[] PlatinumToolMatDefault = {2, 200, 12, 2, 22};
