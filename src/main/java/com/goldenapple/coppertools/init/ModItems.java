@@ -9,7 +9,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import pneumaticCraft.api.item.ItemSupplier;
 
 public class ModItems {
     public static final CopperToolsSword woodSaber = new CopperToolsSword(Item.ToolMaterial.STONE, "wooden_saber", "logWood");
@@ -26,13 +25,13 @@ public class ModItems {
             GameRegistry.registerItem(woodSaber, "wooden_saber");
         }
         if (GeneralConfigHandler.loadCopper) {
-            ToolSets.RegisterOreToolSet(ModToolMaterial.COPPER, ModToolMaterial.COPPER_A, "copper", "ingotCopper", false);
+            ToolSetsInitializer.RegisterOreToolSet(ModToolMaterial.COPPER, ModToolMaterial.COPPER_A, "copper", "ingotCopper", false);
         }
         if (GeneralConfigHandler.loadPlatinum) {
-            ToolSets.RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", PropertiesConfigHandler.platinumRequiresObsidian);
+            ToolSetsInitializer.RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", PropertiesConfigHandler.platinumRequiresObsidian);
         }
         if (GeneralConfigHandler.loadCompressed && Loader.isModLoaded("PneumaticCraft")) {
-            ToolSets.RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", new ItemStack(ItemSupplier.getItem("ingotCompressedIron")), PropertiesConfigHandler.platinumRequiresObsidian);
+            ToolSetsInitializer.RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotCompressedIron"), PropertiesConfigHandler.platinumRequiresObsidian);
         }
     }
 }

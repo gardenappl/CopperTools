@@ -26,5 +26,17 @@ item.coppertools:platinum_chestplate.name=Platinum Chestplate
 item.coppertools:platinum_leggings.name=Platinum Leggings
 item.coppertools:platinum_boots.name=Platinum Boots
 
+    # Compressed Items
+item.coppertools:platinum_pickaxe.name=Compressed Iron Pickaxe
+item.coppertools:platinum_sword.name=Compressed Iron Sword
+item.coppertools:platinum_shovel.name=Compressed Iron Shovel
+item.coppertools:platinum_axe.name=Compressed Iron Axe
+item.coppertools:platinum_hoe.name=Compressed Iron Hoe
+
+item.coppertools:platinum_helmet.name=Compressed Iron Helmet
+item.coppertools:platinum_chestplate.name=Compressed Iron Chestplate
+item.coppertools:platinum_leggings.name=Compressed Iron Leggings
+item.coppertools:platinum_boots.name=Compressed Iron Boots
+
 # Misc
 itemGroup.coppertools=Copper Tools
