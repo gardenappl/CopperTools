@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 public class CopperToolsArmor extends ItemArmor{
 
     private String repairOre;
-    private ItemStack repairItem;
+    private Item repairItem;
 
     public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, String matRepair, int type)
     {
@@ -23,7 +23,7 @@ public class CopperToolsArmor extends ItemArmor{
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
     }
-    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type)
+    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, Item matRepair, int type)
     {
         super(material, 1, type);
         repairItem = matRepair;
@@ -36,7 +36,7 @@ public class CopperToolsArmor extends ItemArmor{
         if(repairOre!=null) {
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.isItemEqual(item);
+            return item.getItem().equals(repairItem);
         }
     }
 

@@ -13,21 +13,23 @@ import net.minecraft.item.ItemStack;
 public class CopperToolsSpade extends ItemSpade{
 
     private String repairOre;
-    private ItemStack repairItem;
+    private Item repairItem;
     private boolean useObsidian;
 
-    public CopperToolsSpade(Item.ToolMaterial material, String name, String matRepair){
+    public CopperToolsSpade(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+        this.useObsidian = useObsidian;
     }
 
-    public CopperToolsSpade(Item.ToolMaterial material, String name, ItemStack matRepair){
+    public CopperToolsSpade(Item.ToolMaterial material, String name, Item matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
+        this.useObsidian = useObsidian;
     }
 
     public CopperToolsSpade setUseObsidian(boolean o){
@@ -37,10 +39,10 @@ public class CopperToolsSpade extends ItemSpade{
 
     @Override
     public boolean getIsRepairable(ItemStack tool, ItemStack item){
-        if(repairOre!=null) {
+        if (repairOre != null){
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.isItemEqual(item);
+            return item.getItem().equals(repairItem);
         }
     }
 
