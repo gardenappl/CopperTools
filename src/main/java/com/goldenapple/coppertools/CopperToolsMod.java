@@ -1,7 +1,6 @@
 package com.goldenapple.coppertools;
 
-import com.goldenapple.coppertools.handler.GeneralConfigHandler;
-import com.goldenapple.coppertools.handler.PropertiesConfigHandler;
+import com.goldenapple.coppertools.handler.ConfigHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
@@ -27,22 +26,22 @@ public class CopperToolsMod {
     public static void preInit(FMLPreInitializationEvent event){
         root = event.getModConfigurationDirectory();
 
-        PropertiesConfigHandler.init();
-        GeneralConfigHandler.init();
-
-        FMLCommonHandler.instance().bus().register(new PropertiesConfigHandler());
-        FMLCommonHandler.instance().bus().register(new GeneralConfigHandler());
+        ConfigHandler.init();
+        FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
         ModItems.init();
+
         LogHelper.info("Pre-init complete!");
     }
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
         Recipes.init();
-        if (GeneralConfigHandler.dumpAllOres) {
+
+        if (ConfigHandler.dumpAllOres) {
             OreHelper.dumpAllOres();
         }
+
         LogHelper.info("Init complete!");
     }
 

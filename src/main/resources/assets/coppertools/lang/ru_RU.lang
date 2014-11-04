@@ -1,42 +1,45 @@
-# Items
 item.coppertools:wooden_saber.name=Деревянная сабля
 item.coppertools:obsidian_rod.name=Обсидиановый стержень
 
-    # Copper Items
 item.coppertools:copper_pickaxe.name=Медная кирка
 item.coppertools:copper_sword.name=Медный меч
 item.coppertools:copper_shovel.name=Медная лопата
 item.coppertools:copper_axe.name=Медный топор
 item.coppertools:copper_hoe.name=Медная мотыга
-
 item.coppertools:copper_helmet.name=Медный шлем
 item.coppertools:copper_chestplate.name=Медный нагрудник
 item.coppertools:copper_leggings.name=Медные поножи
 item.coppertools:copper_boots.name=Медные ботинки
 
-    # Platinum Items
 item.coppertools:platinum_pickaxe.name=Платниовая кирка
 item.coppertools:platinum_sword.name=Платиновый меч
 item.coppertools:platinum_shovel.name=Платиновая лопата
 item.coppertools:platinum_axe.name=Платиновый топор
 item.coppertools:platinum_hoe.name=Платиновая мотыга
-
 item.coppertools:platinum_helmet.name=Платиновый шлем
 item.coppertools:platinum_chestplate.name=Платиновый нагрудник
 item.coppertools:platinum_leggings.name=Платиновые штаны
 item.coppertools:platinum_boots.name=Платиновые ботинки
 
-    # Compressed Items
 item.coppertools:compressed_pickaxe.name=Кирка из скопрессированого железа
 item.coppertools:compressed_sword.name=Меч из скопрессированого железа
 item.coppertools:compressed_shovel.name=Лопата из скопрессированого железа
 item.coppertools:compressed_axe.name=Топор из скопрессированого железа
 item.coppertools:compressed_hoe.name=Мотыга из скопрессированого железа
-
 item.coppertools:compressed_helmet.name=Шлем из скопрессированого железа
 item.coppertools:compressed_chestplate.name=Нагрудник из скопрессированого железа
 item.coppertools:compressed_leggings.name=Штаны из скопрессированого железа
 item.coppertools:compressed_boots.name=Ботинки из скопрессированого железа
 
-# Misc
+item.coppertools:lead_pickaxe.name=Свинцовая кирка
+item.coppertools:lead_sword.name=Свинцовый меч
+item.coppertools:lead_shovel.name=Свинцовая лопата
+item.coppertools:lead_axe.name=Свинцоый топор
+item.coppertools:lead_hoe.name=Свинцовая мотыга
+item.coppertools:lead_helmet.name=Свинцовый шлем
+item.coppertools:lead_chestplate.name=Свинцовый нагрудник
+item.coppertools:lead_leggings.name=Свинцовые штаны
+item.coppertools:lead_boots.name=Свинцовые ботинки
+
+
 itemGroup.coppertools=Copper Tools

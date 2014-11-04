@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.init;
 
-import com.goldenapple.coppertools.handler.GeneralConfigHandler;
+import com.goldenapple.coppertools.handler.ConfigHandler;
 import com.goldenapple.coppertools.util.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -10,7 +10,7 @@ import pneumaticCraft.api.item.ItemSupplier;
 
 public class Recipes {
     public static void init(){
-        if (GeneralConfigHandler.loadSaber){
+        if (ConfigHandler.loadSaber){
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.woodSaber),
                 " i ",
                 " i ",
@@ -22,10 +22,10 @@ public class Recipes {
                 "o  ",
                 "   ", 'o', Blocks.obsidian);
 
-        //useObsidian is false temporairly. I've got some eevil plans for config files >:D
         RegisterOreToolRecipes("copper", "ingotCopper", false);
-        RegisterOreToolRecipes("platinum", "ingotPlatinum", false);
+        RegisterOreToolRecipes("platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
         RegisterToolRecipes("compressed", new ItemStack(ItemSupplier.getItem("ingotIronCompressed")), false);
+        RegisterOreToolRecipes("lead", "ingotLead", false);
     }
 
     //For tools that use the Ore Dictionary
@@ -51,10 +51,6 @@ public class Recipes {
                 " s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
 
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
-                " ii",
-                " si",
-                " s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
                 " ii",
                 " si",

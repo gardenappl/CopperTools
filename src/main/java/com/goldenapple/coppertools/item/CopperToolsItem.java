@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 
 public class CopperToolsItem extends Item{
     public CopperToolsItem(String name){
-        super();
         setCreativeTab(CopperToolsTab.CopperToolsTab);
         setUnlocalizedName(name);
     }

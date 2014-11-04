@@ -1,7 +1,6 @@
 package com.goldenapple.coppertools.init;
 
-import com.goldenapple.coppertools.handler.GeneralConfigHandler;
-import com.goldenapple.coppertools.handler.PropertiesConfigHandler;
+import com.goldenapple.coppertools.handler.ConfigHandler;
 import com.goldenapple.coppertools.item.*;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -14,23 +13,26 @@ public class ModItems {
     public static final CopperToolsItem obsidianRod = new CopperToolsItem("obsidian_rod");
 
     public static void init() {
-        if (GeneralConfigHandler.loadObsidianRod) {
+        if (ConfigHandler.loadObsidianRod) {
             GameRegistry.registerItem(obsidianRod, "obsidian_rod");
 
             OreDictionary.registerOre("rodObsidian", obsidianRod);
         }
 
-        if (GeneralConfigHandler.loadSaber) {
+        if (ConfigHandler.loadSaber) {
             GameRegistry.registerItem(woodSaber, "wooden_saber");
         }
-        if (GeneralConfigHandler.loadCopper) {
+        if (ConfigHandler.loadCopper) {
             RegisterOreToolSet(ModToolMaterial.COPPER, ModToolMaterial.COPPER_A, "copper", "ingotCopper", false);
         }
-        if (GeneralConfigHandler.loadPlatinum) {
-            RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", PropertiesConfigHandler.platinumRequiresObsidian);
+        if (ConfigHandler.loadPlatinum) {
+            RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
         }
-        if (GeneralConfigHandler.loadCompressed && Loader.isModLoaded("PneumaticCraft")) {
-            RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed"), PropertiesConfigHandler.platinumRequiresObsidian);
+        if (ConfigHandler.loadLead){
+            RegisterOreToolSet(ModToolMaterial.LEAD, ModToolMaterial.LEAD_A, "lead", "ingotLead", false);
+        }
+        if (ConfigHandler.loadCompressed && Loader.isModLoaded("PneumaticCraft")) {
+            RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed"), false);
         }
     }
 

@@ -1,42 +1,45 @@
-# Items
 item.coppertools:wooden_saber.name=Wooden Saber
 item.coppertools:obsidian_rod.name=Obsidian Rod
 
-    # Copper Items
 item.coppertools:copper_pickaxe.name=Copper Pickaxe
 item.coppertools:copper_sword.name=Copper Sword
 item.coppertools:copper_shovel.name=Copper Shovel
 item.coppertools:copper_axe.name=Copper Axe
 item.coppertools:copper_hoe.name=Copper Hoe
-
 item.coppertools:copper_helmet.name=Copper Helmet
 item.coppertools:copper_chestplate.name=Copper Chestplate
 item.coppertools:copper_leggings.name=Copper Leggings
 item.coppertools:copper_boots.name=Copper Boots
 
-    # Platinum Items
 item.coppertools:platinum_pickaxe.name=Platinum Pickaxe
 item.coppertools:platinum_sword.name=Platinum Sword
 item.coppertools:platinum_shovel.name=Platinum Shovel
 item.coppertools:platinum_axe.name=Platinum Axe
 item.coppertools:platinum_hoe.name=Platinum Hoe
-
 item.coppertools:platinum_helmet.name=Platinum Helmet
 item.coppertools:platinum_chestplate.name=Platinum Chestplate
 item.coppertools:platinum_leggings.name=Platinum Leggings
 item.coppertools:platinum_boots.name=Platinum Boots
 
-    # Compressed Items
 item.coppertools:compressed_pickaxe.name=Compressed Iron Pickaxe
 item.coppertools:compressed_sword.name=Compressed Iron Sword
 item.coppertools:compressed_shovel.name=Compressed Iron Shovel
 item.coppertools:compressed_axe.name=Compressed Iron Axe
 item.coppertools:compressed_hoe.name=Compressed Iron Hoe
-
 item.coppertools:compressed_helmet.name=Compressed Iron Helmet
 item.coppertools:compressed_chestplate.name=Compressed Iron Chestplate
 item.coppertools:compressed_leggings.name=Compressed Iron Leggings
 item.coppertools:compressed_boots.name=Compressed Iron Boots
 
-# Misc
+item.coppertools:lead_pickaxe.name=Lead Pickaxe
+item.coppertools:lead_sword.name=Lead Sword
+item.coppertools:lead_shovel.name=Lead Shovel
+item.coppertools:lead_axe.name=Lead Axe
+item.coppertools:lead_hoe.name=Lead Hoe
+item.coppertools:lead_helmet.name=Lead Helmet
+item.coppertools:lead_chestplate.name=Lead Chestplate
+item.coppertools:lead_leggings.name=Lead Leggings
+item.coppertools:lead_boots.name=Lead Boots
+
+
 itemGroup.coppertools=Copper Tools
