@@ -6,7 +6,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import pneumaticCraft.api.item.ItemSupplier;
 
 public class Recipes {
     public static void init(){
@@ -24,7 +23,7 @@ public class Recipes {
 
         RegisterOreToolRecipes("copper", "ingotCopper", false);
         RegisterOreToolRecipes("platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
-        RegisterToolRecipes("compressed", new ItemStack(ItemSupplier.getItem("ingotIronCompressed")), false);
+        RegisterToolRecipes("compressed", new ItemStack(GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed")), false);
         RegisterOreToolRecipes("lead", "ingotLead", false);
     }
 
