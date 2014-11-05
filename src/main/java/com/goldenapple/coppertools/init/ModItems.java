@@ -52,6 +52,9 @@ public class ModItems {
         Item hoe = new CopperToolsHoe(mat, matName + "_hoe", material, useObsidian);
         GameRegistry.registerItem(hoe, matName + "_hoe");
 
+        Item sickle = new CopperToolsSickle(mat, matName + "_sickle", material, useObsidian);
+        GameRegistry.registerItem(sickle, matName + "_sickle");
+
         Item helmet = new CopperToolsArmor(matArmor, matName + "_helmet", material, 0);
         GameRegistry.registerItem(helmet, matName + "_helmet");
 
@@ -80,6 +83,9 @@ public class ModItems {
 
         Item hoe = new CopperToolsHoe(mat, matName + "_hoe", ingot, useObsidian);
         GameRegistry.registerItem(hoe, matName + "_hoe");
+
+        Item sickle = new CopperToolsSickle(mat, matName + "_sickle", ingot, useObsidian);
+        GameRegistry.registerItem(sickle, matName + "_sickle");
 
         Item helmet = new CopperToolsArmor(matArmor, matName + "_helmet", ingot, 0);
         GameRegistry.registerItem(helmet, matName + "_helmet");
