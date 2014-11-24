@@ -79,7 +79,7 @@ public class CopperToolsSickle extends ItemTool {
     }
 
     @Override
-    public float func_150893_a(ItemStack stack, Block block)
+    public float func_150893_a(ItemStack stack, Block block) //Returns efficiency of mining given block
     {
         return effectiveMaterials.contains(block.getMaterial()) ? efficiencyOnProperMaterial : 1.0F;
     }
