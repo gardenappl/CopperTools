@@ -1,6 +1,8 @@
 package com.goldenapple.coppertools.init;
 
-import com.goldenapple.coppertools.handler.ConfigHandler;
+import com.goldenapple.coppertools.config.ConfigHandler;
+import com.goldenapple.coppertools.config.ModArmorMaterial;
+import com.goldenapple.coppertools.config.ModToolMaterial;
 import com.goldenapple.coppertools.item.*;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -23,16 +25,16 @@ public class ModItems {
             GameRegistry.registerItem(woodSaber, "wooden_saber");
         }
         if (ConfigHandler.loadCopper) {
-            RegisterOreToolSet(ModToolMaterial.COPPER, ModToolMaterial.COPPER_A, "copper", "ingotCopper", false);
+            RegisterOreToolSet(ModToolMaterial.COPPER, ModArmorMaterial.COPPER, "copper", "ingotCopper", false);
         }
         if (ConfigHandler.loadPlatinum) {
-            RegisterOreToolSet(ModToolMaterial.PLATINUM, ModToolMaterial.PLATINUM_A, "platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
+            RegisterOreToolSet(ModToolMaterial.PLATINUM, ModArmorMaterial.PLATINUM, "platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
         }
         if (ConfigHandler.loadLead){
-            RegisterOreToolSet(ModToolMaterial.LEAD, ModToolMaterial.LEAD_A, "lead", "ingotLead", false);
+            RegisterOreToolSet(ModToolMaterial.LEAD, ModArmorMaterial.LEAD, "lead", "ingotLead", false);
         }
         if (ConfigHandler.loadCompressed && Loader.isModLoaded("PneumaticCraft")) {
-            RegisterToolSet(ModToolMaterial.COMPRESSED, ModToolMaterial.COMPRESSED_A, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed"), false);
+            RegisterToolSet(ModToolMaterial.COMPRESSED, ModArmorMaterial.COMPRESSED, "compressed", GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed"), false);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools;
 
-import com.goldenapple.coppertools.handler.ConfigHandler;
+import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
@@ -20,13 +20,12 @@ public class CopperToolsMod {
     @Mod.Instance(Reference.MOD_ID)
     public static CopperToolsMod instance;
 
-    public static File root;
+    public String folder;
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
-        root = event.getModConfigurationDirectory();
+        ConfigHandler.init(event.getModConfigurationDirectory() + "/coppertools/");
 
-        ConfigHandler.init();
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
 
         ModItems.init();
