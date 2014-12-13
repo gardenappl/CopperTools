@@ -88,7 +88,7 @@ public class CopperToolsSickle extends ItemTool {
     public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int x, int y, int z, EntityLivingBase entity) {
         EntityPlayer player = (EntityPlayer) entity;
 
-        if (block.getBlockHardness(world, x, y, z) != 0.0D && !effectiveMaterials.contains(block.getMaterial())) {
+        if (!effectiveMaterials.contains(block.getMaterial())) {
             if (!player.capabilities.isCreativeMode) {
                 stack.damageItem(1, entity);
             }
@@ -96,7 +96,7 @@ public class CopperToolsSickle extends ItemTool {
         }
         boolean used = false;
 
-        if(!world.getBlock(x, y, z).getMaterial().equals(Material.leaves)) { //Harvesting plants in a 3x1x3 area
+        if(!block.getMaterial().equals(Material.leaves)) { //Harvesting plants in a 3x1x3 area
             for (int i = x - 1; i <= x + 1; i++) {
                 for (int k = z - 1; k <= z + 1; k++) {
                     if (effectiveMaterials.contains(world.getBlock(i, y, k).getMaterial())) {
@@ -106,7 +106,7 @@ public class CopperToolsSickle extends ItemTool {
                 }
             }
         }
-        if (world.getBlock(x, y, z).getMaterial().equals(Material.leaves)){ //Harvesting leaves in a 3x3x3 area
+        if (block.getMaterial().equals(Material.leaves)){ //Harvesting leaves in a 3x3x3 area
             for (int i = x - 1; i <= x + 1; i++) {
                 for (int j = y - 1; i <= y + 1; j++){
                     for (int k = z - 1; k <= z + 1; k++) {

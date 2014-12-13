@@ -20,8 +20,6 @@ public class CopperToolsMod {
     @Mod.Instance(Reference.MOD_ID)
     public static CopperToolsMod instance;
 
-    public String folder;
-
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
         ConfigHandler.init(event.getModConfigurationDirectory() + "/coppertools/");

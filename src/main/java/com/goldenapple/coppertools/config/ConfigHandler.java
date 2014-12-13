@@ -29,8 +29,7 @@ public class ConfigHandler {
     public static boolean platinumRequiresObsidian;
     public static boolean dumpAllOres;
 
-    public static void init(String folder){
-        path = folder;
+    public static void init(String path){
         if (configGeneral == null){
             configGeneral = new Configuration(new File(path + "general.cfg"));
         }
@@ -98,14 +97,14 @@ public class ConfigHandler {
     }
 
     private static ItemArmor.ArmorMaterial loadProperty(Configuration config, String name, ModArmorMaterialDefault armorMatDefault){
-        int durability = config.getInt(name + "ArmorDurability", "armor", armorMatDefault.getDurability(), 0, 9000, "Durability level of " + name + " armor");
+        int durability = config.getInt(name + "Durability", "armor", armorMatDefault.getDurability(), 0, 9000, "Durability level of " + name + " armor");
         int[] protection = new int[4];
         int[] protectionDefault = armorMatDefault.getProtection();
         protection[0]  = config.getInt(name + "HelmetProtection", "armor", protectionDefault[0], 0, 9000, "Protection of the " + name + " helmet");
         protection[1] = config.getInt(name + "ChestProtection", "armor", protectionDefault[1], 0, 9000, "Protection of the " + name + " chestplate");
         protection[2] = config.getInt(name + "LegsProtection", "armor", protectionDefault[2], 0, 9000, "Protection of the " + name + " leggings");
         protection[3] = config.getInt(name + "BootsProtection", "armor", protectionDefault[3], 0, 9000, "Protection of the " + name + " boots");
-        int enchant = config.getInt(name + "ArmorEnchant", "armor", armorMatDefault.getEnchant(), 0, 9000, "Enchantability of " + name + " armor");
+        int enchant = config.getInt(name + "Enchant", "armor", armorMatDefault.getEnchant(), 0, 9000, "Enchantability of " + name + " armor");
         return EnumHelper.addArmorMaterial(name.toUpperCase(), durability, protection, enchant);
     }
 
