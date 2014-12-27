@@ -76,7 +76,7 @@ item.coppertools:stone_sickle.name=Камянный серп
 item.coppertools:iron_sickle.name=Железный серп
 item.coppertools:diamond_sickle.name=Алмазный серп
 item.coppertools:gold_sickle.name=Золотой серп
-item.coppertools:brass_sickle.name=Латуниевый серп
+item.coppertools:brass_sickle.name=Латунный серп
 item.coppertools:gilded_sickle.name=Серп из позолоченого железа
 
 ################################
