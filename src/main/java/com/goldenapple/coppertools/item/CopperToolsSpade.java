@@ -2,7 +2,7 @@ package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
 import com.goldenapple.coppertools.util.OreHelper;
-import com.goldenapple.coppertools.util.Reference;
+import com.goldenapple.coppertools.Reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 public class CopperToolsSpade extends ItemSpade{
 
     private String repairOre;
-    private Item repairItem;
+    private ItemStack repairItem;
     private boolean useObsidian;
 
     public CopperToolsSpade(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
@@ -24,7 +24,7 @@ public class CopperToolsSpade extends ItemSpade{
         this.useObsidian = useObsidian;
     }
 
-    public CopperToolsSpade(Item.ToolMaterial material, String name, Item matRepair, boolean useObsidian){
+    public CopperToolsSpade(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
@@ -42,7 +42,7 @@ public class CopperToolsSpade extends ItemSpade{
         if (repairOre != null){
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.getItem().equals(repairItem);
+            return item.isItemEqual(repairItem);
         }
     }
 

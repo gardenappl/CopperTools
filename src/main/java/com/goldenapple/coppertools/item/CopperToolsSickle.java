@@ -1,8 +1,9 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
-import com.goldenapple.coppertools.util.Reference;
+import com.goldenapple.coppertools.Reference.Reference;
 import com.google.common.collect.Sets;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,7 +27,7 @@ public class CopperToolsSickle extends ItemTool {
     private static final Set<String> toolClasses = Sets.newHashSet("sickle");
 
     private String repairOre;
-    private Item repairItem;
+    private ItemStack repairItem;
     private boolean useObsidian;
 
     public CopperToolsSickle(ToolMaterial material, String name, String matRepair, boolean useObsidian){
@@ -37,7 +38,7 @@ public class CopperToolsSickle extends ItemTool {
         this.useObsidian = useObsidian;
     }
 
-    public CopperToolsSickle(Item.ToolMaterial material, String name, Item matRepair, boolean useObsidian){
+    public CopperToolsSickle(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairItem = matRepair;
         setCreativeTab(CopperToolsTab.CopperToolsTab);
@@ -97,6 +98,7 @@ public class CopperToolsSickle extends ItemTool {
         boolean used = false;
 
         if(!block.getMaterial().equals(Material.leaves)) { //Harvesting plants in a 3x1x3 area
+            LogHelper.info("no leaves");
             for (int i = x - 1; i <= x + 1; i++) {
                 for (int k = z - 1; k <= z + 1; k++) {
                     if (effectiveMaterials.contains(world.getBlock(i, y, k).getMaterial())) {
@@ -105,21 +107,24 @@ public class CopperToolsSickle extends ItemTool {
                     }
                 }
             }
-        }
-        if (block.getMaterial().equals(Material.leaves)){ //Harvesting leaves in a 3x3x3 area
-            for (int i = x - 1; i <= x + 1; i++) {
-                for (int j = y - 1; i <= y + 1; j++){
-                    for (int k = z - 1; k <= z + 1; k++) {
-                        if (effectiveMaterials.contains(world.getBlock(i, j, k).getMaterial())) {
-                            harvestBlock(world, i, j, k, player);
+        }else{ //Harvesting leaves in a 3x3x3 area
+            LogHelper.info("leaf!!!");
+            for (int a = x - 1; a <= x + 1; a++) {
+                for (int b = y - 1; b <= y + 1; b++){
+                    for (int c = z - 1; c <= z + 1; c++) {
+                        if (effectiveMaterials.contains(world.getBlock(a, b, c).getMaterial())) {
+                            harvestBlock(world, a, b, c, player);
                             used = true;
                         }
                     }
                 }
             }
         }
+
         if (used) {
-            stack.damageItem(1, entity);
+            if(!player.capabilities.isCreativeMode) {
+                stack.damageItem(1, entity);
+            }
         }
         return used;
     }
@@ -129,7 +134,7 @@ public class CopperToolsSickle extends ItemTool {
         if (repairOre != null){
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.getItem().equals(repairItem);
+            return item.isItemEqual(repairItem);
         }
     }
 
@@ -149,13 +154,11 @@ public class CopperToolsSickle extends ItemTool {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
-    {
+    public void registerIcons(IIconRegister iconRegister){
         itemIcon = useObsidian ? iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_o") : iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
-    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
-    {
+    protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
 }

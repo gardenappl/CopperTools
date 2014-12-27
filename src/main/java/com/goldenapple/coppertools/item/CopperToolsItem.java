@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
-import com.goldenapple.coppertools.util.Reference;
+import com.goldenapple.coppertools.Reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;

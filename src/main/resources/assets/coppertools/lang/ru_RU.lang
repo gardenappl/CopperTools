@@ -1,11 +1,14 @@
-item.coppertools:wooden_saber.name=Деревянная сабля
-item.coppertools:obsidian_rod.name=Обсидиановый стержень
+itemGroup.coppertools=Copper Tools
+itemGroup.coppertools_combat=Copper Tools лол
+
+################################
 
 item.coppertools:copper_pickaxe.name=Медная кирка
 item.coppertools:copper_sword.name=Медный меч
 item.coppertools:copper_shovel.name=Медная лопата
 item.coppertools:copper_axe.name=Медный топор
 item.coppertools:copper_hoe.name=Медная мотыга
+item.coppertools:copper_sickle.name=Медный серп
 item.coppertools:copper_helmet.name=Медный шлем
 item.coppertools:copper_chestplate.name=Медный нагрудник
 item.coppertools:copper_leggings.name=Медные поножи
@@ -16,9 +19,10 @@ item.coppertools:platinum_sword.name=Платиновый меч
 item.coppertools:platinum_shovel.name=Платиновая лопата
 item.coppertools:platinum_axe.name=Платиновый топор
 item.coppertools:platinum_hoe.name=Платиновая мотыга
+item.coppertools:platinum_sickle.name=Платиновый серп
 item.coppertools:platinum_helmet.name=Платиновый шлем
 item.coppertools:platinum_chestplate.name=Платиновый нагрудник
-item.coppertools:platinum_leggings.name=Платиновые штаны
+item.coppertools:platinum_leggings.name=Платиновые поножи
 item.coppertools:platinum_boots.name=Платиновые ботинки
 
 item.coppertools:compressed_pickaxe.name=Кирка из скопрессированого железа
@@ -26,9 +30,10 @@ item.coppertools:compressed_sword.name=Меч из скопрессирован�
 item.coppertools:compressed_shovel.name=Лопата из скопрессированого железа
 item.coppertools:compressed_axe.name=Топор из скопрессированого железа
 item.coppertools:compressed_hoe.name=Мотыга из скопрессированого железа
+item.coppertools:compressed_sickle.name=Серп из скопрессированого железа
 item.coppertools:compressed_helmet.name=Шлем из скопрессированого железа
 item.coppertools:compressed_chestplate.name=Нагрудник из скопрессированого железа
-item.coppertools:compressed_leggings.name=Штаны из скопрессированого железа
+item.coppertools:compressed_leggings.name=Поножи из скопрессированого железа
 item.coppertools:compressed_boots.name=Ботинки из скопрессированого железа
 
 item.coppertools:lead_pickaxe.name=Свинцовая кирка
@@ -36,10 +41,67 @@ item.coppertools:lead_sword.name=Свинцовый меч
 item.coppertools:lead_shovel.name=Свинцовая лопата
 item.coppertools:lead_axe.name=Свинцоый топор
 item.coppertools:lead_hoe.name=Свинцовая мотыга
+item.coppertools:lead_sickle.name=Свинцовый серп
 item.coppertools:lead_helmet.name=Свинцовый шлем
 item.coppertools:lead_chestplate.name=Свинцовый нагрудник
-item.coppertools:lead_leggings.name=Свинцовые штаны
+item.coppertools:lead_leggings.name=Свинцовые поножи
 item.coppertools:lead_boots.name=Свинцовые ботинки
 
+item.coppertools:enderium_pickaxe.name=Эндериумовая кирка
+item.coppertools:enderium_sword.name=Эндериумовый меч
+item.coppertools:enderium_shovel.name-Эндериумовая лопата
+item.coppertools:enderium_axe.name=Эндериумовый топор
+item.coppertools:enderium_hoe.name=Эндериумовая мотыга
+item.coppertools:enderium_sickle.name=Эндериумовый серп
+item.coppertools:enderium_helmet.name=Эндериумовый шлем
+item.coppertools:enderium_chestplate.name=Эндериумовый нагрудник
+item.coppertools:enderium_leggings.name=Эндериумовые поножи
+item.coppertools:enderium_boots.name=Эндериумовые ботинки
 
-itemGroup.coppertools=Copper Tools
+item.coppertools:silver_pickaxe.name=Серебрянная кирка
+item.coppertools:silver_sword.name=Серербряный меч
+item.coppertools:silver_shovel.name=Серебряная лопата
+item.coppertools:silver_axe.name=Серебряный топор
+item.coppertools:silver_hoe.name=Серебряная мотыга
+item.coppertools:silver_sickle.name=Серебряный серп
+item.coppertools:silver_helmet.name=Серебряный шлем
+item.coppertools:silver_chestplate.name=Серебряный нагрудник
+item.coppertools:silver_leggings.name=Серебряные поножи
+item.coppertools:silver_boots.name=Серебряные ботинки
+
+###############################
+
+item.coppertools:wood_sickle.name=Деревянный серп
+item.coppertools:stone_sickle.name=Камянный серп
+item.coppertools:iron_sickle.name=Железный серп
+item.coppertools:diamond_sickle.name=Алмазный серп
+item.coppertools:gold_sickle.name=Золотой серп
+item.coppertools:brass_sickle.name=Латуниевый серп
+item.coppertools:gilded_sickle.name=Серп из позолоченого железа
+
+################################
+
+item.coppertools:amethyst_helmet.name=Аметистовый шлем
+item.coppertools:amethyst_chestplate.name=Аметистовый нагрудник
+item.coppertools:amethyst_leggings.name=Аметистовые поножи
+item.coppertools:amethyst_boots.name=Аметистовые ботинки
+
+item.coppertools:ruby_helmet.name=Рубиновый шлем
+item.coppertools:ruby_chestplate.name=Рубиновый нагрудник
+item.coppertools:ruby_leggings.name=Рубиновые поножи
+item.coppertools:ruby_boots.name=Рубиновые ботинки
+
+item.coppertools:sapphire_helmet.name=Сапрфировый шлем
+item.coppertools:sapphire_chestplate.name=Сапфировый нагрудник
+item.coppertools:sapphire_leggings.name=Сапфировые поножи
+item.coppertools:sapphire_boots.name=Сапфировые ботинки
+
+item.coppertools:peridot_helmet.name=Перидотовый шлем
+item.coppertools:peridot_chestplate.name=Перидотовый нагрудник
+item.coppertools:peridot_leggings.name=Перидотовые поножи
+item.coppertools:peridot_boots.name=Перидотовые ботинки
+
+################################
+
+item.coppertools:wooden_saber.name=Деревянная сабля
+item.coppertools:obsidian_rod.name=Обсидиановый стержень

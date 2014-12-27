@@ -1,4 +1,4 @@
-package com.goldenapple.coppertools.util;
+package com.goldenapple.coppertools.Reference;
 
 public class Reference {
     public static final String MOD_ID = "CopperTools";

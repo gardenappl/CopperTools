@@ -1,8 +1,10 @@
 package com.goldenapple.coppertools.item;
 
+import com.goldenapple.coppertools.creativetab.CopperToolsCombatTab;
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
-import com.goldenapple.coppertools.util.Reference;
+import com.goldenapple.coppertools.Reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -14,20 +16,19 @@ import net.minecraft.item.ItemStack;
 public class CopperToolsArmor extends ItemArmor{
 
     private String repairOre;
-    private Item repairItem;
+    private ItemStack repairItem;
 
-    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, String matRepair, int type)
-    {
+    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, String matRepair, int type){
         super(material, 1, type);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
     }
-    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, Item matRepair, int type)
-    {
+
+    public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type){
         super(material, 1, type);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
     }
 
@@ -36,7 +37,7 @@ public class CopperToolsArmor extends ItemArmor{
         if(repairOre!=null) {
             return OreHelper.isItemThisOre(item, repairOre);
         }else{
-            return item.getItem().equals(repairItem);
+            return item.isItemEqual(repairItem);
         }
     }
 

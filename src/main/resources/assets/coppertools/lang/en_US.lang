@@ -1,11 +1,14 @@
-item.coppertools:wooden_saber.name=Wooden Saber
-item.coppertools:obsidian_rod.name=Obsidian Rod
+itemGroup.coppertools=Copper Tools
+itemGroup.coppertools_combat=Copper Tools Combat
+
+################################
 
 item.coppertools:copper_pickaxe.name=Copper Pickaxe
 item.coppertools:copper_sword.name=Copper Sword
 item.coppertools:copper_shovel.name=Copper Shovel
 item.coppertools:copper_axe.name=Copper Axe
 item.coppertools:copper_hoe.name=Copper Hoe
+item.coppertools:copper_sickle.name=Copper Sickle
 item.coppertools:copper_helmet.name=Copper Helmet
 item.coppertools:copper_chestplate.name=Copper Chestplate
 item.coppertools:copper_leggings.name=Copper Leggings
@@ -16,6 +19,7 @@ item.coppertools:platinum_sword.name=Platinum Sword
 item.coppertools:platinum_shovel.name=Platinum Shovel
 item.coppertools:platinum_axe.name=Platinum Axe
 item.coppertools:platinum_hoe.name=Platinum Hoe
+item.coppertools:platinum_sickle.name=Platinum Sickle
 item.coppertools:platinum_helmet.name=Platinum Helmet
 item.coppertools:platinum_chestplate.name=Platinum Chestplate
 item.coppertools:platinum_leggings.name=Platinum Leggings
@@ -26,6 +30,7 @@ item.coppertools:compressed_sword.name=Compressed Iron Sword
 item.coppertools:compressed_shovel.name=Compressed Iron Shovel
 item.coppertools:compressed_axe.name=Compressed Iron Axe
 item.coppertools:compressed_hoe.name=Compressed Iron Hoe
+item.coppertools:compressed_sickle.name=Compressed Sickle
 item.coppertools:compressed_helmet.name=Compressed Iron Helmet
 item.coppertools:compressed_chestplate.name=Compressed Iron Chestplate
 item.coppertools:compressed_leggings.name=Compressed Iron Leggings
@@ -36,10 +41,67 @@ item.coppertools:lead_sword.name=Lead Sword
 item.coppertools:lead_shovel.name=Lead Shovel
 item.coppertools:lead_axe.name=Lead Axe
 item.coppertools:lead_hoe.name=Lead Hoe
+item.coppertools:lead_sickle.name=Lead Sickle
 item.coppertools:lead_helmet.name=Lead Helmet
 item.coppertools:lead_chestplate.name=Lead Chestplate
 item.coppertools:lead_leggings.name=Lead Leggings
 item.coppertools:lead_boots.name=Lead Boots
 
+item.coppertools:enderium_pickaxe.name=Enderium Pickaxe
+item.coppertools:enderium_sword.name=Enderium Sword
+item.coppertools:enderium_shovel.name=Enderium Shovel
+item.coppertools:enderium_axe.name=Enderium Axe
+item.coppertools:enderium_hoe.name=Enderium Hoe
+item.coppertools:enderium_sickle.name=Enderium Sickle
+item.coppertools:enderium_helmet.name=Enderium Helmet
+item.coppertools:enderium_chestplate.name=Enderium Chestplate
+item.coppertools:enderium_leggings.name=Enderium Leggings
+item.coppertools:enderium_boots.name=Enderium Boots
 
-itemGroup.coppertools=Copper Tools
+item.coppertools:silver_pickaxe.name=Silver Pickaxe
+item.coppertools:silver_sword.name=Silver Sword
+item.coppertools:silver_shovel.name=Silver Shovel
+item.coppertools:silver_axe.name=Silver Axe
+item.coppertools:silver_hoe.name=Silver Hoe
+item.coppertools:silver_sickle.name=Silver Sickle
+item.coppertools:silver_helmet.name=Silver Helmet
+item.coppertools:silver_chestplate.name=Silver Chestplate
+item.coppertools:silver_leggings.name=Silver Leggings
+item.coppertools:silver_boots.name=Silver Boots
+
+################################
+
+item.coppertools:wood_sickle.name=Wooden Sickle
+item.coppertools:stone_sickle.name=Stone Sickle
+item.coppertools:iron_sickle.name=Iron Sickle
+item.coppertools:diamond_sickle.name=Diamond Sickle
+item.coppertools:gold_sickle.name=Gold Sickle
+item.coppertools:brass_sickle.name=Brass Sickle
+item.coppertools:gilded_sickle.name=Gilded Iron Sickle
+
+################################
+
+item.coppertools:amethyst_helmet.name=Amethyst Helmet
+item.coppertools:amethyst_chestplate.name=Amethyst Chestplate
+item.coppertools:amethyst_leggings.name=Amethyst Leggings
+item.coppertools:amethyst_boots.name=Amethyst Boots
+
+item.coppertools:ruby_helmet.name=Ruby Helmet
+item.coppertools:ruby_chestplate.name=Ruby Chestplate
+item.coppertools:ruby_leggings.name=Ruby Leggings
+item.coppertools:ruby_boots.name=Ruby Boots
+
+item.coppertools:sapphire_helmet.name=Sapphire Helmet
+item.coppertools:sapphire_chestplate.name=Sapphire Chestplate
+item.coppertools:sapphire_leggings.name=Sapphire Leggings
+item.coppertools:sapphire_boots.name=Sapphire Boots
+
+item.coppertools:peridot_helmet.name=Peridot Helmet
+item.coppertools:peridot_chestplate.name=Peridot Chestplate
+item.coppertools:peridot_leggings.name=Peridot Leggings
+item.coppertools:peridot_boots.name=Peridot Boots
+
+################################
+
+item.coppertools:wooden_saber.name=Wooden Saber
+item.coppertools:obsidian_rod.name=Obsidian Rod
