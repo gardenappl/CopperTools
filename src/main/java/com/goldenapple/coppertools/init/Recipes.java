@@ -2,7 +2,7 @@ package com.goldenapple.coppertools.init;
 
 import com.goldenapple.coppertools.CopperToolsMod;
 import com.goldenapple.coppertools.config.ConfigHandler;
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;

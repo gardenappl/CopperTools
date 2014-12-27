@@ -5,7 +5,7 @@ import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;

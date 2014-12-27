@@ -3,7 +3,7 @@ package com.goldenapple.coppertools.item;
 import com.goldenapple.coppertools.creativetab.CopperToolsTab;
 import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import com.google.common.collect.Sets;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

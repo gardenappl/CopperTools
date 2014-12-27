@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.util;
 
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 

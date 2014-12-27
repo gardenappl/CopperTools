@@ -1,4 +1,4 @@
-package com.goldenapple.coppertools.Reference;
+package com.goldenapple.coppertools.reference;
 
 public class Names {
     public static final String woodSaber = "wooden_saber";

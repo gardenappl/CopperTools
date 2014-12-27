@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools.init;
 
 import com.goldenapple.coppertools.CopperToolsMod;
-import com.goldenapple.coppertools.Reference.Names;
+import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.config.ModArmorMaterial;
 import com.goldenapple.coppertools.config.ModToolMaterial;

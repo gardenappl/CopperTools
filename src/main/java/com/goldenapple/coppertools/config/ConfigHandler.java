@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.config;
 
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.Item;

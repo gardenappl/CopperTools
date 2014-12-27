@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.creativetab;
 
-import com.goldenapple.coppertools.Reference.Reference;
+import com.goldenapple.coppertools.reference.Reference;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;

@@ -17,7 +17,7 @@ public class ModToolMaterial {
         PLATINUM(2, 200, 12, 2, 22),
         LEAD(0, 131, 4, 0, 14),
         COMPRESSED(2, 500, 6, 2, 14),
-        ENDERIUM(5, 2000, 10, 4, 18),
+        ENDERIUM(5, 2000, 10, 4, 22),
         SILVER(2, 250, 8, 2.5F, 18);
 
         private int harvestLevel;

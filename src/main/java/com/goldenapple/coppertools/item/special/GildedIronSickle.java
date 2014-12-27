@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item.special;
 
-import com.goldenapple.coppertools.Reference.Names;
+import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.item.CopperToolsSickle;
 import cpw.mods.fml.common.registry.GameRegistry;
