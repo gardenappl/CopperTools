@@ -16,12 +16,12 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import java.util.*;
 
 public class CopperToolsEventHandler {
+    Random rand = new Random();
     @SubscribeEvent
     public void onEntityDrops(LivingDropsEvent event) {
         if(isHoliday()){
             String item = "christmas_pickaxe";
-            Random rand = new Random();
-            int chance = ConfigHandler.chanceOfGoodChristmas * 10;
+            int chance = ConfigHandler.chanceOfGoodChristmas * 10; //multiplied by 10 because there is a chance to get 10 different tools/armor pieces
 
             if(!event.source.damageType.equals("player")) return;
             if(event.entityLiving instanceof EntityPlayer) chance = 10; //always drops from players
@@ -46,9 +46,7 @@ public class CopperToolsEventHandler {
         }
     }
 
-    /*
-        @author SpitefulFox
-    */
+    //@author SpitefulFox
     private static void addDrop(LivingDropsEvent event, ItemStack drop) {
         EntityItem entityitem = new EntityItem(event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, drop);
         entityitem.delayBeforeCanPickup = 10;
@@ -58,6 +56,8 @@ public class CopperToolsEventHandler {
     //Similar to vanilla chest rendering code
     public static boolean isHoliday(){
         Calendar calendar = Calendar.getInstance();
-        return calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= 24 && calendar.get(Calendar.DAY_OF_MONTH) <= 31;
+        if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= 24) return true;
+        else if(calendar.get(Calendar.MONTH) == Calendar.JANUARY && calendar.get(Calendar.DAY_OF_MONTH) <= 7) return true; //Over here in Ukraine we celebrate Christmas on thr 6th of January
+        else return false;
     }
 }
