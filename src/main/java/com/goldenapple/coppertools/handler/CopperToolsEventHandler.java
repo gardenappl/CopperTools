@@ -23,11 +23,10 @@ public class CopperToolsEventHandler {
             Random rand = new Random();
             int chance = ConfigHandler.chanceOfGoodChristmas * 10;
 
-            if(!event.source.damageType.equals("player")) return; else LogHelper.info("player!");
+            if(!event.source.damageType.equals("player")) return;
             if(event.entityLiving instanceof EntityPlayer) chance = 10; //always drops from players
             if(event.entityLiving instanceof IMob || event.entityLiving instanceof EntityPlayer){
                 int got = rand.nextInt(chance);
-                LogHelper.info("chance: " + got + " out of " + chance);
                 if (got < 10) {
                     switch (got) {
                         case 0: item = "christmas_pickaxe";
@@ -43,8 +42,6 @@ public class CopperToolsEventHandler {
                     }
                     addDrop(event, new ItemStack(GameRegistry.findItem(Reference.MOD_ID, item)));
                 }
-            }else{
-                LogHelper.info("illegal entity! stop right there you criminal!");
             }
         }
     }
