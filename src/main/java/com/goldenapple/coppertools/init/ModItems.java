@@ -72,7 +72,7 @@ public class ModItems {
             registerArmorOnly(ModArmorMaterial.GEM, "sapphire", "gemSapphire");
             registerArmorOnly(ModArmorMaterial.GEM, "amethyst", "gemAmethyst");
         }
-        if((ConfigHandler.loadHoliday && CopperToolsEventHandler.isHoliday()) || ConfigHandler.holidaySpiritLivesForever){
+        if((ConfigHandler.loadHoliday && CopperToolsEventHandler.isChristmas()) || ConfigHandler.holidaySpiritLivesForever){
             registerToolSet(ModToolMaterial.HOLIDAY, ModArmorMaterial.HOLIDAY, "christmas", new ItemStack(Blocks.ice), false);
         }
     }

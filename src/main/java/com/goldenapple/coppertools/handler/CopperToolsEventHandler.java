@@ -2,24 +2,24 @@ package com.goldenapple.coppertools.handler;
 
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.reference.Reference;
-import com.goldenapple.coppertools.util.LogHelper;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 
 import java.util.*;
 
 public class CopperToolsEventHandler {
     Random rand = new Random();
+
     @SubscribeEvent
     public void onEntityDrops(LivingDropsEvent event) {
-        if(isHoliday()){
+        if(isChristmas()){
             String item = "christmas_pickaxe";
             int chance = ConfigHandler.chanceOfGoodChristmas * 10; //multiplied by 10 because there is a chance to get 10 different tools/armor pieces
 
@@ -54,7 +54,7 @@ public class CopperToolsEventHandler {
     }
 
     //Similar to vanilla chest rendering code
-    public static boolean isHoliday(){
+    public static boolean isChristmas(){
         Calendar calendar = Calendar.getInstance();
         if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= 24) return true;
         else if(calendar.get(Calendar.MONTH) == Calendar.JANUARY && calendar.get(Calendar.DAY_OF_MONTH) <= 7) return true; //Over here in Ukraine we celebrate Christmas on thr 6th of January
