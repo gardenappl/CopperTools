@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsCombatTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -19,7 +19,7 @@ public class CopperToolsSword extends ItemSword{
     public CopperToolsSword(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -27,14 +27,9 @@ public class CopperToolsSword extends ItemSword{
     public CopperToolsSword(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
-    }
-
-    public CopperToolsSword setUseObsidian(boolean o){
-        useObsidian = o;
-        return this;
     }
 
     @Override

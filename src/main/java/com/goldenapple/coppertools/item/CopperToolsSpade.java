@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -19,7 +19,7 @@ public class CopperToolsSpade extends ItemSpade{
     public CopperToolsSpade(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -27,14 +27,9 @@ public class CopperToolsSpade extends ItemSpade{
     public CopperToolsSpade(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
-    }
-
-    public CopperToolsSpade setUseObsidian(boolean o){
-        useObsidian = o;
-        return this;
     }
 
     @Override
@@ -44,12 +39,6 @@ public class CopperToolsSpade extends ItemSpade{
         }else{
             return item.isItemEqual(repairItem);
         }
-    }
-
-    public CopperToolsSpade(Item.ToolMaterial material, String name){
-        super(material);
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
-        setUnlocalizedName(name);
     }
 
     //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot

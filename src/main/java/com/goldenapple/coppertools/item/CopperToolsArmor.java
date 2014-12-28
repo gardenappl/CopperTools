@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsCombatTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -18,14 +18,14 @@ public class CopperToolsArmor extends ItemArmor{
     public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, String matRepair, int type){
         super(material, 1, type);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
     }
 
     public CopperToolsArmor(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type){
         super(material, 1, type);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCombatTab.CopperToolsCombatTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
         setUnlocalizedName(name);
     }
 

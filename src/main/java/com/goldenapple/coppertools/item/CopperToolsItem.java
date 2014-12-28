@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class CopperToolsItem extends Item{
     public CopperToolsItem(String name){
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
     }
 

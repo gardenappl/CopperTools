@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools;
 
 import com.goldenapple.coppertools.config.ConfigHandler;
+import com.goldenapple.coppertools.handler.CopperToolsEventHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
@@ -12,6 +13,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid= Reference.MOD_ID,name=Reference.MOD_NAME,version=Reference.VERSION)
 public class CopperToolsMod {
@@ -48,15 +50,15 @@ public class CopperToolsMod {
     public static void init(FMLInitializationEvent event){
         Recipes.init();
 
-        if (ConfigHandler.dumpAllOres) {
-            OreHelper.dumpAllOres();
-        }
+        MinecraftForge.EVENT_BUS.register(new CopperToolsEventHandler());
 
         LogHelper.info("Init complete!");
     }
 
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event){
+        if (ConfigHandler.dumpAllOres) OreHelper.dumpAllOres();
+
         LogHelper.info("Post-init complete!");
     }
 }

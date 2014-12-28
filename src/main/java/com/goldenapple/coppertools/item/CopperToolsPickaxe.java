@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -19,7 +19,7 @@ public class CopperToolsPickaxe extends ItemPickaxe {
     public CopperToolsPickaxe(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -27,7 +27,7 @@ public class CopperToolsPickaxe extends ItemPickaxe {
     public CopperToolsPickaxe(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }

@@ -1,6 +1,6 @@
 package com.goldenapple.coppertools.item;
 
-import com.goldenapple.coppertools.creativetab.CopperToolsTab;
+import com.goldenapple.coppertools.CopperToolsCreativeTab;
 import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
@@ -33,7 +33,7 @@ public class CopperToolsSickle extends ItemTool {
     public CopperToolsSickle(ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -41,7 +41,7 @@ public class CopperToolsSickle extends ItemTool {
     public CopperToolsSickle(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
