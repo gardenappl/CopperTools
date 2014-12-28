@@ -41,6 +41,8 @@ public class CopperToolsMod {
         isTwilightLoaded = Loader.isModLoaded("TwilightForest");
         isPneumaticLoaded = Loader.isModLoaded("PneumaticCraft");
 
+        if(CopperToolsEventHandler.isHoliday()) LogHelper.info("It's the holiday season! Now go kill some zombies to get Santa's Armor! In the name of Christmas!");
+
         ModItems.init();
 
         LogHelper.info("Pre-init complete!");

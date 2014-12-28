@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools.init;
 
 import com.goldenapple.coppertools.CopperToolsMod;
+import com.goldenapple.coppertools.handler.CopperToolsEventHandler;
 import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.config.ModArmorMaterial;
@@ -8,6 +9,7 @@ import com.goldenapple.coppertools.config.ModToolMaterial;
 import com.goldenapple.coppertools.item.*;
 import com.goldenapple.coppertools.item.special.GildedIronSickle;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -69,6 +71,9 @@ public class ModItems {
             registerArmorOnly(ModArmorMaterial.GEM, "peridot", "gemPeridot");
             registerArmorOnly(ModArmorMaterial.GEM, "sapphire", "gemSapphire");
             registerArmorOnly(ModArmorMaterial.GEM, "amethyst", "gemAmethyst");
+        }
+        if((ConfigHandler.loadHoliday && CopperToolsEventHandler.isHoliday()) || ConfigHandler.holidaySpiritLivesForever){
+            registerToolSet(ModToolMaterial.HOLIDAY, ModArmorMaterial.HOLIDAY, "christmas", new ItemStack(Blocks.ice), false);
         }
     }
 

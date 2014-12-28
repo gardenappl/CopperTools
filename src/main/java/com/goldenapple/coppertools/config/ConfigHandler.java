@@ -2,6 +2,7 @@ package com.goldenapple.coppertools.config;
 
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -20,6 +21,7 @@ public class ConfigHandler {
     private static Configuration configLead;
     private static Configuration configEnderium;
     private static Configuration configSilver;
+    private static Configuration configHoliday;
 
     private static final String CATEGORY_SICKLES = "sickles";
     private static final String CATEGORY_SETS = "sets";
@@ -31,12 +33,15 @@ public class ConfigHandler {
     public static boolean loadEnderium;
     public static boolean loadSilver;
 
+    public static boolean loadHoliday;
     public static boolean loadSaber;
     public static boolean loadObsidianRod;
     public static boolean loadGemArmor;
 
+    public static boolean holidaySpiritLivesForever;
     public static boolean platinumRequiresObsidian;
     public static boolean dumpAllOres;
+    public static int chanceOfGoodChristmas;
 
     public static boolean loadSickles;
     public static boolean loadVanillaSickles;
@@ -46,6 +51,7 @@ public class ConfigHandler {
 
     public static void init(String path){
         configPath = path;
+
         if (configGeneral == null){
             configGeneral = new Configuration(new File(path + "general.cfg"));
         }
@@ -104,9 +110,22 @@ public class ConfigHandler {
         if(configSilver.hasChanged()){
             configSilver.save();
         }
+
+        if(configHoliday == null){
+            configHoliday = new Configuration(new File(path + "holiday.cfg"));
+        }
+        ModToolMaterial.HOLIDAY = loadProperty(configHoliday, "holiday", ModToolMaterial.Default.HOLIDAY);
+        ModArmorMaterial.HOLIDAY = loadProperty(configHoliday, "holiday", ModArmorMaterial.Default.HOLIDAY);
+        if(configHoliday.hasChanged()){
+            configHoliday.save();
+        }
     }
 
     private static void loadGeneral(){
+        if(configGeneral == null){
+            configGeneral = new Configuration(new File(configPath + "general.cfg"));
+        }
+
         loadCopper = configGeneral.getBoolean("loadCopper", CATEGORY_SETS, true, "Set this to false to disable copper tools & armor");
         loadPlatinum = configGeneral.getBoolean("loadPlatinum", CATEGORY_SETS, true, "Set this to false to disable platinum tools & armor");
         loadCompressed = configGeneral.getBoolean("loadCompressed", CATEGORY_SETS, true, "Set this to false to disable tools & armor out of compressed iron");
@@ -115,8 +134,11 @@ public class ConfigHandler {
         loadEnderium = configGeneral.getBoolean("loadEnderium", CATEGORY_SETS, true, "Set this to false to disable enderium tools & armor");
         loadGemArmor = configGeneral.getBoolean("loadGemArmor", CATEGORY_SETS, true, "Set this to false to disable gem armor");
 
+        chanceOfGoodChristmas = configGeneral.getInt("chanceOfGoodChristmas", Configuration.CATEGORY_GENERAL, 50, 1, 9000, "1 in X chance that a hostile mob will drop a piece of Christmas equipment");
+        loadHoliday = configGeneral.getBoolean("loadHoliday", Configuration.CATEGORY_GENERAL, true, "Set this to false if you hate Christmas, you bastard! >:(");
         loadSaber = configGeneral.getBoolean("loadSaber", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Wooden Saber");
         loadObsidianRod = configGeneral.getBoolean("loadObsidianRod", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Obsidian Rod");
+        holidaySpiritLivesForever = configGeneral.getBoolean("holidaySpiritLivesForever", Configuration.CATEGORY_GENERAL, false, "Set this to true if you love Christmas so much that you want to celebrate it forever!");
         platinumRequiresObsidian = configGeneral.getBoolean("platinumRequiresObsidian", Configuration.CATEGORY_GENERAL, true, "Set this to false to allow crafting platinum tools with regular sticks");
         dumpAllOres = configGeneral.getBoolean("dumpAllOres", Configuration.CATEGORY_GENERAL, false, "Set this to true to log every single OreDictionary ore");
 
@@ -153,8 +175,7 @@ public class ConfigHandler {
     }
 
     @SubscribeEvent
-    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
-    {
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event){
         if (event.modID.equalsIgnoreCase(Reference.MOD_ID)){
             init(configPath);
         }
