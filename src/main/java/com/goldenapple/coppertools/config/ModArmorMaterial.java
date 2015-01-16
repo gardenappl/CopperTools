@@ -18,9 +18,9 @@ public class ModArmorMaterial {
         PLATINUM(12, new int[]{2, 6, 5, 2}, 25),
         LEAD(10, new int[]{3, 7, 6, 3}, 9),
         COMPRESSED(30, new int[]{2, 6, 5, 2}, 9),
-        ENDERIUM(40, new int[]{2, 6, 5, 2}, 25),
+        ENDERIUM(40, new int[]{3, 8, 6, 3}, 25),
         SILVER(15, new int[]{2, 7, 5, 2}, 17),
-        HOLIDAY(7, new int[]{2, 6, 5, 2}, 12);
+        HOLIDAY(5, new int[]{3, 8, 6, 3}, 25);
 
         private int durability;
         private int[] protection;
