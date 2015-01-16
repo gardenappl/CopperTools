@@ -69,6 +69,17 @@ item.coppertools:silver_chestplate.name=Silver Chestplate
 item.coppertools:silver_leggings.name=Silver Leggings
 item.coppertools:silver_boots.name=Silver Boots
 
+item.coppertools:christmas_pickaxe.name=Candy Cane Pickaxe
+item.coppertools:christmas_sword.name=Candy Cane Sword
+item.coppertools:christmas_shovel.name=Candy Cane Shovel
+item.coppertools:christmas_axe.name=Candy Cane Axe
+item.coppertools:christmas_hoe.name=Candy Cane Hoe
+item.coppertools:christmas_sickle.name=Candy Cane Sickle
+item.coppertools:christmas_helmet.name=Santa's Hat
+item.coppertools:christmas_chestplate.name=Santa's Jacket
+item.coppertools:christmas_leggings.name=Santa's Pants
+item.coppertools:christmas_boots.name=Santa's Boots
+
 ################################
 
 item.coppertools:wood_sickle.name=Wooden Sickle

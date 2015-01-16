@@ -29,16 +29,16 @@ public class CopperToolsEventHandler {
                 int got = rand.nextInt(chance);
                 if (got < 10) {
                     switch (got) {
-                        case 0: item = "christmas_pickaxe";
-                        case 1: item = "christmas_sword";
-                        case 2: item = "christmas_shovel";
-                        case 3: item = "christmas_axe";
-                        case 4: item = "christmas_hoe";
-                        case 5: item = "christmas_sickle";
-                        case 6: item = "christmas_helmet";
-                        case 7: item = "christmas_chestplate";
-                        case 8: item = "christmas_leggings";
-                        case 9: item = "christmas_boots";
+                        case 0: item = "christmas_pickaxe"; break;
+                        case 1: item = "christmas_sword"; break;
+                        case 2: item = "christmas_shovel"; break;
+                        case 3: item = "christmas_axe"; break;
+                        case 4: item = "christmas_hoe"; break;
+                        case 5: item = "christmas_sickle"; break;
+                        case 6: item = "christmas_helmet"; break;
+                        case 7: item = "christmas_chestplate"; break;
+                        case 8: item = "christmas_leggings"; break;
+                        case 9: item = "christmas_boots"; break;
                     }
                     addDrop(event, new ItemStack(GameRegistry.findItem(Reference.MOD_ID, item)));
                 }
