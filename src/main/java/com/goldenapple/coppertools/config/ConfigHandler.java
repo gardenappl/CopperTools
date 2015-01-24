@@ -46,6 +46,7 @@ public class ConfigHandler {
     public static boolean loadSickles;
     public static boolean loadVanillaSickles;
     public static boolean loadThaumiumSickle;
+    public static boolean loadVoidSickle;
     public static boolean loadBrassSickle;
     public static boolean loadGildedSickle;
 
@@ -145,6 +146,7 @@ public class ConfigHandler {
         loadSickles = configGeneral.getBoolean("loadSickles", CATEGORY_SICKLES, true, "Set this to false to disable sickles (will override all other options)");
         loadVanillaSickles = configGeneral.getBoolean("loadVanillaSickles", CATEGORY_SICKLES, false, "Set this to true to enable sickles made out of vanilla materials (e.g. wood or iron)");
         loadThaumiumSickle = configGeneral.getBoolean("loadThaumiumSickle", CATEGORY_SICKLES, true, "Set this to false to disable the Thaumium Sickle");
+        loadVoidSickle = configGeneral.getBoolean("loadVoidSickle", CATEGORY_SICKLES, true, "Set this to false to disable the Voidmetal Sickle");
         loadBrassSickle = configGeneral.getBoolean("loadBrassSickle", CATEGORY_SICKLES, true, "Set this to false to disable the Brass Sickle");
         loadGildedSickle = configGeneral.getBoolean("loadGildedSickle", CATEGORY_SICKLES, true, "Set this to false to disable the Gilded Iron Sickle");
 

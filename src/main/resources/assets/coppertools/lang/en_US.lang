@@ -89,6 +89,8 @@ item.coppertools:diamond_sickle.name=Diamond Sickle
 item.coppertools:gold_sickle.name=Gold Sickle
 item.coppertools:brass_sickle.name=Brass Sickle
 item.coppertools:gilded_sickle.name=Gilded Iron Sickle
+item.coppertools:thaumium_sickle.name=Thaumium Sickle
+item.coppertools:void_sickle.name=Void Sickle
 
 ################################
 

@@ -9,7 +9,7 @@ public class Names {
     public static final String diamondSickle = "diamond_sickle";
     public static final String goldSickle = "gold_sickle";
     public static final String thaumiumSickle = "thaumium_sickle";
-    public static final String voidSickle = "thaumium_sickle";
+    public static final String voidSickle = "void_sickle";
     public static final String brassSickle = "brass_sickle";
     public static final String gildedSickle = "gilded_sickle";
     public static final String manasteelSickle = "manasteel_sickle";
