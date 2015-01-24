@@ -10,13 +10,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 
-public class CopperToolsSword extends ItemSword{
+public class ItemSwordCommon extends ItemSword{
 
     private String repairOre;
     private ItemStack repairItem;
     private boolean useObsidian;
 
-    public CopperToolsSword(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
+    public ItemSwordCommon(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
@@ -24,7 +24,7 @@ public class CopperToolsSword extends ItemSword{
         this.useObsidian = useObsidian;
     }
 
-    public CopperToolsSword(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
+    public ItemSwordCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);

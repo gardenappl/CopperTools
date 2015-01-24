@@ -22,7 +22,7 @@ import java.util.Set;
 
 //Contains a lot of "stolen" code from CoFHCore https://github.com/CoFH/CoFHCore
 
-public class CopperToolsSickle extends ItemTool {
+public class ItemSickleCommon extends ItemTool {
     private static final Set<Material> effectiveMaterials = Sets.newHashSet(Material.leaves, Material.plants, Material.vine, Material.web);
     private static final Set<String> toolClasses = Sets.newHashSet("sickle");
 
@@ -30,7 +30,7 @@ public class CopperToolsSickle extends ItemTool {
     private ItemStack repairItem;
     private boolean useObsidian;
 
-    public CopperToolsSickle(ToolMaterial material, String name, String matRepair, boolean useObsidian){
+    public ItemSickleCommon(ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairOre = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
@@ -38,7 +38,7 @@ public class CopperToolsSickle extends ItemTool {
         this.useObsidian = useObsidian;
     }
 
-    public CopperToolsSickle(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
+    public ItemSickleCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairItem = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);

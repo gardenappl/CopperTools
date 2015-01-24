@@ -7,16 +7,16 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 
-public class CopperToolsAxe extends ItemAxe{
+public class ItemPickaxeCommon extends ItemPickaxe {
 
     private String repairOre;
     private ItemStack repairItem;
     private boolean useObsidian;
 
-    public CopperToolsAxe(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
+    public ItemPickaxeCommon(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
@@ -24,7 +24,7 @@ public class CopperToolsAxe extends ItemAxe{
         this.useObsidian = useObsidian;
     }
 
-    public CopperToolsAxe(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
+    public ItemPickaxeCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
         setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
