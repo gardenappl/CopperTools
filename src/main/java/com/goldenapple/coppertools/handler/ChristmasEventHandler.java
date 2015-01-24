@@ -14,7 +14,7 @@ import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 
 import java.util.*;
 
-public class CopperToolsEventHandler {
+public class ChristmasEventHandler {
     Random rand = new Random();
 
     @SubscribeEvent

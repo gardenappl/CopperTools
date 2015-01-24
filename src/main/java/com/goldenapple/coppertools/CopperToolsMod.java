@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools;
 
 import com.goldenapple.coppertools.config.ConfigHandler;
-import com.goldenapple.coppertools.handler.CopperToolsEventHandler;
+import com.goldenapple.coppertools.handler.ChristmasEventHandler;
 import com.goldenapple.coppertools.init.ModItems;
 import com.goldenapple.coppertools.init.Recipes;
 import com.goldenapple.coppertools.util.LogHelper;
@@ -41,7 +41,7 @@ public class CopperToolsMod {
         isTwilightLoaded = Loader.isModLoaded("TwilightForest");
         isPneumaticLoaded = Loader.isModLoaded("PneumaticCraft");
 
-        if(CopperToolsEventHandler.isChristmas()) LogHelper.info("It's the holiday season! Now go kill some zombies to get Santa's Armor! In the name of Christmas!");
+        if(ChristmasEventHandler.isChristmas()) LogHelper.info("It's the holiday season! Now go kill some zombies to get Santa's Armor! In the name of Christmas!");
 
         ModItems.init();
 
@@ -52,7 +52,7 @@ public class CopperToolsMod {
     public static void init(FMLInitializationEvent event){
         Recipes.init();
 
-        MinecraftForge.EVENT_BUS.register(new CopperToolsEventHandler());
+        MinecraftForge.EVENT_BUS.register(new ChristmasEventHandler());
 
         LogHelper.info("Init complete!");
     }
