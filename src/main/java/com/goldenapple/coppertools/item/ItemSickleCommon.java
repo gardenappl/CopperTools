@@ -98,7 +98,6 @@ public class ItemSickleCommon extends ItemTool {
         boolean used = false;
 
         if(!block.getMaterial().equals(Material.leaves)) { //Harvesting plants in a 3x1x3 area
-            LogHelper.info("no leaves");
             for (int i = x - 1; i <= x + 1; i++) {
                 for (int k = z - 1; k <= z + 1; k++) {
                     if (effectiveMaterials.contains(world.getBlock(i, y, k).getMaterial())) {
@@ -108,7 +107,6 @@ public class ItemSickleCommon extends ItemTool {
                 }
             }
         }else{ //Harvesting leaves in a 3x3x3 area
-            LogHelper.info("leaf!!!");
             for (int a = x - 1; a <= x + 1; a++) {
                 for (int b = y - 1; b <= y + 1; b++){
                     for (int c = z - 1; c <= z + 1; c++) {
