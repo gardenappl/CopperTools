@@ -57,7 +57,7 @@ public class ChristmasEventHandler {
     public static boolean isChristmas(){
         Calendar calendar = Calendar.getInstance();
         if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DAY_OF_MONTH) >= 24) return true;
-        else if(calendar.get(Calendar.MONTH) == Calendar.JANUARY && calendar.get(Calendar.DAY_OF_MONTH) <= 7) return true; //Over here in Ukraine we celebrate Christmas on thr 6th of January
+        else if(calendar.get(Calendar.MONTH) == Calendar.JANUARY && calendar.get(Calendar.DAY_OF_MONTH) <= 7) return true; //Over here in Ukraine we celebrate Christmas on the 6th of January
         else return false;
     }
 }

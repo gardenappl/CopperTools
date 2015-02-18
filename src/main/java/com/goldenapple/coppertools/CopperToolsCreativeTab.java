@@ -8,24 +8,33 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class CopperToolsCreativeTab {
-    public static final CreativeTabs CopperToolsTab = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
-        @Override
-        public Item getTabIconItem() {
-            if (ConfigHandler.loadCopper){
-                return GameRegistry.findItem(Reference.MOD_ID, "copper_pickaxe");
-            }else {
-                return Items.iron_pickaxe;
-            }
+    public static CreativeTabs tabTools;
+    public static CreativeTabs tabCombat;
+
+    public static void init() {
+        if (ConfigHandler.creativeTabs >= 1) {
+            tabTools = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
+                @Override
+                public Item getTabIconItem() {
+                    if (ConfigHandler.loadCopper) {
+                        return GameRegistry.findItem(Reference.MOD_ID, "copper_pickaxe");
+                    } else {
+                        return Items.iron_pickaxe;
+                    }
+                }
+            };
         }
-    };
-    public static final CreativeTabs CopperToolsCombatTab = new CreativeTabs(Reference.MOD_ID.toLowerCase() + "_combat") {
-        @Override
-        public Item getTabIconItem() {
-            if (ConfigHandler.loadSilver){
-                return GameRegistry.findItem(Reference.MOD_ID, "silver_chestplate");
-            }else {
-                return Items.chainmail_chestplate;
-            }
+        if (ConfigHandler.creativeTabs == 2) {
+            tabCombat = new CreativeTabs(Reference.MOD_ID.toLowerCase() + "_combat") {
+                @Override
+                public Item getTabIconItem() {
+                    if (ConfigHandler.loadSilver){
+                        return GameRegistry.findItem(Reference.MOD_ID, "silver_sword");
+                    }else {
+                        return Items.chainmail_chestplate;
+                    }
+                }
+            };
         }
-    };
+    }
 }

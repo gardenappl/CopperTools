@@ -1,5 +1,8 @@
-itemGroup.coppertools=Copper Tools
-itemGroup.coppertools_combat=Copper Tools лол
+itemGroup.coppertools=Copper Tools инструменты
+itemGroup.coppertools_combat=Copper Tools оружие и доспехи
+
+coppertools.tooltip.katana1=Ведь все знают, что деревянные
+coppertools.tooltip.katana2=катаны - самые крутые
 
 ################################
 
@@ -68,6 +71,17 @@ item.coppertools:silver_helmet.name=Серебряный шлем
 item.coppertools:silver_chestplate.name=Серебряный нагрудник
 item.coppertools:silver_leggings.name=Серебряные поножи
 item.coppertools:silver_boots.name=Серебряные ботинки
+
+item.coppertools:emerald_pickaxe.name=Изумрудная кирка
+item.coppertools:emerald_sword.name=Изумрудный меч
+item.coppertools:emerald_shovel.name=Изумрудная лопата
+item.coppertools:emerald_axe.name=Изумрудный топор
+item.coppertools:emerald_hoe.name=Изумрудная мотыга
+item.coppertools:emerald_sickle.name=Изумурудный серп
+item.coppertools:emerald_helmet.name=Изумурдный шлем
+item.coppertools:emerald_chestplate.name=Изумрудный нагрудник
+item.coppertools:emerald_leggings.name=Изумрудные поножи
+item.coppertools:emerald_boots.name=Изумрудные ботинки
 
 item.coppertools:christmas_pickaxe.name=Конфетная кирка
 item.coppertools:christmas_sword.name=Конфетный меч

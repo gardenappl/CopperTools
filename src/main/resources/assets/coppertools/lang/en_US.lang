@@ -1,6 +1,9 @@
 itemGroup.coppertools=Copper Tools
 itemGroup.coppertools_combat=Copper Tools Combat
 
+coppertools.tooltip.katana1=Simply because Wooden
+coppertools.tooltip.katana2=Katanas Are Even Better
+
 ################################
 
 item.coppertools:copper_pickaxe.name=Copper Pickaxe
@@ -69,6 +72,17 @@ item.coppertools:silver_chestplate.name=Silver Chestplate
 item.coppertools:silver_leggings.name=Silver Leggings
 item.coppertools:silver_boots.name=Silver Boots
 
+item.coppertools:emerald_pickaxe.name=Emerald Pickaxe
+item.coppertools:emerald_sword.name=Emerald Sword
+item.coppertools:emerald_shovel.name=Emerald Shovel
+item.coppertools:emerald_axe.name=Emerald Axe
+item.coppertools:emerald_hoe.name=Emerald Hoe
+item.coppertools:emerald_sickle.name=Emerald Sickle
+item.coppertools:emerald_helmet.name=Emerald Helmet
+item.coppertools:emerald_chestplate.name=Emerald Chestplate
+item.coppertools:emerald_leggings.name=Emerald Leggings
+item.coppertools:emerald_boots.name=Emerald Boots
+
 item.coppertools:christmas_pickaxe.name=Candy Cane Pickaxe
 item.coppertools:christmas_sword.name=Candy Cane Sword
 item.coppertools:christmas_shovel.name=Candy Cane Shovel
@@ -116,5 +130,5 @@ item.coppertools:peridot_boots.name=Peridot Boots
 
 ################################
 
-item.coppertools:wooden_saber.name=Wooden Saber
+item.coppertools:wooden_saber.name=Wooden Katana
 item.coppertools:obsidian_rod.name=Obsidian Rod

@@ -1,7 +1,6 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.CopperToolsCreativeTab;
-import com.goldenapple.coppertools.util.LogHelper;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import com.google.common.collect.Sets;
@@ -10,6 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -33,7 +33,11 @@ public class ItemSickleCommon extends ItemTool {
     public ItemSickleCommon(ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
+        if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabTools);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -41,7 +45,11 @@ public class ItemSickleCommon extends ItemTool {
     public ItemSickleCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(1.0F, material, effectiveMaterials);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
+        if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabTools);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }

@@ -6,6 +6,7 @@ import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
@@ -19,7 +20,11 @@ public class ItemAxeCommon extends ItemAxe{
     public ItemAxeCommon(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
+        if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabTools);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -27,7 +32,11 @@ public class ItemAxeCommon extends ItemAxe{
     public ItemAxeCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
+        if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabTools);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }

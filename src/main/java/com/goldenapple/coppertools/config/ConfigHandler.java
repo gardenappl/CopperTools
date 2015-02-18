@@ -22,6 +22,7 @@ public class ConfigHandler {
     private static Configuration configEnderium;
     private static Configuration configSilver;
     private static Configuration configHoliday;
+    private static Configuration configEmerald;
 
     private static final String CATEGORY_SICKLES = "sickles";
     private static final String CATEGORY_SETS = "sets";
@@ -32,6 +33,7 @@ public class ConfigHandler {
     public static boolean loadLead;
     public static boolean loadEnderium;
     public static boolean loadSilver;
+    public static boolean loadEmerald;
 
     public static boolean loadHoliday;
     public static boolean loadSaber;
@@ -40,8 +42,9 @@ public class ConfigHandler {
 
     public static boolean holidaySpiritLivesForever;
     public static boolean platinumRequiresObsidian;
-    public static boolean dumpAllOres;
+    public static boolean emeraldRequiresObsidian;
     public static int chanceOfGoodChristmas;
+    public static int creativeTabs;
 
     public static boolean loadSickles;
     public static boolean loadVanillaSickles;
@@ -120,6 +123,15 @@ public class ConfigHandler {
         if(configHoliday.hasChanged()){
             configHoliday.save();
         }
+
+        if(configEmerald == null){
+            configEmerald = new Configuration(new File(path + "emerald.cfg"));
+        }
+        ModToolMaterial.EMERALD = loadProperty(configEmerald, "emerald", ModToolMaterial.Default.EMERALD);
+        ModArmorMaterial.EMERALD = loadProperty(configEmerald, "emerald", ModArmorMaterial.Default.EMERALD);
+        if(configEmerald.hasChanged()){
+            configEmerald.save();
+        }
     }
 
     private static void loadGeneral(){
@@ -133,6 +145,7 @@ public class ConfigHandler {
         loadLead = configGeneral.getBoolean("loadLead", CATEGORY_SETS, true, "Set this to false to disable lead tools & armor");
         loadSilver = configGeneral.getBoolean("loadSilver", CATEGORY_SETS, true, "Set this to false to disable silver tools & armor");
         loadEnderium = configGeneral.getBoolean("loadEnderium", CATEGORY_SETS, true, "Set this to false to disable enderium tools & armor");
+        loadEmerald = configGeneral.getBoolean("loadEmerald", CATEGORY_SETS, true, "Set this to false to disable emerald tools & armor");
         loadGemArmor = configGeneral.getBoolean("loadGemArmor", CATEGORY_SETS, true, "Set this to false to disable gem armor");
 
         chanceOfGoodChristmas = configGeneral.getInt("chanceOfGoodChristmas", Configuration.CATEGORY_GENERAL, 50, 1, 9000, "1 in X chance that a hostile mob will drop a piece of Christmas equipment");
@@ -141,7 +154,8 @@ public class ConfigHandler {
         loadObsidianRod = configGeneral.getBoolean("loadObsidianRod", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Obsidian Rod");
         holidaySpiritLivesForever = configGeneral.getBoolean("holidaySpiritLivesForever", Configuration.CATEGORY_GENERAL, false, "Set this to true if you love Christmas so much that you want to celebrate it forever!");
         platinumRequiresObsidian = configGeneral.getBoolean("platinumRequiresObsidian", Configuration.CATEGORY_GENERAL, true, "Set this to false to allow crafting platinum tools with regular sticks");
-        dumpAllOres = configGeneral.getBoolean("dumpAllOres", Configuration.CATEGORY_GENERAL, false, "Set this to true to log every single OreDictionary ore");
+        emeraldRequiresObsidian = configGeneral.getBoolean("emeraldRequiresObsidian", Configuration.CATEGORY_GENERAL, true, "Set this to false to allow crafting emerald tools with regular sticks");
+        creativeTabs = configGeneral.getInt("creativeTabs", Configuration.CATEGORY_GENERAL, 2, 0, 2, "Set this to 0 to disable Creative Tabs, items will be registered in Vanilla tabs. Set this to 1 to have one giant tab. Set this to 2 to have separate Tools & Combat tabs");
 
         loadSickles = configGeneral.getBoolean("loadSickles", CATEGORY_SICKLES, true, "Set this to false to disable sickles (will override all other options)");
         loadVanillaSickles = configGeneral.getBoolean("loadVanillaSickles", CATEGORY_SICKLES, false, "Set this to true to enable sickles made out of vanilla materials (e.g. wood or iron)");

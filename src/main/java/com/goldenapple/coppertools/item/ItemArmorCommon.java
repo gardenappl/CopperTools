@@ -6,6 +6,7 @@ import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -18,14 +19,26 @@ public class ItemArmorCommon extends ItemArmor{
     public ItemArmorCommon(ItemArmor.ArmorMaterial material, String name, String matRepair, int type){
         super(material, 1, type);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
+        if(CopperToolsCreativeTab.tabCombat != null) {
+            setCreativeTab(CopperToolsCreativeTab.tabCombat);
+        }else if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabCombat);
+        }
         setUnlocalizedName(name);
     }
 
     public ItemArmorCommon(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type){
         super(material, 1, type);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
+        if(CopperToolsCreativeTab.tabCombat != null) {
+            setCreativeTab(CopperToolsCreativeTab.tabCombat);
+        }else if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabCombat);
+        }
         setUnlocalizedName(name);
     }
 

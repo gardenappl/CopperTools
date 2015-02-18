@@ -6,6 +6,7 @@ import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -19,7 +20,13 @@ public class ItemSwordCommon extends ItemSword{
     public ItemSwordCommon(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
         super(material);
         repairOre = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
+        if(CopperToolsCreativeTab.tabCombat != null) {
+            setCreativeTab(CopperToolsCreativeTab.tabCombat);
+        }else if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabCombat);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }
@@ -27,7 +34,13 @@ public class ItemSwordCommon extends ItemSword{
     public ItemSwordCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
         super(material);
         repairItem = matRepair;
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsCombatTab);
+        if(CopperToolsCreativeTab.tabCombat != null) {
+            setCreativeTab(CopperToolsCreativeTab.tabCombat);
+        }else if(CopperToolsCreativeTab.tabTools != null){
+            setCreativeTab(CopperToolsCreativeTab.tabTools);
+        }else{
+            setCreativeTab(CreativeTabs.tabCombat);
+        }
         setUnlocalizedName(name);
         this.useObsidian = useObsidian;
     }

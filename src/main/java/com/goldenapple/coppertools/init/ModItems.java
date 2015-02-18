@@ -1,10 +1,11 @@
 package com.goldenapple.coppertools.init;
 
-import com.goldenapple.coppertools.CopperToolsMod;
+import com.goldenapple.coppertools.CopperTools;
 import com.goldenapple.coppertools.handler.ChristmasEventHandler;
 import com.goldenapple.coppertools.item.special.ItemSickleGildedIron;
 import com.goldenapple.coppertools.item.special.ItemSickleThaumium;
 import com.goldenapple.coppertools.item.special.ItemSickleVoid;
+import com.goldenapple.coppertools.item.special.ItemSwordWooden;
 import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.config.ModArmorMaterial;
@@ -18,7 +19,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
-    public static final ItemSwordCommon woodSaber = new ItemSwordCommon(Item.ToolMaterial.STONE, Names.woodSaber, "logWood", false);
     public static final ItemCommon obsidianRod = new ItemCommon(Names.obsidianRod);
 
     public static final ItemSickleCommon woodSickle = new ItemSickleCommon(Item.ToolMaterial.WOOD, Names.woodSickle, "plankWood", false);
@@ -27,9 +27,6 @@ public class ModItems {
     public static final ItemSickleCommon diamondSickle = new ItemSickleCommon(Item.ToolMaterial.EMERALD, Names.diamondSickle, "gemDiamond", false);
     public static final ItemSickleCommon goldSickle = new ItemSickleCommon(Item.ToolMaterial.GOLD, Names.goldSickle, "ingotGold", false);
     public static final ItemSickleCommon brassSickle = new ItemSickleCommon(ModToolMaterial.BRASS, Names.brassSickle, "ingotBrass", false);
-    public static final ItemSickleCommon gildedSickle = new ItemSickleGildedIron();
-    public static final ItemSickleCommon thaumiumSickle = new ItemSickleThaumium();
-    public static final ItemSickleCommon voidSickle = new ItemSickleVoid();
 
     public static void init() {
         if(ConfigHandler.loadObsidianRod) {
@@ -37,7 +34,7 @@ public class ModItems {
             OreDictionary.registerOre("rodObsidian", obsidianRod);
         }
         if(ConfigHandler.loadSaber) {
-            GameRegistry.registerItem(woodSaber, Names.woodSaber);
+            GameRegistry.registerItem(new ItemSwordWooden(), Names.woodKatana);
         }
         if (ConfigHandler.loadCopper){
             registerSet(ModToolMaterial.COPPER, ModArmorMaterial.COPPER, "copper", "ingotCopper", false);
@@ -48,10 +45,10 @@ public class ModItems {
         if(ConfigHandler.loadLead){
             registerSet(ModToolMaterial.LEAD, ModArmorMaterial.LEAD, "lead", "ingotLead", false);
         }
-        if(ConfigHandler.loadCompressed && CopperToolsMod.isPneumaticLoaded) {
+        if(ConfigHandler.loadCompressed && CopperTools.isPneumaticLoaded) {
             registerSet(ModToolMaterial.COMPRESSED, ModArmorMaterial.COMPRESSED, "compressed", new ItemStack(GameRegistry.findItem("PneumaticCraft", "ingotIronCompressed")), false);
         }
-        if(ConfigHandler.loadEnderium){
+        if(ConfigHandler.loadEnderium && CopperTools.isTELoaded){
             registerSet(ModToolMaterial.ENDERIUM, ModArmorMaterial.ENDERIUM, "enderium", "ingotEnderium", true);
         }
         if(ConfigHandler.loadSilver){
@@ -68,14 +65,14 @@ public class ModItems {
             if (ConfigHandler.loadBrassSickle) {
                 GameRegistry.registerItem(brassSickle, Names.brassSickle);
             }
-            if (ConfigHandler.loadGildedSickle && CopperToolsMod.isSteamPowerLoaded) {
-                GameRegistry.registerItem(gildedSickle, Names.gildedSickle);
+            if (ConfigHandler.loadGildedSickle && CopperTools.isSteamPowerLoaded) {
+                GameRegistry.registerItem(new ItemSickleGildedIron(), Names.gildedSickle);
             }
-            if(ConfigHandler.loadThaumiumSickle && CopperToolsMod.isThaumcraftLoaded){
-                GameRegistry.registerItem(thaumiumSickle, Names.thaumiumSickle);
+            if(ConfigHandler.loadThaumiumSickle && CopperTools.isThaumcraftLoaded){
+                GameRegistry.registerItem(new ItemSickleThaumium(), Names.thaumiumSickle);
             }
-            if(ConfigHandler.loadVoidSickle && CopperToolsMod.isThaumcraftLoaded){
-                GameRegistry.registerItem(voidSickle, Names.voidSickle);
+            if(ConfigHandler.loadVoidSickle && CopperTools.isThaumcraftLoaded){
+                GameRegistry.registerItem(new ItemSickleVoid(), Names.voidSickle);
             }
         }
         if(ConfigHandler.loadGemArmor){
@@ -86,6 +83,9 @@ public class ModItems {
         }
         if((ConfigHandler.loadHoliday && ChristmasEventHandler.isChristmas()) || ConfigHandler.holidaySpiritLivesForever){
             registerSet(ModToolMaterial.HOLIDAY, ModArmorMaterial.HOLIDAY, "christmas", new ItemStack(Blocks.ice), false);
+        }
+        if(ConfigHandler.loadEmerald){
+            registerSet(ModToolMaterial.EMERALD, ModArmorMaterial.EMERALD, "emerald", "gemEmerald", ConfigHandler.emeraldRequiresObsidian);
         }
     }
 

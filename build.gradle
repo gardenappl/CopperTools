@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-1.2"
+version = "1.7.10-1.3"
 group= "com.goldenapple.coppertools" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "CopperTools"
 
@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies{
-
+    compile files('Thaumcraft-deobf-1.7.10-4.2.3.3.jar')
 }
 
 processResources

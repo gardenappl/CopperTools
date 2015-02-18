@@ -12,6 +12,7 @@ public class ModToolMaterial {
     public static Item.ToolMaterial ENDERIUM;
     public static Item.ToolMaterial SILVER;
     public static Item.ToolMaterial HOLIDAY;
+    public static Item.ToolMaterial EMERALD;
 
     static enum Default { //Mining level, durability, speed, damage, enchantibility
         COPPER(1, 131, 7, 1, 18),
@@ -20,7 +21,8 @@ public class ModToolMaterial {
         COMPRESSED(2, 500, 6, 2, 14),
         ENDERIUM(5, 2000, 10, 4, 22),
         SILVER(2, 250, 8, 2.5F, 18),
-        HOLIDAY(0, 32, 12.0F, 0.0F, 22);
+        HOLIDAY(0, 32, 12.0F, 0.0F, 22),
+        EMERALD(3, 1561, 10.0F, 3.0F, 10);
 
         private int harvestLevel;
         private int durability;

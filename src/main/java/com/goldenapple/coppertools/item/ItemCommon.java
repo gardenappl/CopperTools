@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemCommon extends Item{
     public ItemCommon(String name){
-        setCreativeTab(CopperToolsCreativeTab.CopperToolsTab);
+        setCreativeTab(CopperToolsCreativeTab.tabTools);
         setUnlocalizedName(name);
     }
 

@@ -1,13 +1,14 @@
 package com.goldenapple.coppertools.reference;
 
 public class Names {
-    public static final String woodSaber = "wooden_saber";
+    public static final String woodKatana = "wooden_saber";
     public static final String obsidianRod = "obsidian_rod";
     public static final String woodSickle = "wood_sickle";
     public static final String stoneSickle = "stone_sickle";
     public static final String ironSickle = "iron_sickle";
     public static final String diamondSickle = "diamond_sickle";
     public static final String goldSickle = "gold_sickle";
+    public static final String emeraldSickle = "emerald_sickle";
     public static final String thaumiumSickle = "thaumium_sickle";
     public static final String voidSickle = "void_sickle";
     public static final String brassSickle = "brass_sickle";
