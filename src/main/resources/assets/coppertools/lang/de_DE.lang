@@ -1,0 +1,134 @@
+itemGroup.coppertools=Copper Tools
+itemGroup.coppertools_combat=Copper Tools Kampf
+
+coppertools.tooltip.katana1=Denn hölzerne Katanas
+coppertools.tooltip.katana2=sind einfach besser
+
+################################
+
+item.coppertools:copper_pickaxe.name=Kupferspitzhacke
+item.coppertools:copper_sword.name=Kupferschwert
+item.coppertools:copper_shovel.name=Kupferschaufel
+item.coppertools:copper_axe.name=Kupferaxt
+item.coppertools:copper_hoe.name=Kupferhacke
+item.coppertools:copper_sickle.name=Kupfersichel
+item.coppertools:copper_helmet.name=Kupferhelm
+item.coppertools:copper_chestplate.name=Kupferbrustpanzer
+item.coppertools:copper_leggings.name=Kupferbeinschutz
+item.coppertools:copper_boots.name=Kupferstiefel
+
+item.coppertools:platinum_pickaxe.name=Platinspitzhacke
+item.coppertools:platinum_sword.name=Platinschwert
+item.coppertools:platinum_shovel.name=Platinschaufel
+item.coppertools:platinum_axe.name=Platinaxt
+item.coppertools:platinum_hoe.name=Platinhacke
+item.coppertools:platinum_sickle.name=Platinsichel
+item.coppertools:platinum_helmet.name=Platinhelm
+item.coppertools:platinum_chestplate.name=Platinbrustpanzer
+item.coppertools:platinum_leggings.name=Platinbeinschutz
+item.coppertools:platinum_boots.name=Platinstiefel
+
+item.coppertools:compressed_pickaxe.name=Komprimierte Eisenspitzhacke
+item.coppertools:compressed_sword.name=Komprimiertes Eisenschwert
+item.coppertools:compressed_shovel.name=Komprimierte Eisenschaufel
+item.coppertools:compressed_axe.name=Komprimierte Eisenaxt
+item.coppertools:compressed_hoe.name=Komprimierte Eisenhacke
+item.coppertools:compressed_sickle.name=Komprimierte Eisensichel
+item.coppertools:compressed_helmet.name=Komprimierter Eisenhelm
+item.coppertools:compressed_chestplate.name=Komprimierter Eisenbrustpanzer
+item.coppertools:compressed_leggings.name=Komprimierter Eisenbeinschutz
+item.coppertools:compressed_boots.name=Komprimierte Eisenstiefel
+
+item.coppertools:lead_pickaxe.name=Bleispitzhacke
+item.coppertools:lead_sword.name=Bleischwert
+item.coppertools:lead_shovel.name=Bleischaufel
+item.coppertools:lead_axe.name=Bleiaxt
+item.coppertools:lead_hoe.name=Bleihacke
+item.coppertools:lead_sickle.name=Bleisichel
+item.coppertools:lead_helmet.name=Bleihelm
+item.coppertools:lead_chestplate.name=Bleibrustpanzer
+item.coppertools:lead_leggings.name=Bleibeinschutz
+item.coppertools:lead_boots.name=Bleistiefel
+
+item.coppertools:enderium_pickaxe.name=Enderiumspitzhacke
+item.coppertools:enderium_sword.name=Enderiumschwert
+item.coppertools:enderium_shovel.name=Enderiumschaufel
+item.coppertools:enderium_axe.name=Enderiumaxt
+item.coppertools:enderium_hoe.name=Enderiumhacke
+item.coppertools:enderium_sickle.name=Enderiumsichel
+item.coppertools:enderium_helmet.name=Enderiumhelm
+item.coppertools:enderium_chestplate.name=Enderiumbrustpanzer
+item.coppertools:enderium_leggings.name=Enderiumbeinschutz
+item.coppertools:enderium_boots.name=Enderiumstiefel
+
+item.coppertools:silver_pickaxe.name=Silberspitzhacke
+item.coppertools:silver_sword.name=Silberschwert
+item.coppertools:silver_shovel.name=Silberschaufel
+item.coppertools:silver_axe.name=Silberaxt
+item.coppertools:silver_hoe.name=Silberhacke
+item.coppertools:silver_sickle.name=Silbersichel
+item.coppertools:silver_helmet.name=Silberhelm
+item.coppertools:silver_chestplate.name=Silberbrustpanzer
+item.coppertools:silver_leggings.name=Silberbeinschutz
+item.coppertools:silver_boots.name=Silberstiefel
+
+item.coppertools:emerald_pickaxe.name=Smaragdspitzhacke
+item.coppertools:emerald_sword.name=Smaragdschwert
+item.coppertools:emerald_shovel.name=Smaragdschaufel
+item.coppertools:emerald_axe.name=Smaragdaxt
+item.coppertools:emerald_hoe.name=Smaragdhacke
+item.coppertools:emerald_sickle.name=Smaragdsichel
+item.coppertools:emerald_helmet.name=Smaragdhelm
+item.coppertools:emerald_chestplate.name=Smaragdbrustpanzer
+item.coppertools:emerald_leggings.name=Smaragdbeinschutz
+item.coppertools:emerald_boots.name=Smaragdstiefel
+
+item.coppertools:christmas_pickaxe.name=Zuckerstangen-Spitzhacke
+item.coppertools:christmas_sword.name=Zuckerstangen-Schwert
+item.coppertools:christmas_shovel.name=Zuckerstangen-Schaufel
+item.coppertools:christmas_axe.name=Zuckerstangen-Axt
+item.coppertools:christmas_hoe.name=Zuckerstangen-Hacke
+item.coppertools:christmas_sickle.name=Zuckerstangen-Sichel
+item.coppertools:christmas_helmet.name=Weihnachtsmütze
+item.coppertools:christmas_chestplate.name=Weihnachtsmann-Jacke
+item.coppertools:christmas_leggings.name=Weihnachtsmann-Hose
+item.coppertools:christmas_boots.name=Schneestiefel
+
+################################
+
+item.coppertools:wood_sickle.name=Holzsichel
+item.coppertools:stone_sickle.name=Steinsichel
+item.coppertools:iron_sickle.name=Eisensichel
+item.coppertools:diamond_sickle.name=Diamantsichel
+item.coppertools:gold_sickle.name=Goldsichel
+item.coppertools:brass_sickle.name=Messingsichel
+item.coppertools:gilded_sickle.name=Vergoldete Eisensichel
+item.coppertools:thaumium_sickle.name=Thaumiumsichel
+item.coppertools:void_sickle.name=Leermetallsichel
+
+################################
+
+item.coppertools:amethyst_helmet.name=Amethysthelm
+item.coppertools:amethyst_chestplate.name=Amethystbrustpanzer
+item.coppertools:amethyst_leggings.name=Amethystbeinschutz
+item.coppertools:amethyst_boots.name=Amethyststiefel
+
+item.coppertools:ruby_helmet.name=Rubinhelm
+item.coppertools:ruby_chestplate.name=Rubinbrustpanzer
+item.coppertools:ruby_leggings.name=Rubinbeinschutz
+item.coppertools:ruby_boots.name=Rubinstiefel
+
+item.coppertools:sapphire_helmet.name=Saphirhelm
+item.coppertools:sapphire_chestplate.name=Saphirbrustpanzer
+item.coppertools:sapphire_leggings.name=Saphirbeinschutz
+item.coppertools:sapphire_boots.name=Saphirstiefel
+
+item.coppertools:peridot_helmet.name=Olivinhelm
+item.coppertools:peridot_chestplate.name=Olivinbrustpanzer
+item.coppertools:peridot_leggings.name=Olivinbeinschutz
+item.coppertools:peridot_boots.name=Olivinstiefel
+
+################################
+
+item.coppertools:wooden_saber.name=Holzkatana
+item.coppertools:obsidian_rod.name=Obsidianstab
