@@ -23,15 +23,15 @@ import java.util.Set;
 //Contains a lot of "stolen" code from CoFHCore https://github.com/CoFH/CoFHCore
 
 public class ItemSickleCommon extends ItemTool {
-    private static final Set<Material> effectiveMaterials = Sets.newHashSet(Material.leaves, Material.plants, Material.vine, Material.web);
+    public static final Set<Material> effectiveMaterials = Sets.newHashSet(Material.leaves, Material.plants, Material.vine, Material.web);
     private static final Set<String> toolClasses = Sets.newHashSet("sickle");
 
     private String repairOre;
     private ItemStack repairItem;
-    private boolean useObsidian;
+    private boolean useObsidian; //used for textures
 
     public ItemSickleCommon(ToolMaterial material, String name, String matRepair, boolean useObsidian){
-        super(1.0F, material, effectiveMaterials);
+        super(2.0F, material, effectiveMaterials);
         repairOre = matRepair;
         if(CopperToolsCreativeTab.tabTools != null){
             setCreativeTab(CopperToolsCreativeTab.tabTools);
@@ -43,7 +43,7 @@ public class ItemSickleCommon extends ItemTool {
     }
 
     public ItemSickleCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
-        super(1.0F, material, effectiveMaterials);
+        super(2.0F, material, effectiveMaterials);
         repairItem = matRepair;
         if(CopperToolsCreativeTab.tabTools != null){
             setCreativeTab(CopperToolsCreativeTab.tabTools);
@@ -67,11 +67,17 @@ public class ItemSickleCommon extends ItemTool {
     }
 
     @Override
+    public float func_150893_a(ItemStack stack, Block block) //Returns efficiency of mining given block
+    {
+        return effectiveMaterials.contains(block.getMaterial()) ? efficiencyOnProperMaterial : 1.0F;
+    }
+
+    @Override
     public boolean isItemTool(ItemStack stack){
         return true;
     }
 
-    private void harvestBlock(World world, int x, int y, int z, EntityPlayer player){
+    public void harvestBlock(World world, int x, int y, int z, EntityPlayer player){
         Block block = world.getBlock(x, y, z);
         if (block.getBlockHardness(world, x, y, z) < 0 || block.equals(Blocks.waterlily)) {
             return;
@@ -87,22 +93,36 @@ public class ItemSickleCommon extends ItemTool {
         world.setBlockToAir(x, y, z);
     }
 
-    @Override
-    public float func_150893_a(ItemStack stack, Block block) //Returns efficiency of mining given block
-    {
-        return effectiveMaterials.contains(block.getMaterial()) ? efficiencyOnProperMaterial : 1.0F;
+    public boolean harvest(World world, Block block, int x, int y, int z, EntityPlayer player){ //i'm not doing all of this in the onBlockDestroyed because of other sickles that handle damage differently
+        boolean used = false;
+
+        if(block.getMaterial().equals(Material.leaves)) { //Harvesting leaves in a 3x3x3 area
+            for (int a = x - 1; a <= x + 1; a++) {
+                for (int b = y - 1; b <= y + 1; b++){
+                    for (int c = z - 1; c <= z + 1; c++) {
+                        if (effectiveMaterials.contains(world.getBlock(a, b, c).getMaterial())) {
+                            harvestBlock(world, a, b, c, player);
+                            used = true;
+                        }
+                    }
+                }
+            }
+        }else{ //Harvesting grass in a 3x1x3 area
+            for (int a = x - 1; a <= x + 1; a++) {
+                for (int c = z - 1; c <= z + 1; c++) {
+                    if (effectiveMaterials.contains(world.getBlock(a, y, c).getMaterial())) {
+                        harvestBlock(world, a, y, c, player);
+                        used = true;
+                    }
+                }
+            }
+        }
+        return used;
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int x, int y, int z, EntityLivingBase entity) {
-        EntityPlayer player = (EntityPlayer) entity;
-
-        if (!effectiveMaterials.contains(block.getMaterial())) {
-            if (!player.capabilities.isCreativeMode) {
-                stack.damageItem(1, entity);
-            }
-            return false;
-        }
+    public boolean onBlockDestroyed(ItemStack itemStack, World world, Block block, int x, int y, int z, EntityLivingBase entity) {
+        /* EntityPlayer player = (EntityPlayer) entity;
         boolean used = false;
 
         if(!block.getMaterial().equals(Material.leaves)) { //Harvesting plants in a 3x1x3 area
@@ -132,7 +152,16 @@ public class ItemSickleCommon extends ItemTool {
                 stack.damageItem(1, entity);
             }
         }
-        return used;
+        return used; */
+        if(entity instanceof EntityPlayer) {
+            if (harvest(world, block, x, y, z, (EntityPlayer) entity)) {
+                if (!((EntityPlayer) entity).capabilities.isCreativeMode) {
+                    itemStack.damageItem(1, entity);
+                }
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

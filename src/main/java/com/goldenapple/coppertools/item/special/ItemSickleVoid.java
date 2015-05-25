@@ -22,7 +22,7 @@ public class ItemSickleVoid extends ItemSickleCommon implements IRepairable, IWa
     private Random rand = new Random();
 
     public ItemSickleVoid(){
-        super(ThaumcraftApi.toolMatVoid, Names.voidSickle, "ingotVoid", false);
+        super(ThaumcraftApi.toolMatVoid, Names.VOID_SICKLE, "ingotVoid", false);
     }
 
     @Override

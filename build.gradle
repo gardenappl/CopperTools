@@ -22,7 +22,7 @@ group= "com.goldenapple.coppertools" // http://maven.apache.org/guides/mini/guid
 archivesBaseName = "CopperTools"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.7.10-10.13.2.1291"
 }
 
 repositories {
@@ -31,6 +31,7 @@ repositories {
 
 dependencies{
     compile files('Thaumcraft-deobf-1.7.10-4.2.3.3.jar')
+    compile files('Botania r1.6-187-deobf.jar')
 }
 
 processResources

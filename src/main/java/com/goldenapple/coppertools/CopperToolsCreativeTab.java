@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools;
 
 import com.goldenapple.coppertools.config.ConfigHandler;
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +17,7 @@ public class CopperToolsCreativeTab {
             tabTools = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
                 @Override
                 public Item getTabIconItem() {
-                    if (ConfigHandler.loadCopper) {
+                    if (EquipMaterial.copper.load) { //TODO: fix this
                         return GameRegistry.findItem(Reference.MOD_ID, "copper_pickaxe");
                     } else {
                         return Items.iron_pickaxe;
@@ -28,7 +29,7 @@ public class CopperToolsCreativeTab {
             tabCombat = new CreativeTabs(Reference.MOD_ID.toLowerCase() + "_combat") {
                 @Override
                 public Item getTabIconItem() {
-                    if (ConfigHandler.loadSilver){
+                    if (EquipMaterial.silver.load){
                         return GameRegistry.findItem(Reference.MOD_ID, "silver_sword");
                     }else {
                         return Items.chainmail_chestplate;

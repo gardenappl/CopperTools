@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class ItemSickleGildedIron extends ItemSickleCommon {
     public ItemSickleGildedIron(){
-        super(EnumHelper.addToolMaterial("GILDEDIRON", 2, 250, 6.0F, 2.0F, 22), Names.gildedSickle, new ItemStack(GameRegistry.findItem("Steamcraft", "ingot"), 1, 3), false);
+        super(EnumHelper.addToolMaterial("GILDEDIRON", 2, 250, 6.0F, 2.0F, 22), Names.GILDED_SICKLE, new ItemStack(GameRegistry.findItem("Steamcraft", "ingot"), 1, 3), false);
     }
 
     @Override

@@ -9,6 +9,6 @@ import thaumcraft.api.ThaumcraftApi;
 @Optional.Interface(iface = "thaumcraft.api.IRepairable", modid = "Thaumcraft")
 public class ItemSickleThaumium extends ItemSickleCommon implements IRepairable{
     public ItemSickleThaumium(){
-        super(ThaumcraftApi.toolMatThaumium, Names.thaumiumSickle, "ingotThaumium", false);
+        super(ThaumcraftApi.toolMatThaumium, Names.THAUMIUM_SICKLE, "ingotThaumium", false);
     }
 }

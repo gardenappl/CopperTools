@@ -1,9 +1,6 @@
 itemGroup.coppertools=Copper Tools
 itemGroup.coppertools_combat=Copper Tools Combat
 
-coppertools.tooltip.katana1=Simply because Wooden
-coppertools.tooltip.katana2=Katanas Are Even Better
-
 ################################
 
 item.coppertools:copper_pickaxe.name=Copper Pickaxe
@@ -132,3 +129,9 @@ item.coppertools:peridot_boots.name=Peridot Boots
 
 item.coppertools:wooden_saber.name=Wooden Katana
 item.coppertools:obsidian_rod.name=Obsidian Rod
+
+################################
+
+config.general.tooltip=Configure general gameplay settings
+config.sickles.tooltip=Enable/Disable sickles
+config.set.tooltip=Configure properties of a specific set

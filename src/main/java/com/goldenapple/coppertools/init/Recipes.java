@@ -12,7 +12,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 public class Recipes {
     public static void init(){
         if (ConfigHandler.loadSaber){
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, Names.woodKatana)),
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, Names.WOOD_KATANA)),
                 "i",
                 "i",
                 "s", 'i', "logWood", 's', "stickWood"));
@@ -30,19 +30,20 @@ public class Recipes {
                     "o", 'o', Blocks.obsidian));
         }
 
-        if(ConfigHandler.loadCopper) registerRecipes("copper", "ingotCopper", false);
-        if(ConfigHandler.loadPlatinum) registerRecipes("platinum", "ingotPlatinum", ConfigHandler.platinumRequiresObsidian);
-        if(ConfigHandler.loadCompressed && CopperTools.isPneumaticLoaded) registerRecipes("compressed", "ingotIronCompressed", false);
-        if(ConfigHandler.loadLead) registerRecipes("lead", "ingotLead", false);
-        if(ConfigHandler.loadEnderium && CopperTools.isTELoaded) registerRecipes("enderium", "ingotEnderium", true);
-        if(ConfigHandler.loadSilver) registerRecipes("silver", "ingotSilver", false);
-        if(ConfigHandler.loadEmerald) registerRecipes("emerald", "gemEmerald", ConfigHandler.emeraldRequiresObsidian);
-        if(ConfigHandler.loadGemArmor){
-            registerArmorRecipes("sapphire", "gemSapphire");
-            registerArmorRecipes("ruby", "gemRuby");
-            registerArmorRecipes("peridot", "gemPeridot");
-            registerArmorRecipes("amethyst", "gemAmethyst");
+        registerRecipes(EquipMaterial.copper);
+        registerRecipes(EquipMaterial.platinum);
+        registerRecipes(EquipMaterial.lead);
+        registerRecipes(EquipMaterial.silver);
+        registerRecipes(EquipMaterial.emerald);
+
+        if(CopperTools.isPneumaticLoaded) registerRecipes(EquipMaterial.compressed);
+        if(CopperTools.isTELoaded) registerRecipes(EquipMaterial.enderium);
+        if(CopperTools.isBluePowerLoaded){
+            registerRecipes(EquipMaterial.ruby);
+            registerRecipes(EquipMaterial.sapphire);
+            registerRecipes(EquipMaterial.amethyst);
         }
+
         if(ConfigHandler.loadSickles) {
             if(ConfigHandler.loadVanillaSickles){
                 registerSickleRecipes("wood", "plankWood", false);
@@ -55,22 +56,26 @@ public class Recipes {
             if(ConfigHandler.loadGildedSickle && CopperTools.isSteamPowerLoaded) registerSickleRecipes("gilded", new ItemStack(GameRegistry.findItem("Steamcraft", "steamcraftIngot"), 1, 3), false);
             if(ConfigHandler.loadThaumiumSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("thaumium", "ingotThaumium", false);
             if(ConfigHandler.loadVoidSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("void", "ingotVoid", false);
+            if(ConfigHandler.loadManasteelSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("manasteel", "ingotManasteel", false);
+            if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("elementium", "ingotElementium", false);
         }
     }
 
-    private static void registerRecipes(String matName, Object material, boolean useObsidian){
-        if(material instanceof ItemStack) {
-            registerToolRecipes(matName, (ItemStack) material, useObsidian);
-            if (ConfigHandler.loadSickles) {
-                registerSickleRecipes(matName, (ItemStack) material, useObsidian);
+    private static void registerRecipes(EquipMaterial material){
+        if(material.load) {
+            if (material.repairMat instanceof ItemStack) {
+                registerToolRecipes(material.name, (ItemStack) material.repairMat, material.useObsidian);
+                if (ConfigHandler.loadSickles) {
+                    registerSickleRecipes(material.name, (ItemStack) material.repairMat, material.useObsidian);
+                }
+                registerArmorRecipes(material.name, (ItemStack) material.repairMat);
+            } else if (material.repairMat instanceof String) {
+                registerToolRecipes(material.name, (String) material.repairMat, material.useObsidian);
+                if (ConfigHandler.loadSickles) {
+                    registerSickleRecipes(material.name, (String) material.repairMat, material.useObsidian);
+                }
+                registerArmorRecipes(material.name, (String) material.repairMat);
             }
-            registerArmorRecipes(matName, (ItemStack) material);
-        }else if(material instanceof String){
-            registerToolRecipes(matName, (String) material, useObsidian);
-            if (ConfigHandler.loadSickles) {
-                registerSickleRecipes(matName, (String) material, useObsidian);
-            }
-            registerArmorRecipes(matName, (String) material);
         }
     }
 
