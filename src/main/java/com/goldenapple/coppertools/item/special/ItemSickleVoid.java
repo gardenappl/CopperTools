@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools.item.special;
 
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.item.ItemSickleCommon;
-import com.goldenapple.coppertools.reference.Names;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,9 +20,10 @@ import java.util.Random;
 })
 public class ItemSickleVoid extends ItemSickleCommon implements IRepairable, IWarpingGear{
     private Random rand = new Random();
+    public static EquipMaterial voidmetal = new EquipMaterial("void", "ingotVoid", ThaumcraftApi.toolMatVoid, null, null, null, false, false, true);
 
     public ItemSickleVoid(){
-        super(ThaumcraftApi.toolMatVoid, Names.VOID_SICKLE, "ingotVoid", false);
+        super(voidmetal);
     }
 
     @Override

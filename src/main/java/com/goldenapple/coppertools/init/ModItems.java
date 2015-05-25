@@ -7,19 +7,19 @@ import com.goldenapple.coppertools.item.special.*;
 import com.goldenapple.coppertools.reference.Names;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
     public static final ItemCommon obsidianRod = new ItemCommon(Names.OBSIDIAN_ROD);
 
-    public static final ItemSickleCommon woodSickle = new ItemSickleCommon(Item.ToolMaterial.WOOD, Names.WOOD_SICKLE, "plankWood", false);
-    public static final ItemSickleCommon stoneSickle = new ItemSickleCommon(Item.ToolMaterial.STONE, Names.STONE_SICKLE, "cobblestone", false);
-    public static final ItemSickleCommon ironSickle = new ItemSickleCommon(Item.ToolMaterial.IRON, Names.IRON_SICKLE, "ingotIron", false);
-    public static final ItemSickleCommon diamondSickle = new ItemSickleCommon(Item.ToolMaterial.EMERALD, Names.DIAMOND_SICKLE, "gemDiamond", false);
-    public static final ItemSickleCommon goldSickle = new ItemSickleCommon(Item.ToolMaterial.GOLD, Names.GOLD_SICKLE, "ingotGold", false);
-    public static final ItemSickleCommon brassSickle = new ItemSickleCommon(EquipMaterial.BRASS_MATERIAL, Names.BRASS_SICKLE, "ingotBrass", false);
+    public static final ItemSickleCommon woodSickle = new ItemSickleCommon(EquipMaterial.wood);
+    public static final ItemSickleCommon stoneSickle = new ItemSickleCommon(EquipMaterial.stone);
+    public static final ItemSickleCommon ironSickle = new ItemSickleCommon(EquipMaterial.iron);
+    public static final ItemSickleCommon diamondSickle = new ItemSickleCommon(EquipMaterial.diamond);
+    public static final ItemSickleCommon goldSickle = new ItemSickleCommon(EquipMaterial.gold);
+    public static final ItemSickleCommon brassSickle = new ItemSickleCommon(EquipMaterial.brass);
+    public static final ItemSickleCommon ironwoodSickle = new ItemSickleCommon(EquipMaterial.ironwood);
+    public static final ItemSickleCommon steeleafSickle = new ItemSickleCommon(EquipMaterial.steeleaf);
 
     public static void init() {
         if(ConfigHandler.loadObsidianRod) {
@@ -60,6 +60,12 @@ public class ModItems {
             if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded){
                 GameRegistry.registerItem(new ItemSickleElementium(), Names.ELEMENTIUM_SICKLE);
             }
+            if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded){
+                GameRegistry.registerItem(ironwoodSickle, Names.IRONWOOD_SICKLE);
+            }
+            if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded){
+                GameRegistry.registerItem(steeleafSickle, Names.STEELEAF_SICKLE);
+            }
         }
     }
 
@@ -68,85 +74,40 @@ public class ModItems {
             if(material.loadTools) registerToolSet(material);
             if(material.loadArmor) registerArmorSet(material);
             if(material.loadSickle){
-                if(material.repairMat instanceof ItemStack) {
-                    Item sickle = new ItemSickleCommon(material.toolMat, material.name + "_sickle", (ItemStack)material.repairMat, material.useObsidian);
-                    GameRegistry.registerItem(sickle, material.name + "_sickle");
-                }
-                if(material.repairMat instanceof String) {
-                    Item sickle = new ItemSickleCommon(material.toolMat, material.name + "_sickle", (String)material.repairMat, material.useObsidian);
-                    GameRegistry.registerItem(sickle, material.name + "_sickle");
-                }
+                Item sickle = new ItemSickleCommon(material);
+                GameRegistry.registerItem(sickle, material.name + "_sickle");
             }
         }
     }
 
     private static void registerToolSet(EquipMaterial material){
-        Item.ToolMaterial mat = material.toolMat;
-        if(material.repairMat instanceof ItemStack) {
-            ItemStack matRepair = (ItemStack) material.repairMat;
+        Item pickaxe = new ItemPickaxeCommon(material);
+        GameRegistry.registerItem(pickaxe, material.name + "_pickaxe");
 
-            Item pickaxe = new ItemPickaxeCommon(mat, material.name + "_pickaxe", matRepair, false);
-            GameRegistry.registerItem(pickaxe, material.name + "_pickaxe");
+        Item sword = new ItemSwordCommon(material);
+        GameRegistry.registerItem(sword, material.name + "_sword");
 
-            Item sword = new ItemSwordCommon(mat, material.name + "_sword", matRepair, false);
-            GameRegistry.registerItem(sword, material.name + "_sword");
+        Item shovel = new ItemSpadeCommon(material);
+        GameRegistry.registerItem(shovel, material.name + "_shovel");
 
-            Item shovel = new ItemSpadeCommon(mat, material.name + "_shovel", matRepair, false);
-            GameRegistry.registerItem(shovel, material.name + "_shovel");
+        Item axe = new ItemAxeCommon(material);
+        GameRegistry.registerItem(axe, material.name + "_axe");
 
-            Item axe = new ItemAxeCommon(mat, material.name + "_axe", matRepair, false);
-            GameRegistry.registerItem(axe, material.name + "_axe");
-
-            Item hoe = new ItemHoeCommon(mat, material.name + "_hoe", matRepair, false);
-            GameRegistry.registerItem(hoe, material.name + "_hoe");
-        }else if(material.repairMat instanceof String){
-            String matRepair = (String) material.repairMat;
-
-            Item pickaxe = new ItemPickaxeCommon(mat, material.name + "_pickaxe", matRepair, false);
-            GameRegistry.registerItem(pickaxe, material.name + "_pickaxe");
-
-            Item sword = new ItemSwordCommon(mat, material.name + "_sword", matRepair, false);
-            GameRegistry.registerItem(sword, material.name + "_sword");
-
-            Item shovel = new ItemSpadeCommon(mat, material.name + "_shovel", matRepair, false);
-            GameRegistry.registerItem(shovel, material.name + "_shovel");
-
-            Item axe = new ItemAxeCommon(mat, material.name + "_axe", matRepair, false);
-            GameRegistry.registerItem(axe, material.name + "_axe");
-
-            Item hoe = new ItemHoeCommon(mat, material.name + "_hoe", matRepair, false);
-            GameRegistry.registerItem(hoe, material.name + "_hoe");
-        }
+        Item hoe = new ItemHoeCommon(material);
+        GameRegistry.registerItem(hoe, material.name + "_hoe");
     }
 
     private static void registerArmorSet(EquipMaterial material){
-        ItemArmor.ArmorMaterial mat = material.armorMat;
-        if(material.repairMat instanceof ItemStack) {
-            ItemStack matRepair = (ItemStack) material.repairMat;
-            Item helmet = new ItemArmorCommon(mat, material.name + "_helmet", matRepair, 0);
-            GameRegistry.registerItem(helmet, material.name + "_helmet");
+        Item helmet = new ItemArmorCommon(material, "helmet", 0);
+        GameRegistry.registerItem(helmet, material.name + "_helmet");
 
-            Item chestplate = new ItemArmorCommon(mat, material.name + "_chestplate", matRepair, 1);
-            GameRegistry.registerItem(chestplate, material.name + "_chestplate");
+        Item chestplate = new ItemArmorCommon(material, "chestplate", 1);
+        GameRegistry.registerItem(chestplate, material.name + "_chestplate");
 
-            Item leggings = new ItemArmorCommon(mat, material.name + "_leggings", matRepair, 2);
-            GameRegistry.registerItem(leggings, material.name + "_leggings");
+        Item leggings = new ItemArmorCommon(material, "leggings", 2);
+        GameRegistry.registerItem(leggings, material.name + "_leggings");
 
-            Item boots = new ItemArmorCommon(mat, material.name + "_boots", matRepair, 3);
-            GameRegistry.registerItem(boots, material.name + "_boots");
-        }else if(material.repairMat instanceof String) {
-            String matRepair = (String) material.repairMat;
-            Item helmet = new ItemArmorCommon(mat, material.name + "_helmet", matRepair, 0);
-            GameRegistry.registerItem(helmet, material.name + "_helmet");
-
-            Item chestplate = new ItemArmorCommon(mat, material.name + "_chestplate", matRepair, 1);
-            GameRegistry.registerItem(chestplate, material.name + "_chestplate");
-
-            Item leggings = new ItemArmorCommon(mat, material.name + "_leggings", matRepair, 2);
-            GameRegistry.registerItem(leggings, material.name + "_leggings");
-
-            Item boots = new ItemArmorCommon(mat, material.name + "_boots", matRepair, 3);
-            GameRegistry.registerItem(boots, material.name + "_boots");
-        }
+        Item boots = new ItemArmorCommon(material, "boots", 3);
+        GameRegistry.registerItem(boots, material.name + "_boots");
     }
 }

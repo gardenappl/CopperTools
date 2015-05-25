@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools.item.special;
 
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.item.ItemSickleCommon;
-import com.goldenapple.coppertools.reference.Names;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -20,9 +20,10 @@ import java.util.List;
 @Optional.Interface(iface = "vazkii.botania.api.mana.IManaUsingItem", modid = "Botania")
 public class ItemSickleElementium extends ItemSickleCommon implements IManaUsingItem {
     private static int MANA_PER_DAMAGE = 60;
+    public static EquipMaterial elementium = new EquipMaterial("elementium", "ingotElementium", BotaniaAPI.elementiumToolMaterial, null, null, null, false, false, true);
 
     public ItemSickleElementium(){
-        super(BotaniaAPI.elementiumToolMaterial, Names.ELEMENTIUM_SICKLE, "ingotElementium", false);
+        super(elementium);
     }
 
     @Override

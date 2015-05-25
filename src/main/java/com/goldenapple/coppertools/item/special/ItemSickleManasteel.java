@@ -1,7 +1,7 @@
 package com.goldenapple.coppertools.item.special;
 
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.item.ItemSickleCommon;
-import com.goldenapple.coppertools.reference.Names;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -17,9 +17,10 @@ import vazkii.botania.api.mana.ManaItemHandler;
 @Optional.Interface(iface = "vazkii.botania.api.mana.IManaUsingItem", modid = "Botania")
 public class ItemSickleManasteel extends ItemSickleCommon implements IManaUsingItem {
     private static int MANA_PER_DAMAGE = 60;
+    public static EquipMaterial manasteel = new EquipMaterial("manasteel", "ingotManasteel", BotaniaAPI.manasteelToolMaterial, null, null, null, false, false, true);
 
     public ItemSickleManasteel(){
-        super(BotaniaAPI.manasteelToolMaterial, Names.MANASTEEL_SICKLE, "ingotManasteel", false);
+        super(manasteel);
     }
 
     @Override

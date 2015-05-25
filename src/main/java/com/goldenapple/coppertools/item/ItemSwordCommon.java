@@ -1,25 +1,21 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.CopperToolsCreativeTab;
-import com.goldenapple.coppertools.util.OreHelper;
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.reference.Reference;
+import com.goldenapple.coppertools.util.OreHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 
 public class ItemSwordCommon extends ItemSword{
+    private EquipMaterial material;
 
-    private String repairOre;
-    private ItemStack repairItem;
-    private boolean useObsidian;
-
-    public ItemSwordCommon(Item.ToolMaterial material, String name, String matRepair, boolean useObsidian){
-        super(material);
-        repairOre = matRepair;
+    public ItemSwordCommon(EquipMaterial material){
+        super(material.toolMat);
         if(CopperToolsCreativeTab.tabCombat != null) {
             setCreativeTab(CopperToolsCreativeTab.tabCombat);
         }else if(CopperToolsCreativeTab.tabTools != null){
@@ -27,56 +23,36 @@ public class ItemSwordCommon extends ItemSword{
         }else{
             setCreativeTab(CreativeTabs.tabCombat);
         }
-        setUnlocalizedName(name);
-        this.useObsidian = useObsidian;
-    }
-
-    public ItemSwordCommon(Item.ToolMaterial material, String name, ItemStack matRepair, boolean useObsidian){
-        super(material);
-        repairItem = matRepair;
-        if(CopperToolsCreativeTab.tabCombat != null) {
-            setCreativeTab(CopperToolsCreativeTab.tabCombat);
-        }else if(CopperToolsCreativeTab.tabTools != null){
-            setCreativeTab(CopperToolsCreativeTab.tabTools);
-        }else{
-            setCreativeTab(CreativeTabs.tabCombat);
-        }
-        setUnlocalizedName(name);
-        this.useObsidian = useObsidian;
+        this.material = material;
     }
 
     @Override
     public boolean getIsRepairable(ItemStack tool, ItemStack item){
-        if (repairOre != null){
-            return OreHelper.isItemThisOre(item, repairOre);
-        }else{
-            return item.isItemEqual(repairItem);
+        if (material.repairMat instanceof String){
+            return OreHelper.isItemThisOre(item, (String)material.repairMat);
+        }else if(material.repairMat instanceof ItemStack){
+            return item.isItemEqual((ItemStack)material.repairMat);
         }
-    }
-
-    //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot
-
-    @Override
-    public String getUnlocalizedName()
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return false;
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack itemStack)
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    public String getUnlocalizedName(){
+        return "item." + Reference.MOD_ID.toLowerCase() + ":" + material.name + "_sword";
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack){
+        return getUnlocalizedName();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
-    {
-        itemIcon = useObsidian ? iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + "_o") : iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-    }
-
-    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
-    {
-        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+    public void registerIcons(IIconRegister iconRegister){
+        if(material.useObsidian){
+            itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + material.name + "_sword_o");
+        }else {
+            itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + material.name + "_sword");
+        }
     }
 }

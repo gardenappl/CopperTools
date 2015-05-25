@@ -9,34 +9,26 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ItemCommon extends Item{
+    private String name;
+
     public ItemCommon(String name){
         setCreativeTab(CopperToolsCreativeTab.tabTools);
-        setUnlocalizedName(name);
-    }
-
-    //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot
-
-    @Override
-    public String getUnlocalizedName()
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        this.name = name;
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack itemStack)
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    public String getUnlocalizedName(){
+        return "item." + Reference.MOD_ID + ":" + name;
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack){
+        return getUnlocalizedName();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
-    {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-    }
-
-    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
-    {
-        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+    public void registerIcons(IIconRegister iconRegister){
+        itemIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + name);
     }
 }

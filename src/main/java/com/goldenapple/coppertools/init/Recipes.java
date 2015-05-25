@@ -4,7 +4,9 @@ import com.goldenapple.coppertools.CopperTools;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.reference.Reference;
+import com.goldenapple.coppertools.util.EnchantHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -58,6 +60,18 @@ public class Recipes {
             if(ConfigHandler.loadVoidSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("void", "ingotVoid", false);
             if(ConfigHandler.loadManasteelSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("manasteel", "ingotManasteel", false);
             if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("elementium", "ingotElementium", false);
+            if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded){
+                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(ModItems.ironwoodSickle), Enchantment.unbreaking, 1),
+                        " i ",
+                        "  i",
+                        "si ", 'i', "ironwood", 's', "stickWood").setMirrored(true));
+            }
+            if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded){
+                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(ModItems.steeleafSickle), Enchantment.unbreaking, 2),
+                        " i ",
+                        "  i",
+                        "si ", 'i', "steeleaf", 's', "stickWood").setMirrored(true));
+            }
         }
     }
 
@@ -84,34 +98,22 @@ public class Recipes {
                 "iii",
                 " s ",
                 " s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sword")),
                 "i",
                 "i",
                 "s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
                 "ii",
                 "is",
-                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
-                "ii",
-                "si",
-                "s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
+                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_shovel")),
                 "i",
                 "s",
                 "s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_hoe")),
-                "ii",
-                "s ",
-                "s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_hoe")),
                 "ii",
                 " s",
-                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
+                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
     }
 
     private static void registerToolRecipes(String matName, ItemStack material, boolean useObsidian){
@@ -119,34 +121,22 @@ public class Recipes {
                 "iii",
                 " s ",
                 " s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sword")),
                 "i",
                 "i",
                 "s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
                 "ii",
                 "is",
-                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_axe")),
-                "ii",
-                "si",
-                "s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
+                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_shovel")),
                 "i",
                 "s",
                 "s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_hoe")),
-                "ii",
-                "s ",
-                "s ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_hoe")),
                 "ii",
                 " s",
-                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
+                " s", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
     }
 
     private static void registerArmorRecipes(String matName, String material){
@@ -187,21 +177,13 @@ public class Recipes {
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sickle")),
                 " i ",
                 "  i",
-                "si ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sickle")),
-                " i ",
-                "i  ",
-                " is", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
+                "si ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
     }
 
-    private static void registerSickleRecipes(String matName, ItemStack material, boolean useObsidian){
+    private static void registerSickleRecipes(String matName, ItemStack material, boolean useObsidian) {
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sickle")),
                 " i ",
                 "  i",
-                "si ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, matName + "_sickle")),
-                " i ",
-                "i  ",
-                " is", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood"));
+                "si ", 'i', material, 's', useObsidian ? "rodObsidian" : "stickWood").setMirrored(true));
     }
 }

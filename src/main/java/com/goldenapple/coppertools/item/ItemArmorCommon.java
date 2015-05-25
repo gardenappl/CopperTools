@@ -1,6 +1,7 @@
 package com.goldenapple.coppertools.item;
 
 import com.goldenapple.coppertools.CopperToolsCreativeTab;
+import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.util.OreHelper;
 import com.goldenapple.coppertools.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
@@ -12,13 +13,11 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 public class ItemArmorCommon extends ItemArmor{
+    private EquipMaterial material;
+    private String typeName;
 
-    private String repairOre;
-    private ItemStack repairItem;
-
-    public ItemArmorCommon(ItemArmor.ArmorMaterial material, String name, String matRepair, int type){
-        super(material, 1, type);
-        repairOre = matRepair;
+    public ItemArmorCommon(EquipMaterial material, String typeName, int type){
+        super(material.armorMat, 1, type);
         if(CopperToolsCreativeTab.tabCombat != null) {
             setCreativeTab(CopperToolsCreativeTab.tabCombat);
         }else if(CopperToolsCreativeTab.tabTools != null){
@@ -26,61 +25,43 @@ public class ItemArmorCommon extends ItemArmor{
         }else{
             setCreativeTab(CreativeTabs.tabCombat);
         }
-        setUnlocalizedName(name);
-    }
-
-    public ItemArmorCommon(ItemArmor.ArmorMaterial material, String name, ItemStack matRepair, int type){
-        super(material, 1, type);
-        repairItem = matRepair;
-        if(CopperToolsCreativeTab.tabCombat != null) {
-            setCreativeTab(CopperToolsCreativeTab.tabCombat);
-        }else if(CopperToolsCreativeTab.tabTools != null){
-            setCreativeTab(CopperToolsCreativeTab.tabTools);
-        }else{
-            setCreativeTab(CreativeTabs.tabCombat);
-        }
-        setUnlocalizedName(name);
+        this.material = material;
+        this.typeName = typeName;
     }
 
     @Override
     public boolean getIsRepairable(ItemStack tool, ItemStack item){
-        if(repairOre!=null) {
-            return OreHelper.isItemThisOre(item, repairOre);
-        }else{
-            return item.isItemEqual(repairItem);
+        if(material.repairMat instanceof String) {
+            return OreHelper.isItemThisOre(item, (String)material.repairMat);
+        }else if(material.repairMat instanceof ItemStack){
+            return item.isItemEqual((ItemStack)material.repairMat);
         }
+
+        return false;
     }
 
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
-        return (slot == 2) ? ("coppertools:textures/armor/" + getUnlocalizedName(stack).substring(this.getUnlocalizedName().indexOf(":") + 1, this.getUnlocalizedName().indexOf("_")) + "1.png") :
-        ("coppertools:textures/armor/" + getUnlocalizedName(stack).substring(this.getUnlocalizedName().indexOf(":") + 1, this.getUnlocalizedName().indexOf("_")) + "0.png");
-    }
-
-    //The code below is taken from Pahimar's Let's Mod Reboot mod. https://github.com/pahimar/LetsModReboot
-
-    @Override
-    public String getUnlocalizedName()
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        if(slot == 2){
+            return "coppertools:textures/armor/" + material.name + "1.png";
+        }else {
+            return "coppertools:textures/armor/" + material.name + "0.png";
+        }
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack itemStack)
-    {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    public String getUnlocalizedName(){
+        return Reference.MOD_ID.toLowerCase() + ":" + material.name + "_" + typeName;
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack){
+        return getUnlocalizedName();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
-    {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+    public void registerIcons(IIconRegister iconRegister){
+        itemIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + material.name + "_" + typeName);
     }
-
-    protected String getUnwrappedUnlocalizedName(String unlocalizedName)
-    {
-        return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
-    }
-
 }
