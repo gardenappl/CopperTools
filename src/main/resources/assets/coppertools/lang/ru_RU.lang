@@ -83,17 +83,6 @@ item.coppertools:emerald_chestplate.name=Изумрудный нагрудник
 item.coppertools:emerald_leggings.name=Изумрудные поножи
 item.coppertools:emerald_boots.name=Изумрудные ботинки
 
-item.coppertools:christmas_pickaxe.name=Конфетная кирка
-item.coppertools:christmas_sword.name=Конфетный меч
-item.coppertools:christmas_shovel.name=Конфетная лопата
-item.coppertools:christmas_axe.name=Конфетный топор
-item.coppertools:christmas_hoe.name=Конфетная мотыга
-item.coppertools:christmas_sickle.name=Конфетный серп
-item.coppertools:christmas_helmet.name=Шляпа Деда Мороза
-item.coppertools:christmas_chestplate.name=Куртка Деда Мороза
-item.coppertools:christmas_leggings.name=Штаны Деда Мороза
-item.coppertools:christmas_boots.name=Ботинки Деда Мороза
-
 
 ###############################
 
@@ -104,6 +93,11 @@ item.coppertools:diamond_sickle.name=Алмазный серп
 item.coppertools:gold_sickle.name=Золотой серп
 item.coppertools:brass_sickle.name=Латунный серп
 item.coppertools:gilded_sickle.name=Серп из позолоченого железа
+item.coppertools:manasteel_sickle.name=Серп из манастали
+item.coppertools:elementium_sickle.name=Серп из элементия
+item.coppertools:ironwood_sickle.name=Серп древних
+item.coppertools:steeleaf_sickle.name=Серп из магических листьев
+#                                          ^ват
 
 ################################
 

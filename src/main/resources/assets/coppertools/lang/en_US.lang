@@ -80,17 +80,6 @@ item.coppertools:emerald_chestplate.name=Emerald Chestplate
 item.coppertools:emerald_leggings.name=Emerald Leggings
 item.coppertools:emerald_boots.name=Emerald Boots
 
-item.coppertools:christmas_pickaxe.name=Candy Cane Pickaxe
-item.coppertools:christmas_sword.name=Candy Cane Sword
-item.coppertools:christmas_shovel.name=Candy Cane Shovel
-item.coppertools:christmas_axe.name=Candy Cane Axe
-item.coppertools:christmas_hoe.name=Candy Cane Hoe
-item.coppertools:christmas_sickle.name=Candy Cane Sickle
-item.coppertools:christmas_helmet.name=Santa's Hat
-item.coppertools:christmas_chestplate.name=Santa's Jacket
-item.coppertools:christmas_leggings.name=Santa's Pants
-item.coppertools:christmas_boots.name=Santa's Boots
-
 ################################
 
 item.coppertools:wood_sickle.name=Wooden Sickle
@@ -102,6 +91,10 @@ item.coppertools:brass_sickle.name=Brass Sickle
 item.coppertools:gilded_sickle.name=Gilded Iron Sickle
 item.coppertools:thaumium_sickle.name=Thaumium Sickle
 item.coppertools:void_sickle.name=Void Sickle
+item.coppertools:manasteel_sickle.name=Manasteel Sickle
+item.coppertools:elementium_sickle.name=Elementium Sickle
+item.coppertools:ironwood_sickle.name=Ironwood Sickle
+item.coppertools:steeleaf_sickle.name=Steeleaf Sickle
 
 ################################
 
