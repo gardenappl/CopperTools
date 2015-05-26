@@ -59,15 +59,15 @@ public class Recipes {
             if(ConfigHandler.loadThaumiumSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("thaumium", "ingotThaumium", false);
             if(ConfigHandler.loadVoidSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("void", "ingotVoid", false);
             if(ConfigHandler.loadManasteelSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("manasteel", "ingotManasteel", false);
-            if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("elementium", "ingotElementium", false);
+            if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("elementium", "ingotElvenElementium", false);
             if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(ModItems.ironwoodSickle), Enchantment.unbreaking, 1),
+                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "ironwood_sickle")), Enchantment.unbreaking, 1),
                         " i ",
                         "  i",
                         "si ", 'i', "ironwood", 's', "stickWood").setMirrored(true));
             }
             if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(ModItems.steeleafSickle), Enchantment.unbreaking, 2),
+                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "steeleaf_sickle")), Enchantment.unbreaking, 2),
                         " i ",
                         "  i",
                         "si ", 'i', "steeleaf", 's', "stickWood").setMirrored(true));

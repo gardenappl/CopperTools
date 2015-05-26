@@ -17,10 +17,10 @@ import vazkii.botania.api.mana.ManaItemHandler;
 @Optional.Interface(iface = "vazkii.botania.api.mana.IManaUsingItem", modid = "Botania")
 public class ItemSickleManasteel extends ItemSickleCommon implements IManaUsingItem {
     private static int MANA_PER_DAMAGE = 60;
-    public static EquipMaterial manasteel = new EquipMaterial("manasteel", "ingotManasteel", BotaniaAPI.manasteelToolMaterial, null, null, null, false, false, true);
+    public static EquipMaterial material = new EquipMaterial("manasteel", "ingotManasteel", BotaniaAPI.manasteelToolMaterial, null, null, null, false, false, true);
 
     public ItemSickleManasteel(){
-        super(manasteel);
+        super(material);
     }
 
     @Override
