@@ -1,21 +1,19 @@
 package com.goldenapple.coppertools.init;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import com.goldenapple.coppertools.CopperTools;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.HashSet;
 
 public class EquipMaterial {
     public static HashSet<EquipMaterial> registry = new HashSet<EquipMaterial>();
-    public static ItemArmor.ArmorMaterial GEM_MATERIAL = EnumHelper.addArmorMaterial("GEM", 27, new int[]{2, 6, 5, 2}, 17);
+
     public static Item.ToolMaterial BRASS_MATERIAL = EnumHelper.addToolMaterial("BRASS_S", 2, 191, 7.0F, 2.5F, 14);
     public static Item.ToolMaterial GILDED_IRON_MATERIAL = EnumHelper.addToolMaterial("GILDEDIRON", 2, 250, 6.0F, 2.0F, 22);
     public static Item.ToolMaterial IRONWOOD_MATERIAL = EnumHelper.addToolMaterial("IRONWOOD", 2, 512, 7.0F, 2.0F, 20);
     public static Item.ToolMaterial STEELEAF_MATERIAL = EnumHelper.addToolMaterial("STEELEAF", 2, 131, 6.0F, 3.0F, 22);
-
 
     //Full sets of equipment
     public static EquipMaterial copper = new EquipMaterial("copper", "ingotCopper", null, DefaultTool.COPPER, null, DefaultArmor.COPPER, true, true, true);
@@ -27,9 +25,9 @@ public class EquipMaterial {
     public static EquipMaterial emerald = new EquipMaterial("emerald", "gemEmerald", null, DefaultTool.EMERALD, null, DefaultArmor.EMERALD, true, true, true);
 
     //Gem armor
-    public static EquipMaterial ruby = new EquipMaterial("ruby", "gemRuby", null, null, GEM_MATERIAL, null, false, true, false);
-    public static EquipMaterial sapphire = new EquipMaterial("sapphire", "gemSapphire", null, null, GEM_MATERIAL, null, false, true, false);
-    public static EquipMaterial amethyst = new EquipMaterial("amethyst", "gemAmethyst", null, null, GEM_MATERIAL, null, false, true, false);
+    public static EquipMaterial ruby = new EquipMaterial("ruby", "gemRuby", null, null, null, DefaultArmor.GEM, false, true, false);
+    public static EquipMaterial sapphire = new EquipMaterial("sapphire", "gemSapphire", null, null, null, DefaultArmor.GEM, false, true, false);
+    public static EquipMaterial amethyst = new EquipMaterial("amethyst", "gemAmethyst", null, null, null, DefaultArmor.GEM, false, true, false);
 
     //Other stuff that I register manually
     public static EquipMaterial wood = new EquipMaterial("wood", "plankWood", Item.ToolMaterial.WOOD, null, null, null, false, false, true);
@@ -38,10 +36,6 @@ public class EquipMaterial {
     public static EquipMaterial gold = new EquipMaterial("gold", "ingotGold", Item.ToolMaterial.GOLD, null, null, null, false, false, true);
     public static EquipMaterial diamond = new EquipMaterial("diamond", "gemDiamond", Item.ToolMaterial.EMERALD, null, null, null, false, false, true);
     public static EquipMaterial brass = new EquipMaterial("brass", "ingotBrass", BRASS_MATERIAL, null, null, null, false, false, true);
-    public static EquipMaterial gildedIron = new EquipMaterial("gilded", new ItemStack(GameRegistry.findItem("Steamcraft", "ingot"), 1, 3), GILDED_IRON_MATERIAL, null, null, null, false, false, true);
-    public static EquipMaterial ironwood = new EquipMaterial("ironwood", "ironwood", IRONWOOD_MATERIAL, null, null, null, false, false, true);
-    public static EquipMaterial steeleaf = new EquipMaterial("steeleaf", "steeleaf", STEELEAF_MATERIAL, null, null, null, false, false, true);
-    public static EquipMaterial woodKatana = new EquipMaterial("wood", "logWood", Item.ToolMaterial.STONE, null, null, null, true, false, false);
 
     public String name;
     public Item.ToolMaterial toolMat;
@@ -70,16 +64,18 @@ public class EquipMaterial {
     public static void init(){
         registry.add(copper);
         registry.add(platinum);
-        registry.add(compressed);
+        if(CopperTools.isPneumaticLoaded) registry.add(compressed);
         registry.add(lead);
         enderium.useObsidian = true;
-        registry.add(enderium);
+        if(CopperTools.isTELoaded) registry.add(enderium);
         registry.add(silver);
         emerald.load = false;
         registry.add(emerald);
-        registry.add(ruby);
-        registry.add(sapphire);
-        registry.add(amethyst);
+        if(CopperTools.isBluePowerLoaded) {
+            registry.add(ruby);
+            registry.add(sapphire);
+            registry.add(amethyst);
+        }
     }
 
 
@@ -91,7 +87,8 @@ public class EquipMaterial {
         ENDERIUM(40, new int[]{3, 8, 6, 3}, 25),
         SILVER(15, new int[]{2, 7, 5, 2}, 17),
         HOLIDAY(5, new int[]{3, 8, 6, 3}, 25),
-        EMERALD(33, new int[]{3, 8, 6, 3}, 10);
+        EMERALD(33, new int[]{3, 8, 6, 3}, 10),
+        GEM(27, new int[]{2, 6, 5, 2}, 17);
 
         private int durability;
         private int[] protection;

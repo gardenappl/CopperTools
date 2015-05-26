@@ -20,10 +20,10 @@ import java.util.List;
 @Optional.Interface(iface = "vazkii.botania.api.mana.IManaUsingItem", modid = "Botania")
 public class ItemSickleElementium extends ItemSickleCommon implements IManaUsingItem {
     private static int MANA_PER_DAMAGE = 60;
-    public static EquipMaterial elementium = new EquipMaterial("elementium", "ingotElementium", BotaniaAPI.elementiumToolMaterial, null, null, null, false, false, true);
+    public static EquipMaterial material = new EquipMaterial("elementium", "ingotElvenElementium", BotaniaAPI.elementiumToolMaterial, null, null, null, false, false, true);
 
     public ItemSickleElementium(){
-        super(elementium);
+        super(material);
     }
 
     @Override
