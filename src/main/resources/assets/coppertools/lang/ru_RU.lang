@@ -1,5 +1,5 @@
-itemGroup.coppertools=Copper Tools инструменты
-itemGroup.coppertools_combat=Copper Tools оружие и доспехи
+itemGroup.coppertools=Copper Tools: инструменты
+itemGroup.coppertools_combat=Copper Tools: оружие и доспехи
 
 coppertools.tooltip.katana1=Ведь все знают, что деревянные
 coppertools.tooltip.katana2=катаны - самые крутые
@@ -93,6 +93,8 @@ item.coppertools:diamond_sickle.name=Алмазный серп
 item.coppertools:gold_sickle.name=Золотой серп
 item.coppertools:brass_sickle.name=Латунный серп
 item.coppertools:gilded_sickle.name=Серп из позолоченого железа
+item.coppertools:thaumium_sickle.name=Таум-серп
+item.coppertools:void_sickle.name=Пустотный серп
 item.coppertools:manasteel_sickle.name=Серп из манастали
 item.coppertools:elementium_sickle.name=Серп из элементия
 item.coppertools:ironwood_sickle.name=Серп древних
