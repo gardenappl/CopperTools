@@ -11,10 +11,5 @@ public class OreHelper {
             }
         }
             return false;
-        }
-    public static void dumpAllOres(){
-        for (String l : OreDictionary.getOreNames()){
-            LogHelper.info(l);
-        }
     }
 }

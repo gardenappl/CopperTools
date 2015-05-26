@@ -20,10 +20,10 @@ import java.util.Random;
 })
 public class ItemSickleVoid extends ItemSickleCommon implements IRepairable, IWarpingGear{
     private Random rand = new Random();
-    public static EquipMaterial voidmetal = new EquipMaterial("void", "ingotVoid", ThaumcraftApi.toolMatVoid, null, null, null, false, false, true);
+    public static EquipMaterial material = new EquipMaterial("void", "ingotVoid", ThaumcraftApi.toolMatVoid, null, null, null, false, false, true);
 
     public ItemSickleVoid(){
-        super(voidmetal);
+        super(material);
     }
 
     @Override

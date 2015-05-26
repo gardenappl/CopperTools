@@ -15,9 +15,10 @@ public class CopperToolsCreativeTab {
     public static void init() {
         if (ConfigHandler.creativeTabs >= 1) {
             tabTools = new CreativeTabs(Reference.MOD_ID.toLowerCase()) {
+
                 @Override
                 public Item getTabIconItem() {
-                    if (EquipMaterial.copper.load) { //TODO: fix this
+                    if (EquipMaterial.copper.load) {
                         return GameRegistry.findItem(Reference.MOD_ID, "copper_pickaxe");
                     } else {
                         return Items.iron_pickaxe;
@@ -27,6 +28,7 @@ public class CopperToolsCreativeTab {
         }
         if (ConfigHandler.creativeTabs == 2) {
             tabCombat = new CreativeTabs(Reference.MOD_ID.toLowerCase() + "_combat") {
+
                 @Override
                 public Item getTabIconItem() {
                     if (EquipMaterial.silver.load){
