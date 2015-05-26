@@ -51,7 +51,7 @@ public class ItemArmorCommon extends ItemArmor{
 
     @Override
     public String getUnlocalizedName(){
-        return Reference.MOD_ID.toLowerCase() + ":" + material.name + "_" + typeName;
+        return "item." + Reference.MOD_ID.toLowerCase() + ":" + material.name + "_" + typeName;
     }
 
     @Override

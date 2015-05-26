@@ -18,7 +18,7 @@ public class ItemCommon extends Item{
 
     @Override
     public String getUnlocalizedName(){
-        return "item." + Reference.MOD_ID + ":" + name;
+        return "item." + Reference.MOD_ID.toLowerCase() + ":" + name;
     }
 
     @Override
