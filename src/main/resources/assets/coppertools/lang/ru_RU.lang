@@ -127,3 +127,9 @@ item.coppertools:peridot_boots.name=Перидотовые ботинки
 
 item.coppertools:wooden_saber.name=Деревянная сабля
 item.coppertools:obsidian_rod.name=Обсидиановый стержень
+
+################################
+
+config.general.tooltip=Конфигурировать обычные настройки
+config.sickles.tooltip=Включить/выключить серпы
+config.set.tooltip=Конфигурировать свойства отдельного сета
