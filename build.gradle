@@ -32,7 +32,6 @@ repositories {
 dependencies{
     compile files('Thaumcraft-deobf-1.7.10-4.2.3.3.jar')
     compile files('Botania r1.6-187-deobf.jar')
-    compile files('exnihilo-deobf.jar')
 }
 
 processResources
