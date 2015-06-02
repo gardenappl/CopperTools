@@ -54,7 +54,7 @@ public class ConfigHandler {
         EquipMaterial.platinum.useObsidian = config.getBoolean("Platinum Requires Obsidian", Configuration.CATEGORY_GENERAL, true, "Set this to false to allow crafting platinum tools with regular sticks");
         EquipMaterial.emerald.useObsidian = config.getBoolean("Emerald Requires Obsidian", Configuration.CATEGORY_GENERAL, true, "Set this to false to allow crafting emerald tools with regular sticks");
         creativeTabs = config.getInt("Creative Tabs", Configuration.CATEGORY_GENERAL, 2, 0, 2, "Set this to 0 to disable Creative Tabs, items will be registered in Vanilla tabs. Set this to 1 to have one giant tab. Set this to 2 to have separate Tools & Combat tabs");
-    //  changePneumaticHelmetRecipe = config.getBoolean("Change Pneumatic Helmet recipe", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Pneumatic Helmet recipe override (it won't require a Compressed Iron Helmet)"); TODO: pneumatic helm recipe
+        changePneumaticHelmetRecipe = config.getBoolean("Change Pneumatic Helmet recipe", Configuration.CATEGORY_GENERAL, true, "Set this to false to disable the Pneumatic Helmet recipe override (it won't require a Compressed Iron Helmet)");
 
         loadSickles = config.getBoolean("Enable Sickles", CATEGORY_SICKLES, true, "Set this to false to disable sickles (will override all other options)");
         loadVanillaSickles = config.getBoolean("Enable Vanilla Sickles", CATEGORY_SICKLES, false, "Set this to true to enable sickles made out of vanilla materials (e.g. wood or iron)");
@@ -100,7 +100,7 @@ public class ConfigHandler {
     }
 
     private static void loadProperty(EquipMaterial material){
-        material.load = config.getBoolean("Enable", material.name, material.load, "Set this to false to disable this equipment");
+        material.enabled = config.getBoolean("Enable", material.name, material.enabled, "Set this to false to disable this equipment");
         if(material.toolMat == null && material.toolMatDefault != null){
             loadToolProperty(material);
         }
