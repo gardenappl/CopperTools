@@ -18,8 +18,6 @@ public class ModItems {
     public static final ItemSickleCommon diamondSickle = new ItemSickleCommon(EquipMaterial.diamond);
     public static final ItemSickleCommon goldSickle = new ItemSickleCommon(EquipMaterial.gold);
     public static final ItemSickleCommon brassSickle = new ItemSickleCommon(EquipMaterial.brass);
-    public static final ItemSickleCommon ironwoodSickle = new ItemSickleCommon(EquipMaterial.ironwood);
-    public static final ItemSickleCommon steeleafSickle = new ItemSickleCommon(EquipMaterial.steeleaf);
 
     public static void init() {
         if(ConfigHandler.loadObsidianRod) {
@@ -61,16 +59,16 @@ public class ModItems {
                 GameRegistry.registerItem(new ItemSickleElementium(), Names.ELEMENTIUM_SICKLE);
             }
             if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.registerItem(ironwoodSickle, Names.IRONWOOD_SICKLE);
+                GameRegistry.registerItem(new ItemSickleIronwood(), Names.IRONWOOD_SICKLE);
             }
             if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.registerItem(steeleafSickle, Names.STEELEAF_SICKLE);
+                GameRegistry.registerItem(new ItemSickleSteeleaf(), Names.STEELEAF_SICKLE);
             }
         }
     }
 
     private static void registerSet(EquipMaterial material){
-        if(material.load) {
+        if(material.enabled) {
             if(material.loadTools) registerToolSet(material);
             if(material.loadArmor) registerArmorSet(material);
             if(material.loadSickle){

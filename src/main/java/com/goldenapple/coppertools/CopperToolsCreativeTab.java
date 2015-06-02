@@ -18,7 +18,7 @@ public class CopperToolsCreativeTab {
 
                 @Override
                 public Item getTabIconItem() {
-                    if (EquipMaterial.copper.load) {
+                    if (EquipMaterial.copper.enabled) {
                         return GameRegistry.findItem(Reference.MOD_ID, "copper_pickaxe");
                     } else {
                         return Items.iron_pickaxe;
@@ -31,7 +31,7 @@ public class CopperToolsCreativeTab {
 
                 @Override
                 public Item getTabIconItem() {
-                    if (EquipMaterial.silver.load){
+                    if (EquipMaterial.silver.enabled){
                         return GameRegistry.findItem(Reference.MOD_ID, "silver_sword");
                     }else {
                         return Items.chainmail_chestplate;
