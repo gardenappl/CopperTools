@@ -84,7 +84,7 @@ public class Recipes {
     }
 
     public static void postInit(){
-        if(ConfigHandler.changePneumaticHelmetRecipe && EquipMaterial.compressed.enabled){
+        if(CopperTools.isPneumaticLoaded && ConfigHandler.changePneumaticHelmetRecipe && EquipMaterial.compressed.enabled){
             ItemStack airCanister = new ItemStack(GameRegistry.findItem("PneumaticCraft", "airCanister"));
             ItemStack PCB = new ItemStack(GameRegistry.findItem("PneumaticCraft", "printedCircuitBoard"));
             ItemStack helmet = new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "compressed_helmet"));
