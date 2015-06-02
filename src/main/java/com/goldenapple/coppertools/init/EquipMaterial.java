@@ -23,6 +23,7 @@ public class EquipMaterial {
     public static EquipMaterial enderium = new EquipMaterial("enderium", "ingotEnderium", null, DefaultTool.ENDERIUM, null, DefaultArmor.ENDERIUM, true, true, true);
     public static EquipMaterial silver = new EquipMaterial("silver", "ingotSilver", null, DefaultTool.SILVER, null, DefaultArmor.SILVER, true, true, true);
     public static EquipMaterial emerald = new EquipMaterial("emerald", "gemEmerald", null, DefaultTool.EMERALD, null, DefaultArmor.EMERALD, true, true, true);
+    public static EquipMaterial aluminum = new EquipMaterial("aluminum", "ingotAluminum", null, DefaultTool., null, DefaultArmor.EMERALD, true, true, true);
 
     //Gem armor
     public static EquipMaterial ruby = new EquipMaterial("ruby", "gemRuby", null, null, null, DefaultArmor.GEM, false, true, false);
@@ -44,7 +45,7 @@ public class EquipMaterial {
     public DefaultArmor armorMatDefault;
     public Object repairMat;
     public boolean useObsidian = false;
-    public boolean load = true;
+    public boolean enabled = true;
     public boolean loadTools;
     public boolean loadArmor;
     public boolean loadSickle;
@@ -69,7 +70,7 @@ public class EquipMaterial {
         enderium.useObsidian = true;
         if(CopperTools.isTELoaded) registry.add(enderium);
         registry.add(silver);
-        emerald.load = false;
+        emerald.enabled = false;
         registry.add(emerald);
         if(CopperTools.isBluePowerLoaded) {
             registry.add(ruby);
@@ -114,11 +115,12 @@ public class EquipMaterial {
         COPPER(1, 131, 7, 1, 18),
         PLATINUM(2, 200, 12, 2, 22),
         LEAD(0, 131, 4, 0, 14),
-        COMPRESSED(2, 500, 6, 2, 14),
+        COMPRESSED(2, 500, 6, 2, 10),
         ENDERIUM(5, 2000, 10, 4, 22),
         SILVER(2, 250, 8, 2.5F, 18),
         HOLIDAY(0, 32, 12.0F, 0.0F, 22),
-        EMERALD(3, 1561, 10.0F, 3.0F, 10);
+        EMERALD(3, 1561, 10.0F, 3.0F, 10),
+        ALUMINUM(2, 400, 5, 1.5F, 10);
 
         private int harvestLevel;
         private int durability;
