@@ -77,11 +77,22 @@ item.coppertools:emerald_sword.name=Изумрудный меч
 item.coppertools:emerald_shovel.name=Изумрудная лопата
 item.coppertools:emerald_axe.name=Изумрудный топор
 item.coppertools:emerald_hoe.name=Изумрудная мотыга
-item.coppertools:emerald_sickle.name=Изумурудный серп
-item.coppertools:emerald_helmet.name=Изумурдный шлем
+item.coppertools:emerald_sickle.name=Изумрудный серп
+item.coppertools:emerald_helmet.name=Изумрудный шлем
 item.coppertools:emerald_chestplate.name=Изумрудный нагрудник
 item.coppertools:emerald_leggings.name=Изумрудные поножи
 item.coppertools:emerald_boots.name=Изумрудные ботинки
+
+item.coppertools:aluminum_pickaxe.name=Алюминиевая кирка
+item.coppertools:aluminum_sword.name=Алюминиевый меч
+item.coppertools:aluminum_shovel.name=Алюминиевая лопата
+item.coppertools:aluminum_axe.name=Алюминиевый топор
+item.coppertools:aluminum_hoe.name=Алюминиевая мотыга
+item.coppertools:aluminum_sickle.name=Алюминиевый серп
+item.coppertools:aluminum_helmet.name=Алюминиевый шлем
+item.coppertools:aluminum_chestplate.name=Алюминиевый нагрудник
+item.coppertools:aluminum_leggings.name=Алюминиевые поножи
+item.coppertools:aluminum_boots.name=Алюминиевые ботинки
 
 
 ###############################
@@ -117,11 +128,6 @@ item.coppertools:sapphire_helmet.name=Сапрфировый шлем
 item.coppertools:sapphire_chestplate.name=Сапфировый нагрудник
 item.coppertools:sapphire_leggings.name=Сапфировые поножи
 item.coppertools:sapphire_boots.name=Сапфировые ботинки
-
-item.coppertools:peridot_helmet.name=Перидотовый шлем
-item.coppertools:peridot_chestplate.name=Перидотовый нагрудник
-item.coppertools:peridot_leggings.name=Перидотовые поножи
-item.coppertools:peridot_boots.name=Перидотовые ботинки
 
 ################################
 

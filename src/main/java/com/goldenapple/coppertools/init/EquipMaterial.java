@@ -23,7 +23,7 @@ public class EquipMaterial {
     public static EquipMaterial enderium = new EquipMaterial("enderium", "ingotEnderium", null, DefaultTool.ENDERIUM, null, DefaultArmor.ENDERIUM, true, true, true);
     public static EquipMaterial silver = new EquipMaterial("silver", "ingotSilver", null, DefaultTool.SILVER, null, DefaultArmor.SILVER, true, true, true);
     public static EquipMaterial emerald = new EquipMaterial("emerald", "gemEmerald", null, DefaultTool.EMERALD, null, DefaultArmor.EMERALD, true, true, true);
-    public static EquipMaterial aluminum = new EquipMaterial("aluminum", "ingotAluminum", null, DefaultTool., null, DefaultArmor.EMERALD, true, true, true);
+    public static EquipMaterial aluminum = new EquipMaterial("aluminum", "ingotAluminum", null, DefaultTool.ALUMINUM, null, DefaultArmor.ALUMINUM, true, true, true);
 
     //Gem armor
     public static EquipMaterial ruby = new EquipMaterial("ruby", "gemRuby", null, null, null, DefaultArmor.GEM, false, true, false);
@@ -77,10 +77,16 @@ public class EquipMaterial {
             registry.add(sapphire);
             registry.add(amethyst);
         }
+        registry.add(aluminum);
     }
 
 
     public static enum DefaultArmor { //Durability, Protection(Helm, Chest, Legs, Boots), Enchantibility
+     /* CLOTH(5, new int[]{1, 3, 2, 1}, 15),
+        CHAIN(15, new int[]{2, 5, 4, 1}, 12),
+        IRON(15, new int[]{2, 6, 5, 2}, 9),
+        GOLD(7, new int[]{2, 5, 3, 1}, 25),
+        DIAMOND(33, new int[]{3, 8, 6, 3}, 10); */
         COPPER(10, new int[]{2, 5, 4, 2}, 17),
         PLATINUM(12, new int[]{2, 6, 5, 2}, 25),
         LEAD(10, new int[]{3, 6, 5, 2}, 9),
@@ -89,7 +95,8 @@ public class EquipMaterial {
         SILVER(15, new int[]{2, 7, 5, 2}, 17),
         HOLIDAY(5, new int[]{3, 8, 6, 3}, 25),
         EMERALD(33, new int[]{3, 8, 6, 3}, 10),
-        GEM(27, new int[]{2, 6, 5, 2}, 17);
+        GEM(27, new int[]{2, 6, 5, 2}, 17),
+        ALUMINUM(20, new int[]{3, 6, 5, 2}, 17);
 
         private int durability;
         private int[] protection;
@@ -112,6 +119,11 @@ public class EquipMaterial {
     }
 
     public static enum DefaultTool { //Mining level, durability, speed, damage, enchantibility
+     /* WOOD(0, 59, 2.0F, 0.0F, 15),
+        STONE(1, 131, 4.0F, 1.0F, 5),
+        IRON(2, 250, 6.0F, 2.0F, 14),
+        EMERALD(3, 1561, 8.0F, 3.0F, 10),
+        GOLD(0, 32, 12.0F, 0.0F, 22); */
         COPPER(1, 131, 7, 1, 18),
         PLATINUM(2, 200, 12, 2, 22),
         LEAD(0, 131, 4, 0, 14),

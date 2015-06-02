@@ -80,6 +80,17 @@ item.coppertools:emerald_chestplate.name=Emerald Chestplate
 item.coppertools:emerald_leggings.name=Emerald Leggings
 item.coppertools:emerald_boots.name=Emerald Boots
 
+item.coppertools:aluminum_pickaxe.name=Aluminum Pickaxe
+item.coppertools:aluminum_sword.name=Aluminum Sword
+item.coppertools:aluminum_shovel.name=Aluminum Shovel
+item.coppertools:aluminum_axe.name=Aluminum Axe
+item.coppertools:aluminum_hoe.name=Aluminum Hoe
+item.coppertools:aluminum_sickle.name=Aluminum Sickle
+item.coppertools:aluminum_helmet.name=Aluminum Helmet
+item.coppertools:aluminum_chestplate.name=Aluminum Chestplate
+item.coppertools:aluminum_leggings.name=Aluminum Leggings
+item.coppertools:aluminum_boots.name=Aluminum Boots
+
 ################################
 
 item.coppertools:wood_sickle.name=Wooden Sickle
@@ -112,11 +123,6 @@ item.coppertools:sapphire_helmet.name=Sapphire Helmet
 item.coppertools:sapphire_chestplate.name=Sapphire Chestplate
 item.coppertools:sapphire_leggings.name=Sapphire Leggings
 item.coppertools:sapphire_boots.name=Sapphire Boots
-
-item.coppertools:peridot_helmet.name=Peridot Helmet
-item.coppertools:peridot_chestplate.name=Peridot Chestplate
-item.coppertools:peridot_leggings.name=Peridot Leggings
-item.coppertools:peridot_boots.name=Peridot Boots
 
 ################################
 
