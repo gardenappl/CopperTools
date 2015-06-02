@@ -4,7 +4,7 @@ import com.goldenapple.coppertools.CopperTools;
 import com.goldenapple.coppertools.config.ConfigHandler;
 import com.goldenapple.coppertools.reference.Names;
 import com.goldenapple.coppertools.reference.Reference;
-import com.goldenapple.coppertools.util.EnchantHelper;
+import com.goldenapple.coppertools.util.MiscHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
@@ -58,25 +58,47 @@ public class Recipes {
             if(ConfigHandler.loadGildedSickle && CopperTools.isSteamPowerLoaded) registerSickleRecipes("gilded", new ItemStack(GameRegistry.findItem("Steamcraft", "steamcraftIngot"), 1, 3), false);
             if(ConfigHandler.loadThaumiumSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("thaumium", "ingotThaumium", false);
             if(ConfigHandler.loadVoidSickle && CopperTools.isThaumcraftLoaded) registerSickleRecipes("void", "ingotVoid", false);
-            if(ConfigHandler.loadManasteelSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("manasteel", "ingotManasteel", false);
-            if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) registerSickleRecipes("elementium", "ingotElvenElementium", false);
-            if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "ironwood_sickle")), Enchantment.unbreaking, 1),
-                        " i ",
-                        "  i",
-                        "si ", 'i', "ironwood", 's', "stickWood").setMirrored(true));
-            }
-            if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded){
-                GameRegistry.addRecipe(new ShapedOreRecipe(EnchantHelper.enchant(new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "steeleaf_sickle")), Enchantment.unbreaking, 2),
-                        " i ",
-                        "  i",
-                        "si ", 'i', "steeleaf", 's', "stickWood").setMirrored(true));
-            }
+            if(ConfigHandler.loadManasteelSickle && CopperTools.isBotaniaLoaded) GameRegistry.addRecipe(new ShapedOreRecipe(GameRegistry.findItem(Reference.MOD_ID, "manasteel_sickle"),
+                    " i ",
+                    "  i",
+                    "si ", 'i', "ingotManasteel", 's', "livingwoodTwig").setMirrored(true));
+            if(ConfigHandler.loadElementiumSickle && CopperTools.isBotaniaLoaded) GameRegistry.addRecipe(new ShapedOreRecipe(GameRegistry.findItem(Reference.MOD_ID, "elementium_sickle"),
+                    " i ",
+                    "  i",
+                    "si ", 'i', "ingotElvenElementium", 's', "dreamwoodTwig").setMirrored(true));
+
+            ItemStack ironwoodSickle = new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "ironwood_sickle"));
+            ironwoodSickle.addEnchantment(Enchantment.unbreaking, 1);
+            if(ConfigHandler.loadIronwoodSickle && CopperTools.isTwilightLoaded) GameRegistry.addRecipe(new ShapedOreRecipe(ironwoodSickle,
+                    " i ",
+                    "  i",
+                    "si ", 'i', "ironwood", 's', "stickWood").setMirrored(true));
+
+            ItemStack steeleafSickle = new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "steeleaf_sickle"));
+            steeleafSickle.addEnchantment(Enchantment.unbreaking, 2);
+            if(ConfigHandler.loadSteeleafSickle && CopperTools.isTwilightLoaded) GameRegistry.addRecipe(new ShapedOreRecipe(steeleafSickle,
+                    " i ",
+                    "  i",
+                    "si ", 'i', "steeleaf", 's', "stickWood").setMirrored(true));
+        }
+    }
+
+    public static void postInit(){
+        if(ConfigHandler.changePneumaticHelmetRecipe && EquipMaterial.compressed.enabled){
+            ItemStack airCanister = new ItemStack(GameRegistry.findItem("PneumaticCraft", "airCanister"));
+            ItemStack PCB = new ItemStack(GameRegistry.findItem("PneumaticCraft", "printedCircuitBoard"));
+            ItemStack helmet = new ItemStack(GameRegistry.findItem(Reference.MOD_ID, "compressed_helmet"));
+            airCanister.setItemDamage(30000);
+
+            MiscHelper.deleteRecipes(GameRegistry.findItem("PneumaticCraft", "pneumaticHelmet"));
+            GameRegistry.addRecipe(new ShapedOreRecipe(GameRegistry.findItem("PneumaticCraft", "pneumaticHelmet"),
+                    "cbc",
+                    "chc", 'c', airCanister, 'b', PCB, 'h', helmet));
         }
     }
 
     private static void registerRecipes(EquipMaterial material){
-        if(material.load) {
+        if(material.enabled) {
             if (material.repairMat instanceof ItemStack) {
                 registerToolRecipes(material.name, (ItemStack) material.repairMat, material.useObsidian);
                 if (ConfigHandler.loadSickles) {

@@ -2,7 +2,6 @@ package com.goldenapple.coppertools.item.special;
 
 import com.goldenapple.coppertools.init.EquipMaterial;
 import com.goldenapple.coppertools.item.ItemSickleCommon;
-import com.goldenapple.coppertools.util.EnchantHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -21,6 +20,8 @@ public class ItemSickleIronwood extends ItemSickleCommon {
     @Override
     @SuppressWarnings("unchecked")
     public void getSubItems(Item item, CreativeTabs tab, List list) {
-        list.add(EnchantHelper.enchant(new ItemStack(item), Enchantment.unbreaking, 1));
+        ItemStack itemStack = new ItemStack(item);
+        itemStack.addEnchantment(Enchantment.unbreaking, 1);
+        list.add(itemStack);
     }
 }
